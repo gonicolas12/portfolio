@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Nicolas Gouy</title>
+<meta name="description" content="Disponible pour alternance 2026 en Data / IA. Toulouse, partout en France ou full remote.">
+<meta name="author" content="Nicolas Gouy">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate icon" href="assets/favicon.svg">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gonicolas12.github.io/portfolio/contact.html">
+<meta property="og:title" content="Contact — Nicolas Gouy">
+<meta property="og:description" content="Disponible pour alternance 2026 en Data / IA. Toulouse, partout en France ou full remote.">
+<meta property="og:image" content="https://gonicolas12.github.io/portfolio/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Nicolas Gouy">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — Nicolas Gouy">
+<meta name="twitter:description" content="Disponible pour alternance 2026 en Data / IA. Toulouse, partout en France ou full remote.">
+<meta name="twitter:image" content="https://gonicolas12.github.io/portfolio/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/core.css">
+<style>
+.page-head {
+  padding: 60px 32px 40px;
+  border-bottom: 1px solid var(--ink);
+}
+.page-head .eyebrow {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.3em; color: var(--accent);
+  margin-bottom: 14px;
+}
+.page-head h1 {
+  font-family: var(--display);
+  font-size: clamp(60px, 11vw, 180px);
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  margin: 0 0 20px;
+  font-weight: 900;
+}
+.page-head h1 em { color: var(--accent); font-style: italic; font-family: 'Space Grotesk'; font-weight: 700; }
+
+/* Big statement */
+.statement {
+  padding: 80px 32px 60px;
+  border-bottom: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+}
+.statement h2 {
+  font-family: var(--display);
+  font-size: clamp(42px, 6.5vw, 90px);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 0;
+  font-weight: 900;
+  max-width: 1400px;
+}
+.statement h2 em {
+  font-style: italic;
+  color: var(--accent);
+  font-family: 'Space Grotesk';
+  font-weight: 700;
+}
+.statement .sub {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: #aaa;
+  margin-top: 30px;
+  max-width: 700px;
+}
+
+/* Contact methods */
+.methods {
+  padding: 80px 32px;
+  border-bottom: 1px solid var(--ink);
+}
+.methods-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border: 1px solid var(--ink);
+}
+.method {
+  padding: 50px 40px;
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  position: relative;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+.method:nth-child(2n) { border-right: none; }
+.method:nth-last-child(-n+2) { border-bottom: none; }
+.method:hover { background: var(--accent); color: #fff; }
+.method:hover .m-sub { color: rgba(255,255,255,0.85); }
+.method:hover .m-arrow { transform: translateX(10px); }
+
+.method .m-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: block;
+  transition: color 0.3s;
+}
+.method:hover .m-label { color: #fff; }
+
+.method h3 {
+  font-family: var(--display);
+  font-size: clamp(28px, 3.5vw, 48px);
+  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+  font-weight: 900;
+  word-break: break-word;
+}
+.method .m-sub {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--muted);
+  transition: color 0.3s;
+  margin: 0;
+}
+.method .m-arrow {
+  position: absolute;
+  right: 40px; top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--display);
+  font-size: 36px;
+  transition: transform 0.3s;
+}
+
+/* Copy row */
+.copy-row {
+  padding: 60px 32px;
+  border-bottom: 1px solid var(--ink);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  background: var(--paper);
+}
+.copy-card {
+  border: 1px solid var(--ink);
+  padding: 28px;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+}
+.copy-card .k {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.copy-card .v {
+  font-family: var(--display);
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+  word-break: break-all;
+  line-height: 1.1;
+}
+.copy-card button {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--ink);
+  padding: 8px 14px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--ink);
+}
+.copy-card button:hover { background: var(--ink); color: var(--accent); }
+.copy-card button.copied { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* Availability */
+.avail {
+  padding: 100px 32px;
+  border-bottom: 1px solid var(--ink);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+.avail h2 {
+  font-family: var(--display);
+  font-size: clamp(48px, 7vw, 100px);
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  margin: 0;
+  font-weight: 900;
+}
+.avail h2 em { font-style: italic; color: var(--accent); font-family: 'Space Grotesk'; font-weight: 700; }
+
+.avail-list {
+  display: grid; gap: 12px;
+}
+.avail-item {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  gap: 18px;
+  align-items: center;
+  padding: 20px 24px;
+  border: 1px solid var(--ink);
+  background: var(--bg);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.15em;
+}
+.avail-item .mk {
+  width: 14px; height: 14px;
+  background: var(--accent);
+}
+.avail-item.off .mk { background: var(--dim); }
+.avail-item.off { color: var(--muted); }
+.avail-item .label { letter-spacing: 0.15em; }
+.avail-item .status {
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 0.25em;
+}
+.avail-item.off .status { color: var(--muted); }
+
+/* FAQ */
+.faq {
+  padding: 100px 32px;
+  border-bottom: 1px solid var(--ink);
+}
+.faq h2 {
+  font-family: var(--display);
+  font-size: clamp(48px, 7vw, 96px);
+  letter-spacing: -0.03em;
+  line-height: 0.9;
+  margin: 0 0 50px;
+  font-weight: 900;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ink);
+}
+.faq h2 em { font-style: italic; color: var(--accent); font-family: 'Space Grotesk'; font-weight: 700; }
+
+details.qa {
+  border-bottom: 1px solid var(--line-soft);
+  padding: 24px 0;
+  cursor: pointer;
+}
+details.qa summary {
+  font-family: var(--display);
+  font-size: clamp(20px, 2.5vw, 28px);
+  letter-spacing: -0.01em;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-weight: 900;
+}
+details.qa summary::-webkit-details-marker { display: none; }
+details.qa summary::after {
+  content: '+';
+  font-family: var(--display);
+  font-size: 36px;
+  color: var(--accent);
+  transition: transform 0.3s;
+  line-height: 1;
+}
+details.qa[open] summary::after { transform: rotate(45deg); }
+details.qa p {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 20px 0 0;
+  max-width: 800px;
+}
+
+/* Final signoff */
+.signoff {
+  padding: 140px 32px 100px;
+  background: var(--accent);
+  color: var(--ink);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.signoff h2 {
+  font-family: var(--display);
+  font-size: clamp(80px, 14vw, 220px);
+  letter-spacing: -0.05em;
+  line-height: 0.85;
+  margin: 0 0 30px;
+  font-weight: 900;
+}
+.signoff .sig {
+  font-family: 'Space Grotesk';
+  font-style: italic;
+  font-size: 48px;
+  color: var(--ink);
+  margin-top: 20px;
+}
+.signoff .mark {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  margin-top: 40px;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .methods-grid { grid-template-columns: 1fr; }
+  .method { border-right: none; }
+  .copy-row { grid-template-columns: 1fr; }
+  .avail { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="mode-rec">
+
+<div id="header-mount" data-page="contact"></div>
+
+<section class="page-head">
+  <div class="eyebrow" data-fr="§ 04 — CONTACT" data-en="§ 04 — CONTACT">§ 04 — CONTACT</div>
+  <h1 data-fr-html="Parlons<em>.</em>" data-en-html="Let's talk<em>.</em>">Parlons<em>.</em></h1>
+  <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--muted); display: flex; gap: 14px;">
+    <span>HOME</span><span style="color:var(--accent)">/</span><span>CONTACT</span>
+  </div>
+</section>
+
+<section class="statement">
+  <h2 class="reveal" data-fr-html="À la recherche d'une <em>alternance</em> Data / IA pour la rentrée <em>2026</em>. Curieux, motivé, et prêt à livrer." data-en-html="Looking for a Data / AI <em>apprenticeship</em> starting <em>2026</em>. Curious, motivated, ready to ship.">
+    À la recherche d'une <em>alternance</em> Data / IA pour la rentrée <em>2026</em>. Curieux, motivé, et prêt à livrer.
+  </h2>
+  <p class="sub reveal d1" data-fr="Le meilleur moyen de me joindre reste l'email. Je réponds généralement dans les 24h." data-en="The best way to reach me is email. I usually reply within 24h.">
+    Le meilleur moyen de me joindre reste l'email. Je réponds généralement dans les 24h.
+  </p>
+</section>
+
+<section class="methods">
+  <div class="sec-meta reveal">
+    <span data-fr="§ 05 — CANAUX" data-en="§ 05 — CHANNELS">§ 05 — CANAUX</span>
+    <span data-fr="CHOISIR LE VÔTRE" data-en="PICK YOURS">CHOISIR LE VÔTRE</span>
+  </div>
+  <div class="methods-grid">
+    <a href="mailto:nicolasgouy@yahoo.com" class="method reveal">
+      <span class="m-label">01 · EMAIL</span>
+      <h3>nicolasgouy<br/>@yahoo.com</h3>
+      <p class="m-sub" data-fr="Le canal préféré. Réponse sous 24h." data-en="Preferred channel. Reply within 24h.">Le canal préféré. Réponse sous 24h.</p>
+      <span class="m-arrow">→</span>
+    </a>
+    <a href="https://www.linkedin.com/in/nicolas-gouy/" target="_blank" class="method reveal d1">
+      <span class="m-label">02 · LINKEDIN</span>
+      <h3>nicolas-gouy</h3>
+      <p class="m-sub" data-fr="Pour les recruteurs et propositions pro." data-en="For recruiters and pro opportunities.">Pour les recruteurs et propositions pro.</p>
+      <span class="m-arrow">↗</span>
+    </a>
+    <a href="https://github.com/gonicolas12/" target="_blank" class="method reveal d2">
+      <span class="m-label">03 · GITHUB</span>
+      <h3>gonicolas12</h3>
+      <p class="m-sub" data-fr="Le code. My_AI et side projects." data-en="The code. My_AI and side projects.">Le code. My_AI et side projects.</p>
+      <span class="m-arrow">↗</span>
+    </a>
+    <a href="tel:+33786334138" class="method reveal d3">
+      <span class="m-label">04 · PHONE</span>
+      <h3>07 86 33 41 38</h3>
+      <p class="m-sub" data-fr="Pour les urgences uniquement. France · FR." data-en="Emergencies only. France · FR.">Pour les urgences uniquement. France · FR.</p>
+      <span class="m-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<section class="copy-row">
+  <div class="copy-card reveal">
+    <div>
+      <div class="k">EMAIL</div>
+      <div class="v">nicolasgouy@yahoo.com</div>
+    </div>
+    <button data-copy="nicolasgouy@yahoo.com" data-fr="COPIER" data-en="COPY">COPIER</button>
+  </div>
+  <div class="copy-card reveal d1">
+    <div>
+      <div class="k">GITHUB URL</div>
+      <div class="v">github.com/gonicolas12</div>
+    </div>
+    <button data-copy="https://github.com/gonicolas12/" data-fr="COPIER" data-en="COPY">COPIER</button>
+  </div>
+  <div class="copy-card reveal d2">
+    <div>
+      <div class="k">LINKEDIN URL</div>
+      <div class="v">linkedin.com/in/nicolas-gouy</div>
+    </div>
+    <button data-copy="https://www.linkedin.com/in/nicolas-gouy/" data-fr="COPIER" data-en="COPY">COPIER</button>
+  </div>
+</section>
+
+<section class="avail">
+  <div class="reveal">
+    <h2 data-fr-html="Dispo<em>nibilités</em>." data-en-html="Avail<em>ability</em>.">Dispo<em>nibilités</em>.</h2>
+  </div>
+  <div class="avail-list">
+    <div class="avail-item reveal d1">
+      <div class="mk"></div>
+      <div class="label" data-fr="ALTERNANCE DATA / IA — SEPT. 2026" data-en="APPRENTICESHIP DATA / AI — SEP 2026">ALTERNANCE DATA / IA — SEPT. 2026</div>
+      <div class="status" data-fr="● OUVERT" data-en="● OPEN">● OUVERT</div>
+    </div>
+    <div class="avail-item reveal d2">
+      <div class="mk"></div>
+      <div class="label" data-fr="MISSIONS FREELANCE — PONCTUEL" data-en="FREELANCE — OCCASIONAL">MISSIONS FREELANCE — PONCTUEL</div>
+      <div class="status" data-fr="● SUR DEMANDE" data-en="● ON REQUEST">● SUR DEMANDE</div>
+    </div>
+    <div class="avail-item reveal d3">
+      <div class="mk"></div>
+      <div class="label" data-fr="CAFÉ / CHAT — TOULOUSE" data-en="COFFEE / CHAT — TOULOUSE">CAFÉ / CHAT — TOULOUSE</div>
+      <div class="status" data-fr="● TOUJOURS" data-en="● ALWAYS">● TOUJOURS</div>
+    </div>
+    <div class="avail-item off reveal d4">
+      <div class="mk"></div>
+      <div class="label" data-fr="CDI TEMPS-PLEIN — PAS AVANT 2028" data-en="FULL-TIME — NOT BEFORE 2028">CDI TEMPS-PLEIN — PAS AVANT 2028</div>
+      <div class="status" data-fr="○ EN ÉTUDES" data-en="○ STUDYING">○ EN ÉTUDES</div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <h2 class="reveal" data-fr-html="Questions <em>fréquentes</em>." data-en-html="<em>FAQ</em>.">Questions <em>fréquentes</em>.</h2>
+
+  <details class="qa reveal">
+    <summary data-fr="Quel rythme d'alternance ?" data-en="What apprenticeship rhythm?">Quel rythme d'alternance ?</summary>
+    <p data-fr="Rythme Ynov : 2 semaines en entreprise / 1 semaine à l'école." data-en="Ynov rhythm: 2 weeks company / 1 week school.">Rythme Ynov : 2 semaines en entreprise / 1 semaine à l'école.</p>
+  </details>
+
+  <details class="qa reveal d1">
+    <summary data-fr="Mobilité géographique ?" data-en="Geographic mobility?">Mobilité géographique ?</summary>
+    <p data-fr="Basé à Toulouse, permis B + véhiculé. Ouvert aux missions en région et ponctuellement au déplacement national. Remote partiel apprécié." data-en="Based in Toulouse, driving license + car. Open to regional missions and occasional national travel. Partial remote welcome.">Basé à Toulouse, permis B + véhiculé. Ouvert aux missions en région et ponctuellement au déplacement national. Remote partiel apprécié.</p>
+  </details>
+
+  <details class="qa reveal d2">
+    <summary data-fr="Stack préférée sur un projet ?" data-en="Preferred stack on a project?">Stack préférée sur un projet ?</summary>
+    <p data-fr="Python pour le backend / data / ML. Power BI côté viz métier. Ollama + ChromaDB + MCP pour les projets IA locaux. Je m'adapte rapidement à d'autres outils." data-en="Python for backend / data / ML. Power BI for business viz. Ollama + ChromaDB + MCP for local AI projects. I adapt quickly to other tools.">Python pour le backend / data / ML. Power BI côté viz métier. Ollama + ChromaDB + MCP pour les projets IA locaux. Je m'adapte rapidement à d'autres outils.</p>
+  </details>
+
+  <details class="qa reveal d3">
+    <summary data-fr="Dispo pour un call rapide ?" data-en="Available for a quick call?">Dispo pour un call rapide ?</summary>
+    <p data-fr="Oui — un mail avec un ou deux créneaux et on trouve ça. 30 min suffisent pour faire le tour d'un sujet." data-en="Yes — an email with one or two slots and we'll set it up. 30 min is usually enough to scope a topic.">Oui — un mail avec un ou deux créneaux et on trouve ça. 30 min suffisent pour faire le tour d'un sujet.</p>
+  </details>
+</section>
+
+<section class="signoff">
+  <h2 data-fr-html="À <em>bientôt</em>." data-en-html="See you <em>soon</em>.">À <em>bientôt</em>.</h2>
+  <div class="sig">Nicolas</div>
+  <div class="mark">◼ N.GOUY · TOULOUSE · 2026</div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="shared/content.js"></script>
+<script src="shared/header.js"></script>
+<script>
+  mountHeader('contact');
+  mountFooter();
+
+  // Copy buttons
+  document.querySelectorAll('[data-copy]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      navigator.clipboard.writeText(btn.dataset.copy).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = PORTFOLIO_STATE.lang === 'fr' ? 'COPIÉ ✓' : 'COPIED ✓';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = PORTFOLIO_STATE.lang === 'fr' ? 'COPIER' : 'COPY';
+          btn.classList.remove('copied');
+        }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>

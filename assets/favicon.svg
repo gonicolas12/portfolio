@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#0a0a0a"></rect>
+  <rect x="0" y="0" width="64" height="6" fill="#ff6b47"></rect>
+  <rect x="0" y="58" width="64" height="6" fill="#ff6b47"></rect>
+  <text x="32" y="44" font-family="Arial Black, Helvetica, sans-serif" font-size="32" font-weight="900" fill="#f5f1ea" text-anchor="middle" letter-spacing="-1">NG</text>
+</svg>

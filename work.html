@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travail — Nicolas Gouy</title>
+<meta name="description" content="Étude de cas : My_AI, assistant IA 100% local en Python. Architecture multi-agents, mémoire vectorielle ChromaDB, protocole MCP, FastAPI.">
+<meta name="author" content="Nicolas Gouy">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate icon" href="assets/favicon.svg">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gonicolas12.github.io/portfolio/work.html">
+<meta property="og:title" content="Travail — Nicolas Gouy">
+<meta property="og:description" content="Étude de cas : My_AI, assistant IA 100% local en Python. Architecture multi-agents, mémoire vectorielle ChromaDB, protocole MCP, FastAPI.">
+<meta property="og:image" content="https://gonicolas12.github.io/portfolio/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Nicolas Gouy">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Travail — Nicolas Gouy">
+<meta name="twitter:description" content="Étude de cas : My_AI, assistant IA 100% local en Python. Architecture multi-agents, mémoire vectorielle ChromaDB, protocole MCP, FastAPI.">
+<meta name="twitter:image" content="https://gonicolas12.github.io/portfolio/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/core.css">
+<style>
+.page-head {
+  padding: 60px 32px 40px;
+  border-bottom: 1px solid var(--ink);
+}
+.page-head .eyebrow {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.3em; color: var(--accent);
+  margin-bottom: 14px;
+}
+.page-head h1 {
+  font-family: var(--display);
+  font-size: clamp(60px, 11vw, 180px);
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  margin: 0 0 20px;
+  font-weight: 900;
+}
+.page-head h1 em { color: var(--accent); font-style: italic; font-family: 'Space Grotesk'; font-weight: 700; }
+.page-head .crumb {
+  display: flex; gap: 14px;
+  font-family: var(--mono); font-size: 11px;
+  color: var(--muted); letter-spacing: 0.2em;
+}
+
+/* Project hero */
+.proj-hero {
+  padding: 80px 32px;
+  border-bottom: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+.proj-hero-info .tag {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.3em; color: var(--accent);
+  margin-bottom: 16px;
+}
+.proj-hero-info h2 {
+  font-family: var(--display);
+  font-size: clamp(60px, 10vw, 140px);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  margin: 0 0 20px;
+  font-weight: 900;
+}
+.proj-hero-info .tagline {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--accent);
+  margin: 0 0 30px;
+  max-width: 500px;
+}
+.proj-hero-info .meta-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; margin-bottom: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--dim);
+}
+.proj-hero-info .meta-row .k { font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em; color: var(--dim); margin-bottom: 4px; }
+.proj-hero-info .meta-row .v { font-family: var(--display); font-size: 18px; }
+
+/* Architecture visual */
+.arch-vis {
+  aspect-ratio: 1/1;
+  border: 1px solid var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.arch-vis svg { width: 100%; height: 100%; }
+
+.arch-interactive {
+  padding: 80px 32px;
+  border-bottom: 1px solid var(--ink);
+}
+.arch-interactive h3 {
+  font-family: var(--display);
+  font-size: clamp(36px, 5vw, 56px);
+  letter-spacing: -0.02em;
+  margin: 0 0 20px;
+  font-weight: 900;
+}
+.arch-interactive h3 em { font-style: italic; color: var(--accent); font-family: 'Space Grotesk'; font-weight: 700; }
+.arch-interactive > p {
+  font-family: var(--serif); font-size: 16px;
+  color: var(--muted); max-width: 700px;
+  margin: 0 0 40px;
+}
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--ink);
+}
+.agent {
+  padding: 28px;
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+.agent:nth-child(3n) { border-right: none; }
+.agent:nth-last-child(-n+3) { border-bottom: none; }
+.agent:hover { background: var(--ink); color: var(--bg); }
+.agent:hover .agent-num { color: var(--accent); }
+.agent-num {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.3em; color: var(--muted);
+  margin-bottom: 12px;
+  transition: color 0.3s;
+}
+.agent h4 {
+  font-family: var(--display);
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+  font-weight: 900;
+}
+.agent p {
+  font-family: var(--serif);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Deep dive */
+.deep {
+  padding: 100px 32px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--ink);
+}
+.deep-head {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 50px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ink);
+}
+.deep-head h2 {
+  font-family: var(--display);
+  font-size: clamp(48px, 7vw, 96px);
+  letter-spacing: -0.03em;
+  margin: 0;
+  line-height: 0.9;
+  font-weight: 900;
+}
+.deep-head h2 em { font-style: italic; color: var(--accent); font-family: 'Space Grotesk'; font-weight: 700; }
+
+.deep-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+.deep-card {
+  border: 1px solid var(--ink);
+  padding: 40px;
+  background: var(--bg);
+}
+.deep-card .n {
+  font-family: var(--display);
+  font-size: 60px;
+  color: var(--accent);
+  line-height: 0.9;
+  margin-bottom: 16px;
+  font-weight: 900;
+}
+.deep-card h4 {
+  font-family: var(--display);
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  margin: 0 0 14px;
+  font-weight: 900;
+}
+.deep-card p {
+  font-family: var(--serif); font-size: 15px;
+  line-height: 1.6; color: var(--ink-soft);
+  margin: 0;
+}
+
+/* Code snippet */
+.code-section {
+  padding: 80px 32px;
+  border-bottom: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+}
+.code-section h3 {
+  font-family: var(--display);
+  font-size: clamp(36px, 5vw, 64px);
+  letter-spacing: -0.02em;
+  margin: 0 0 30px;
+  font-weight: 900;
+}
+.code-section h3 em { font-style: italic; color: var(--accent); font-family: 'Space Grotesk'; font-weight: 700; }
+.code-box {
+  border: 1px solid var(--dim);
+  background: #050505;
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.7;
+  overflow: auto;
+}
+.code-box-head {
+  display: flex; justify-content: space-between;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--dim);
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--dim);
+}
+.code-box-head .dots { display: flex; gap: 6px; }
+.code-box-head .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--dim); }
+.code-box-head .dot.red { background: #ff5f56; }
+.code-box-head .dot.yellow { background: #ffbd2e; }
+.code-box-head .dot.green { background: var(--accent); }
+.code-body {
+  padding: 20px 24px;
+  overflow-x: auto;
+  white-space: pre;
+}
+.code-body .kw { color: var(--accent); }
+.code-body .str { color: #c9e265; }
+.code-body .cm { color: #666; font-style: italic; }
+.code-body .fn { color: #8ec4ff; }
+
+/* Other projects teaser */
+.other-proj {
+  padding: 100px 32px;
+  border-bottom: 1px solid var(--ink);
+}
+.other-proj h2 {
+  font-family: var(--display);
+  font-size: clamp(40px, 6vw, 80px);
+  letter-spacing: -0.03em;
+  margin: 0 0 40px;
+  font-weight: 900;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--ink);
+}
+.other-proj h2 em { font-style: italic; color: var(--accent); font-family: 'Space Grotesk'; font-weight: 700; }
+
+.coming-soon {
+  border: 1px dashed var(--line-soft);
+  padding: 80px 40px;
+  text-align: center;
+  background: var(--paper);
+}
+.coming-soon .blink {
+  display: inline-block;
+  width: 12px; height: 12px; background: var(--accent);
+  margin-right: 10px; vertical-align: middle;
+  animation: blink 1.4s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0.2; } }
+.coming-soon h4 {
+  font-family: var(--display);
+  font-size: 36px;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+.coming-soon p {
+  font-family: var(--serif);
+  color: var(--muted);
+  max-width: 500px;
+  margin: 0 auto 20px;
+}
+.coming-soon .btn {
+  margin-top: 10px;
+}
+
+/* Mini CTA */
+.mini-cta {
+  padding: 100px 32px;
+  background: var(--accent);
+  text-align: center;
+  border-bottom: 1px solid var(--ink);
+}
+.mini-cta h2 {
+  font-family: var(--display);
+  font-size: clamp(40px, 6vw, 80px);
+  margin: 0 0 20px;
+  letter-spacing: -0.03em;
+  font-weight: 900;
+}
+.mini-cta .btn-primary { background: var(--ink); color: var(--accent); }
+.mini-cta .btn-primary:hover { background: var(--bg); color: var(--ink); }
+
+@media (max-width: 900px) {
+  .proj-hero { grid-template-columns: 1fr; }
+  .agents-grid { grid-template-columns: 1fr; }
+  .agent { border-right: none; }
+  .deep-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body class="mode-rec">
+
+<div id="header-mount" data-page="work"></div>
+
+<section class="page-head">
+  <div class="eyebrow" data-fr="§ 03 — PROJETS" data-en="§ 03 — PROJECTS">§ 03 — PROJETS</div>
+  <h1 data-fr-html="Le <em>travail</em>." data-en-html="The <em>work</em>.">Le <em>travail</em>.</h1>
+  <div class="crumb">
+    <span>HOME</span><span style="color:var(--accent)">/</span><span>WORK</span><span style="color:var(--accent)">/</span><span>MY_AI</span>
+  </div>
+</section>
+
+<section class="proj-hero">
+  <div class="proj-hero-info">
+    <div class="tag">● LIVE · FEATURED CASE STUDY · 01 / 01</div>
+    <h2 class="reveal">MY_AI</h2>
+    <p class="tagline reveal d1" data-fr="Assistant IA 100% local. Multi-agents. Extensible." data-en="100% local AI assistant. Multi-agent. Extensible.">Assistant IA 100% local. Multi-agents. Extensible.</p>
+    <div class="meta-row reveal d2">
+      <div><div class="k" data-fr="ANNÉES" data-en="YEARS">ANNÉES</div><div class="v">2025 — 2026</div></div>
+      <div><div class="k" data-fr="RÔLE" data-en="ROLE">RÔLE</div><div class="v" data-fr="SOLO" data-en="SOLO">SOLO</div></div>
+      <div><div class="k">STATUS</div><div class="v" style="color:var(--accent)">● LIVE</div></div>
+    </div>
+    <div class="reveal d3">
+      <span class="chip accent">PYTHON</span>
+      <span class="chip accent">OLLAMA</span>
+      <span class="chip accent">CHROMADB</span>
+      <span class="chip accent">MCP</span>
+      <span class="chip accent">FASTAPI</span>
+    </div>
+    <div style="margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap;">
+      <a href="https://github.com/gonicolas12/My_AI" target="_blank" class="btn btn-primary" style="background: var(--accent); color: #fff;">GITHUB ↗</a>
+    </div>
+  </div>
+
+  <div class="arch-vis reveal d1">
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="dotgrid" width="20" height="20" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1" fill="#333"/>
+        </pattern>
+      </defs>
+      <rect width="500" height="500" fill="url(#dotgrid)"/>
+
+      <!-- Orchestrator hub -->
+      <g transform="translate(250, 250)">
+        <circle r="65" fill="none" stroke="#ff6b47" stroke-width="2" stroke-dasharray="3 3">
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/>
+        </circle>
+        <circle r="50" fill="#ff6b47"/>
+        <text text-anchor="middle" y="4" font-family="Archivo Black" font-size="13" fill="#0a0a0a">ORCH.</text>
+      </g>
+
+      <!-- 9 agent nodes in circle -->
+      <g font-family="JetBrains Mono" font-size="9" fill="#f5f1ea">
+        <g transform="translate(250, 60)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="4" fill="#ff6b47" letter-spacing="1">CODE</text></g>
+        <g transform="translate(400, 110)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">DOCS</text></g>
+        <g transform="translate(450, 250)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">SEARCH</text></g>
+        <g transform="translate(400, 390)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">MEMORY</text></g>
+        <g transform="translate(250, 440)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">PARSER</text></g>
+        <g transform="translate(100, 390)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">MCP</text></g>
+        <g transform="translate(50, 250)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">VECTOR</text></g>
+        <g transform="translate(100, 110)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">ROUTER</text></g>
+        <g transform="translate(180, 190)"><rect x="-32" y="-12" width="64" height="24" fill="#0a0a0a" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="4" fill="#ff6b47">OLLAMA</text></g>
+      </g>
+
+      <!-- Connections -->
+      <g stroke="#ff6b47" stroke-width="1" opacity="0.35" fill="none">
+        <line x1="250" y1="250" x2="250" y2="60"/>
+        <line x1="250" y1="250" x2="400" y2="110"/>
+        <line x1="250" y1="250" x2="450" y2="250"/>
+        <line x1="250" y1="250" x2="400" y2="390"/>
+        <line x1="250" y1="250" x2="250" y2="440"/>
+        <line x1="250" y1="250" x2="100" y2="390"/>
+        <line x1="250" y1="250" x2="50" y2="250"/>
+        <line x1="250" y1="250" x2="100" y2="110"/>
+        <line x1="250" y1="250" x2="180" y2="190"/>
+      </g>
+
+      <!-- Particles flowing -->
+      <circle r="3" fill="#ff6b47">
+        <animateMotion dur="2s" repeatCount="indefinite" path="M 250 250 L 250 60"/>
+      </circle>
+      <circle r="3" fill="#ff6b47">
+        <animateMotion dur="2.4s" repeatCount="indefinite" path="M 250 250 L 450 250"/>
+      </circle>
+      <circle r="3" fill="#ff6b47">
+        <animateMotion dur="2.8s" repeatCount="indefinite" path="M 250 250 L 100 390"/>
+      </circle>
+      <circle r="3" fill="#ff6b47">
+        <animateMotion dur="2.2s" repeatCount="indefinite" path="M 250 250 L 400 110"/>
+      </circle>
+      <circle r="3" fill="#ff6b47">
+        <animateMotion dur="3s" repeatCount="indefinite" path="M 250 250 L 50 250"/>
+      </circle>
+
+      <!-- corners -->
+      <path d="M 10 10 L 30 10 M 10 10 L 10 30" stroke="#ff6b47" stroke-width="2" fill="none"/>
+      <path d="M 490 10 L 470 10 M 490 10 L 490 30" stroke="#ff6b47" stroke-width="2" fill="none"/>
+      <path d="M 10 490 L 30 490 M 10 490 L 10 470" stroke="#ff6b47" stroke-width="2" fill="none"/>
+      <path d="M 490 490 L 470 490 M 490 490 L 490 470" stroke="#ff6b47" stroke-width="2" fill="none"/>
+
+      <text x="20" y="480" font-family="JetBrains Mono" font-size="10" fill="#666" letter-spacing="2">MY_AI · 2026</text>
+      <text x="390" y="480" font-family="JetBrains Mono" font-size="10" fill="#ff6b47" letter-spacing="2">◼ LIVE</text>
+    </svg>
+  </div>
+</section>
+
+<!-- 9 Agents Grid -->
+<section class="arch-interactive">
+  <div class="sec-meta reveal">
+    <span>§ 04 — AGENTS</span>
+    <span data-fr="9 AGENTS SPÉCIALISÉS" data-en="9 SPECIALIZED AGENTS">9 AGENTS SPÉCIALISÉS</span>
+  </div>
+  <h3 class="reveal" data-fr-html="Architecture <em>multi-agents</em>." data-en-html="<em>Multi-agent</em> architecture.">Architecture <em>multi-agents</em>.</h3>
+  <p class="reveal d1" data-fr="Chaque agent est responsable d'un domaine précis. L'orchestrateur route chaque requête vers le bon agent selon l'intention détectée. Survolez pour explorer." data-en="Each agent owns one specific domain. The orchestrator routes each request to the right agent based on detected intent. Hover to explore.">
+    Chaque agent est responsable d'un domaine précis. L'orchestrateur route chaque requête vers le bon agent selon l'intention détectée. Survolez pour explorer.
+  </p>
+
+  <div class="agents-grid reveal d2">
+    <div class="agent">
+      <div class="agent-num">01 / 09</div>
+      <h4>CODE</h4>
+      <p data-fr="Génération et debug de code multi-langages. Python, C, JS et plus." data-en="Code generation and debugging across languages. Python, C, JS and more.">Génération et debug de code multi-langages. Python, C, JS et plus.</p>
+    </div>
+    <div class="agent">
+      <div class="agent-num">02 / 09</div>
+      <h4>WEB</h4>
+      <p data-fr="Recherche internet temps réel via DuckDuckGo. Fact-checking et résumés." data-en="Real-time internet search via DuckDuckGo. Fact-checking and summaries.">Recherche internet temps réel via DuckDuckGo. Fact-checking et résumés.</p>
+    </div>
+    <div class="agent">
+      <div class="agent-num">03 / 09</div>
+      <h4>ANALYST</h4>
+      <p data-fr="Analyse de données et extraction d'insights sur les corpus ingérés." data-en="Data analysis and insight extraction on ingested corpora.">Analyse de données et extraction d'insights sur les corpus ingérés.</p>
+    </div>
+    <div class="agent">
+      <div class="agent-num">04 / 09</div>
+      <h4>CREATIVE</h4>
+      <p data-fr="Rédaction et contenu créatif. Adapte le ton et le format à la demande." data-en="Writing and creative content. Adapts tone and format on demand.">Rédaction et contenu créatif. Adapte le ton et le format à la demande.</p>
+    </div>
+    <div class="agent">
+      <div class="agent-num">05 / 09</div>
+      <h4>DEBUG</h4>
+      <p data-fr="Détection et correction d'erreurs. Analyse de traces et suggestions de fix." data-en="Error detection and fixing. Stack trace analysis and fix suggestions.">Détection et correction d'erreurs. Analyse de traces et suggestions de fix.</p>
+    </div>
+    <div class="agent">
+      <div class="agent-num">06 / 09</div>
+      <h4>PLANNER</h4>
+      <p data-fr="Découpe les projets complexes en étapes actionnables et séquencées." data-en="Breaks complex projects into actionable, sequenced steps.">Découpe les projets complexes en étapes actionnables et séquencées.</p>
+    </div>
+    <div class="agent">
+      <div class="agent-num">07 / 09</div>
+      <h4>SECURITY</h4>
+      <p data-fr="Audit de sécurité et détection de vulnérabilités dans le code." data-en="Security audit and vulnerability detection in code.">Audit de sécurité et détection de vulnérabilités dans le code.</p>
+    </div>
+    <div class="agent">
+      <div class="agent-num">08 / 09</div>
+      <h4>OPTIMIZER</h4>
+      <p data-fr="Optimisation et performance. Profiling, refactor, réduction de coût." data-en="Optimization and performance. Profiling, refactoring, cost reduction.">Optimisation et performance. Profiling, refactor, réduction de coût.</p>
+    </div>
+    <div class="agent">
+      <div class="agent-num">09 / 09</div>
+      <h4>DATA SCIENCE</h4>
+      <p data-fr="Data Science et Machine Learning. Pipelines ML, features, évaluation." data-en="Data Science and Machine Learning. ML pipelines, features, evaluation.">Data Science et Machine Learning. Pipelines ML, features, évaluation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Deep dive -->
+<section class="deep">
+  <div class="deep-head reveal">
+    <h2 data-fr-html="Points <em>forts</em>." data-en-html="Key <em>ideas</em>.">Points <em>forts</em>.</h2>
+    <div style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--muted);">§ 05 — DEEP DIVE</div>
+  </div>
+  <div class="deep-grid">
+    <div class="deep-card reveal">
+      <div class="n">01</div>
+      <h4 data-fr="100% local, 0 API payante" data-en="100% local, 0 paid API">100% local, 0 API payante</h4>
+      <p data-fr="Tout tourne sur Ollama en local. Aucune donnée ne sort de la machine. Adapté aux contextes sensibles où le cloud n'est pas une option." data-en="Everything runs on local Ollama. No data leaves the machine. Fits sensitive contexts where cloud isn't an option.">Tout tourne sur Ollama en local. Aucune donnée ne sort de la machine. Adapté aux contextes sensibles où le cloud n'est pas une option.</p>
+    </div>
+    <div class="deep-card reveal d1">
+      <div class="n">02</div>
+      <h4 data-fr="Mémoire vectorielle persistante" data-en="Persistent vector memory">Mémoire vectorielle persistante</h4>
+      <p data-fr="ChromaDB stocke les conversations et documents en embeddings. L'assistant se souvient des échanges précédents sans ré-entraînement." data-en="ChromaDB stores conversations and documents as embeddings. The assistant remembers past exchanges without retraining.">ChromaDB stocke les conversations et documents en embeddings. L'assistant se souvient des échanges précédents sans ré-entraînement.</p>
+    </div>
+    <div class="deep-card reveal d2">
+      <div class="n">03</div>
+      <h4 data-fr="Pipeline multi-formats" data-en="Multi-format pipeline">Pipeline multi-formats</h4>
+      <p data-fr="Ingère PDF, DOCX, Excel. Normalise, chunk, indexe. Prêt pour RAG sur n'importe quelle base documentaire." data-en="Ingests PDF, DOCX, Excel. Normalizes, chunks, indexes. Ready for RAG on any document base.">Ingère PDF, DOCX, Excel. Normalise, chunk, indexe. Prêt pour RAG sur n'importe quelle base documentaire.</p>
+    </div>
+    <div class="deep-card reveal d3">
+      <div class="n">04</div>
+      <h4 data-fr="Extensible via MCP" data-en="Extensible via MCP">Extensible via MCP</h4>
+      <p data-fr="Le protocole Model Context Protocol permet de brancher de nouveaux outils (bases SQL, APIs, file systems) sans toucher au cœur." data-en="The Model Context Protocol lets you plug new tools (SQL DBs, APIs, file systems) without touching the core.">Le protocole Model Context Protocol permet de brancher de nouveaux outils (bases SQL, APIs, file systems) sans toucher au cœur.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Code snippet -->
+<section class="code-section">
+  <div class="sec-meta reveal" style="color: var(--dim); border-bottom-color: var(--dim);">
+    <span>§ 06 — CODE</span>
+    <span>orchestrator.py</span>
+  </div>
+  <h3 class="reveal" data-fr-html="Un <em>extrait</em>." data-en-html="A <em>peek</em>.">Un <em>extrait</em>.</h3>
+  <div class="code-box reveal d1">
+    <div class="code-box-head">
+      <div class="dots">
+        <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+      </div>
+      <span>~/my_ai/core/orchestrator.py</span>
+      <span>PY · UTF-8</span>
+    </div>
+    <pre class="code-body"><span class="cm"># my_ai/core/orchestrator.py</span>
+<span class="kw">from</span> agents <span class="kw">import</span> CodeAgent, DocsAgent, SearchAgent, MemoryAgent
+<span class="kw">from</span> memory <span class="kw">import</span> VectorStore
+<span class="kw">from</span> mcp <span class="kw">import</span> MCPRegistry
+
+<span class="kw">class</span> <span class="fn">Orchestrator</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, model=<span class="str">"qwen3.5:4b"</span>):
+        self.llm = Ollama(model)
+        self.memory = VectorStore(<span class="str">"./chroma"</span>)
+        self.agents = {
+            <span class="str">"code"</span>:   CodeAgent(self.llm),
+            <span class="str">"docs"</span>:   DocsAgent(self.llm),
+            <span class="str">"search"</span>: SearchAgent(self.memory),
+            <span class="str">"memory"</span>: MemoryAgent(self.memory),
+        }
+        self.mcp = MCPRegistry.discover()
+
+    <span class="kw">async def</span> <span class="fn">route</span>(self, query: str) -> str:
+        <span class="cm"># 1. classify intent locally</span>
+        intent = <span class="kw">await</span> self.<span class="fn">_classify</span>(query)
+        <span class="cm"># 2. enrich w/ long-term memory</span>
+        ctx = self.memory.<span class="fn">recall</span>(query, k=<span class="str">5</span>)
+        <span class="cm"># 3. delegate to specialized agent</span>
+        agent = self.agents[intent]
+        answer = <span class="kw">await</span> agent.<span class="fn">run</span>(query, context=ctx)
+        <span class="cm"># 4. persist exchange</span>
+        self.memory.<span class="fn">store</span>(query, answer)
+        <span class="kw">return</span> answer</pre>
+  </div>
+</section>
+
+<!-- Other projects -->
+<section class="other-proj">
+  <h2 data-fr-html="Autres <em>projets</em>." data-en-html="Other <em>work</em>.">Autres <em>projets</em>.</h2>
+  <div class="coming-soon reveal">
+    <span class="blink"></span>
+    <h4 data-fr="En préparation" data-en="In the lab">En préparation</h4>
+    <p data-fr="D'autres side projects arrivent bientôt." data-en="More side projects coming soon.">D'autres side projects arrivent bientôt.</p>
+    <a href="contact.html" class="btn btn-ghost" style='font-family: "JetBrains Mono"; font-size: 12px' data-fr="PROPOSER DES IDÉES →" data-en="SUGGEST IDEAS →">PROPOSER DES IDÉES →</a>
+  </div>
+</section>
+
+<section class="mini-cta">
+  <h2 data-fr-html="On <em>collabore</em> ?" data-en-html="Let's <em>collaborate</em>.">On <em>collabore</em> ?</h2>
+  <a href="contact.html" class="btn btn-primary">CONTACT →</a>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="shared/content.js"></script>
+<script src="shared/header.js"></script>
+<script>
+  mountHeader('work');
+  mountFooter();
+</script>
+</body>
+</html>

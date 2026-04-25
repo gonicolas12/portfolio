@@ -1,0 +1,6 @@
+# Build artifacts (none for this static site)
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

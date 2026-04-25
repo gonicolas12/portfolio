@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicolas Gouy — Data / AI · Portfolio 2026</title>
+<meta name="description" content="Portfolio de Nicolas Gouy, 21 ans, étudiant Master Data / IA à Toulouse Ynov Campus. Alternant IS Project Manager chez Pierre Fabre. Créateur de My_AI, assistant IA 100% local.">
+<meta name="author" content="Nicolas Gouy">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="alternate icon" href="assets/favicon.svg">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gonicolas12.github.io/portfolio/">
+<meta property="og:title" content="Nicolas Gouy — Data / AI · Portfolio 2026">
+<meta property="og:description" content="Portfolio de Nicolas Gouy, 21 ans, étudiant Master Data / IA à Toulouse Ynov Campus. Alternant IS Project Manager chez Pierre Fabre. Créateur de My_AI, assistant IA 100% local.">
+<meta property="og:image" content="https://gonicolas12.github.io/portfolio/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="Nicolas Gouy">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nicolas Gouy — Data / AI · Portfolio 2026">
+<meta name="twitter:description" content="Portfolio de Nicolas Gouy, 21 ans, étudiant Master Data / IA à Toulouse Ynov Campus. Alternant IS Project Manager chez Pierre Fabre. Créateur de My_AI, assistant IA 100% local.">
+<meta name="twitter:image" content="https://gonicolas12.github.io/portfolio/assets/og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;700;900&family=JetBrains+Mono:wght@300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/core.css">
+<style>
+/* ============ HOME PAGE ============ */
+
+/* HERO */
+.hero {
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 32px 60px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ink);
+}
+.hero-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--ink);
+  margin-bottom: 40px;
+}
+.hero-meta .label { color: var(--dim); display: block; font-size: 10px; margin-bottom: 4px; }
+.hero-meta .val { color: var(--ink); font-weight: 500; }
+.hero-meta .val.accent { color: var(--accent); }
+
+.hero-manifesto {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+}
+.manifesto {
+  font-family: var(--display);
+  font-size: clamp(60px, 12vw, 180px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-weight: 900;
+  color: var(--ink);
+  max-width: 1600px;
+}
+.manifesto .word { display: inline-block; margin-right: 0.15em; position: relative; }
+.manifesto .accent-word { color: var(--accent); font-style: italic; }
+.manifesto .underline {
+  position: relative;
+}
+.manifesto .underline::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0.08em;
+  width: 100%; height: 0.06em;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underline-in 1s cubic-bezier(0.2,0.7,0.3,1) 1.4s forwards;
+}
+@keyframes underline-in { to { transform: scaleX(1); } }
+
+.hero-word { opacity: 0; transform: translateY(100%); animation: wordIn 0.9s cubic-bezier(0.2,0.7,0.3,1) forwards; }
+@keyframes wordIn { to { opacity: 1; transform: translateY(0); } }
+
+.hero-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: end;
+  padding-top: 30px;
+  border-top: 1px solid var(--ink);
+}
+.hero-intro {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 520px;
+  color: var(--ink-soft);
+}
+.hero-intro strong { background: var(--accent); color: #fff; padding: 2px 8px; font-weight: 600; }
+.hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+.hero-ctas .scroll-hint {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--dim); letter-spacing: 0.2em;
+  display: flex; gap: 8px; align-items: center;
+  margin-top: 12px;
+  flex-basis: 100%; justify-content: flex-end;
+}
+.scroll-arrow {
+  display: inline-block;
+  animation: bob 2s ease-in-out infinite;
+}
+@keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+/* Big number brand mark */
+.hero-sig {
+  position: absolute;
+  right: 32px; top: 140px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--dim);
+  text-align: right;
+  line-height: 1.8;
+}
+.hero-sig b { color: var(--accent); }
+
+/* TICKER */
+.ticker {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 14px 0;
+  overflow: hidden;
+  border-bottom: 1px solid var(--ink);
+  border-top: 1px solid var(--ink);
+}
+.ticker-row {
+  display: flex; gap: 60px;
+  white-space: nowrap;
+  font-family: var(--display);
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  animation: tick 50s linear infinite;
+}
+.ticker-row span.star { color: var(--accent); }
+@keyframes tick { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
+
+/* HIGHLIGHTS / STATS */
+.highlights {
+  padding: 80px 32px;
+  border-bottom: 1px solid var(--ink);
+  background: var(--paper);
+}
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--ink);
+}
+.hi {
+  padding: 40px 28px;
+  border-right: 1px solid var(--ink);
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.hi:last-child { border-right: none; }
+.hi:hover { background: var(--accent); color: #fff; }
+.hi:hover .hi-label, .hi:hover .hi-sub { color: inherit; }
+.hi { transition: background 0.3s; }
+.hi-big {
+  font-family: var(--display);
+  font-size: 80px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+.hi-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  margin-bottom: 4px;
+  transition: color 0.3s;
+}
+.hi-sub {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--ink-soft);
+  transition: color 0.3s;
+}
+
+/* CURRENTLY */
+.currently {
+  padding: 100px 32px;
+  border-bottom: 1px solid var(--ink);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+}
+.currently h2 {
+  font-family: var(--display);
+  font-size: 120px;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  margin: 0;
+  font-weight: 900;
+}
+.currently h2 .dot { color: var(--accent); }
+.currently-grid {
+  display: grid; gap: 20px;
+}
+.now-item {
+  border: 1px solid var(--ink);
+  padding: 24px;
+  background: var(--paper);
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  transition: all 0.3s;
+}
+.now-item:hover { background: var(--ink); color: var(--bg); }
+.now-item:hover .now-year { color: var(--accent); }
+.now-year {
+  font-family: var(--display);
+  font-size: 36px;
+  color: var(--accent);
+  line-height: 1;
+}
+.now-title { font-family: var(--display); font-size: 22px; margin-bottom: 4px; }
+.now-desc { font-family: var(--serif); font-size: 14px; color: var(--muted); }
+.now-item:hover .now-desc { color: var(--bg); }
+.now-pulse {
+  width: 10px; height: 10px; background: var(--accent);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(1.4); } }
+
+/* FEATURED WORK */
+.featured {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 100px 32px;
+  border-bottom: 1px solid var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.featured-head {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--bg);
+}
+.featured-head h2 {
+  font-family: var(--display);
+  font-size: clamp(48px, 7vw, 100px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin: 0;
+  line-height: 0.9;
+}
+.featured-head h2 span { color: var(--accent); }
+.featured-head .meta {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.2em; color: var(--dim);
+  text-align: right;
+}
+
+.showcase {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.showcase-vis {
+  aspect-ratio: 4/3;
+  background: var(--ink-soft);
+  border: 1px solid var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.showcase-vis svg { width: 100%; height: 100%; }
+
+.showcase-info h3 {
+  font-family: var(--display);
+  font-size: 64px;
+  letter-spacing: -0.03em;
+  margin: 0 0 8px;
+  line-height: 0.95;
+  font-weight: 900;
+}
+.showcase-info .tagline {
+  font-family: var(--serif); font-size: 20px;
+  color: var(--accent); margin-bottom: 30px;
+}
+.showcase-info p {
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 24px;
+}
+.showcase-stack { margin-bottom: 24px; }
+.showcase-stack .chip { border-color: var(--bg); color: var(--bg); }
+.showcase-metrics {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0; border: 1px solid var(--bg);
+  margin-bottom: 30px;
+}
+.sm-item { padding: 14px; text-align: center; border-right: 1px solid var(--bg); }
+.sm-item:last-child { border-right: none; }
+.sm-v { font-family: var(--display); font-size: 24px; color: var(--accent); }
+.sm-k { font-family: var(--mono); font-size: 9px; letter-spacing: 0.25em; color: var(--dim); margin-top: 4px; }
+
+/* PROCESS STRIP */
+.process {
+  padding: 100px 32px;
+  border-bottom: 1px solid var(--ink);
+}
+.process h2 {
+  font-family: var(--display);
+  font-size: clamp(40px, 6vw, 72px);
+  letter-spacing: -0.03em;
+  margin: 0 0 60px;
+  max-width: 900px;
+  font-weight: 900;
+  line-height: 0.95;
+}
+.process h2 .accent { color: var(--accent); }
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--ink);
+}
+.proc {
+  padding: 36px 28px;
+  border-right: 1px solid var(--ink);
+  position: relative;
+  min-height: 280px;
+}
+.proc:last-child { border-right: none; }
+.proc-num {
+  font-family: var(--display);
+  font-size: 80px;
+  line-height: 0.8;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.proc h4 {
+  font-family: var(--display);
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  margin: 0 0 10px;
+}
+.proc p {
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* CTA BIG */
+.cta-big {
+  padding: 120px 32px;
+  background: var(--accent);
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.cta-big h2 {
+  font-family: var(--display);
+  font-size: clamp(56px, 10vw, 140px);
+  letter-spacing: -0.04em;
+  margin: 0 0 40px;
+  line-height: 0.9;
+  font-weight: 900;
+  max-width: 1200px;
+}
+.cta-big h2 em {
+  font-style: italic;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+}
+.cta-big-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.cta-big-links .btn-ghost { border-color: var(--ink); color: var(--ink); }
+.cta-big-links .btn-ghost:hover { background: var(--ink); color: var(--accent); }
+.cta-big-links .btn-primary { background: var(--ink); color: var(--accent); }
+.cta-big-links .btn-primary:hover { background: var(--bg); color: var(--ink); }
+
+.cta-big::after {
+  content: '◼';
+  position: absolute;
+  right: -20px; bottom: -80px;
+  font-size: 400px;
+  color: var(--ink);
+  opacity: 0.06;
+  font-family: var(--display);
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .hero-meta { grid-template-columns: repeat(2, 1fr); }
+  .hero-bottom { grid-template-columns: 1fr; }
+  .hero-sig { display: none; }
+  .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+  .hi { border-right: none; border-bottom: 1px solid var(--ink); }
+  .currently { grid-template-columns: 1fr; }
+  .currently h2 { font-size: 64px; }
+  .showcase { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: 1fr; }
+  .proc { border-right: none; border-bottom: 1px solid var(--ink); min-height: auto; }
+}
+</style>
+</head>
+<body class="mode-rec">
+
+<div id="header-mount" data-page="home"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-meta">
+    <div><span class="label" data-fr="PORTFOLIO" data-en="PORTFOLIO">PORTFOLIO</span><span class="val">V.2026.01</span></div>
+    <div><span class="label" data-fr="BASÉ À" data-en="BASED IN">BASÉ À</span><span class="val">TOULOUSE · FR</span></div>
+    <div><span class="label" data-fr="DISCIPLINE" data-en="DISCIPLINE">DISCIPLINE</span><span class="val accent">DATA / AI</span></div>
+    <div><span class="label" data-fr="STATUT" data-en="STATUS">STATUT</span><span class="val"><span style="color:var(--accent)">●</span> <span data-fr="DISPONIBLE · ALT'26" data-en="AVAILABLE · ALT'26">DISPONIBLE · ALT'26</span></span></div>
+  </div>
+
+  <div class="hero-sig">
+    ◼ N.GOUY<br/>
+    <b>2004 —</b><br/>
+    TOULOUSE·FR
+  </div>
+
+  <div class="hero-manifesto">
+    <h1 class="manifesto" id="manifesto-el">
+      <span class="word hero-word" style="animation-delay: 0.1s" data-fr="JE" data-en="I">JE</span>
+      <span class="word hero-word" style="animation-delay: 0.2s" data-fr="CONSTRUIS" data-en="BUILD">CONSTRUIS</span>
+      <span class="word hero-word accent-word" style="animation-delay: 0.3s" data-fr-html="<em>des systèmes</em>" data-en-html="<em>systems</em>"><em>des systèmes</em></span>
+      <span class="word hero-word" style="animation-delay: 0.4s" data-fr="QUI" data-en="THAT">QUI</span>
+      <span class="word hero-word" style="animation-delay: 0.5s" data-fr="COMPRENNENT," data-en="UNDERSTAND,">COMPRENNENT,</span>
+      <span class="word hero-word underline" style="animation-delay: 0.7s" data-fr="RAISONNENT" data-en="REASON">RAISONNENT</span>
+      <span class="word hero-word" style="animation-delay: 0.9s" data-fr="ET" data-en="&amp;">ET</span>
+      <span class="word hero-word" style="animation-delay: 1.0s" data-fr="LIVRENT." data-en="SHIP.">LIVRENT.</span>
+    </h1>
+  </div>
+
+  <div class="hero-bottom">
+    <p class="hero-intro" data-fr="Nicolas Gouy, 21 ans. Étudiant en Master Data / IA à Toulouse Ynov Campus. Actuellement <strong>IS Project Manager</strong> à la DAIS de Pierre Fabre — je pilote des projets data, j'industrialise des solutions IA générative et je livre." data-en="Nicolas Gouy, 21. Master's student in Data / AI at Toulouse Ynov Campus. Currently <strong>IS Project Manager</strong> at Pierre Fabre's DAIS — I lead data projects, industrialize generative AI solutions, and ship.">
+      Nicolas Gouy, 21 ans. Étudiant en Master Data / IA à Toulouse Ynov Campus. Actuellement <strong>IS Project Manager</strong> à la DAIS de Pierre Fabre — je pilote des projets data, j'industrialise des solutions IA générative et je livre.
+    </p>
+    <div class="hero-ctas">
+      <a href="work.html" class="btn btn-primary" data-fr="VOIR LE TRAVAIL →" data-en="SEE THE WORK →">VOIR LE TRAVAIL →</a>
+      <a href="contact.html" class="btn btn-ghost" data-fr="ME CONTACTER" data-en="CONTACT ME">ME CONTACTER</a>
+      <div class="scroll-hint">
+        <span data-fr="SCROLLER POUR EXPLORER" data-en="SCROLL TO EXPLORE">SCROLLER POUR EXPLORER</span>
+        <span class="scroll-arrow">↓</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-row">
+    <span>DATA · AI · PYTHON</span>
+    <span class="star">◼</span>
+    <span data-fr="DISPONIBLE POUR ALTERNANCE 2026" data-en="AVAILABLE FOR APPRENTICESHIP 2026">DISPONIBLE POUR ALTERNANCE 2026</span>
+    <span class="star">◼</span>
+    <span>PIERRE FABRE · DAIS</span>
+    <span class="star">◼</span>
+    <span>MY_AI · 100% LOCAL</span>
+    <span class="star">◼</span>
+    <span>DATA · AI · PYTHON</span>
+    <span class="star">◼</span>
+    <span data-fr="DISPONIBLE POUR ALTERNANCE 2026" data-en="AVAILABLE FOR APPRENTICESHIP 2026">DISPONIBLE POUR ALTERNANCE 2026</span>
+    <span class="star">◼</span>
+    <span>PIERRE FABRE · DAIS</span>
+    <span class="star">◼</span>
+    <span>MY_AI · 100% LOCAL</span>
+    <span class="star">◼</span>
+    <span>DATA · AI · PYTHON</span>
+    <span class="star">◼</span>
+    <span data-fr="DISPONIBLE POUR ALTERNANCE 2026" data-en="AVAILABLE FOR APPRENTICESHIP 2026">DISPONIBLE POUR ALTERNANCE 2026</span>
+    <span class="star">◼</span>
+    <span>PIERRE FABRE · DAIS</span>
+    <span class="star">◼</span>
+    <span>MY_AI · 100% LOCAL</span>
+    <span class="star">◼</span>
+  </div>
+</div>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights">
+  <div class="sec-meta reveal">
+    <span data-fr="§ 01 — CHIFFRES CLÉS" data-en="§ 01 — KEY FIGURES">§ 01 — CHIFFRES CLÉS</span>
+    <span data-fr="EN UN COUP D'ŒIL" data-en="AT A GLANCE">EN UN COUP D'ŒIL</span>
+  </div>
+  <div class="highlights-grid">
+    <div class="hi reveal d1">
+      <div class="hi-big">21</div>
+      <div class="hi-label" data-fr="ANS" data-en="YEARS OLD">ANS</div>
+      <div class="hi-sub" data-fr="Basé à Toulouse" data-en="Based in Toulouse">Basé à Toulouse</div>
+    </div>
+    <div class="hi reveal d2">
+      <div class="hi-big">2</div>
+      <div class="hi-label" data-fr="EXPÉRIENCES" data-en="EXPERIENCES">EXPÉRIENCES</div>
+      <div class="hi-sub" data-fr="Pierre Fabre · Data Office / DAIS" data-en="Pierre Fabre · Data Office / DAIS">Pierre Fabre · Data Office / DAIS</div>
+    </div>
+    <div class="hi reveal d3">
+      <div class="hi-big">9</div>
+      <div class="hi-label" data-fr="AGENTS IA" data-en="AI AGENTS">AGENTS IA</div>
+      <div class="hi-sub" data-fr="Dans My_AI, 100% local" data-en="In My_AI, 100% local">Dans My_AI, 100% local</div>
+    </div>
+    <div class="hi reveal d4">
+      <div class="hi-big">5+</div>
+      <div class="hi-label" data-fr="LANGAGES" data-en="LANGUAGES">LANGAGES</div>
+      <div class="hi-sub" data-fr="Python · C · Go · Java · JS" data-en="Python · C · Go · Java · JS">Python · C · Go · Java · JS</div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRENTLY -->
+<section class="currently">
+  <div class="reveal">
+    <h2 data-fr-html="Actuel<span class='dot'>.</span>lement" data-en-html="Curr<span class='dot'>.</span>ently">Actuel<span class="dot">.</span>lement</h2>
+  </div>
+  <div class="currently-grid">
+    <div class="now-item reveal d1">
+      <div class="now-year">'25</div>
+      <div>
+        <div class="now-title">IS Project Manager @ Pierre Fabre</div>
+        <div class="now-desc" data-fr="DAIS · Alternance Data / IA · Sept 2025 — Sept 2026" data-en="DAIS · Apprenticeship Data / AI · Sep 2025 — Sep 2026">DAIS · Alternance Data / IA · Sept 2025 — Sept 2026</div>
+      </div>
+      <div class="now-pulse"></div>
+    </div>
+    <div class="now-item reveal d2">
+      <div class="now-year">'24</div>
+      <div>
+        <div class="now-title">Master Data / IA @ Ynov Toulouse</div>
+        <div class="now-desc" data-fr="3e année en cours · Diplôme visé en 2028" data-en="3rd year in progress · Degree expected 2028">3e année en cours · Diplôme visé en 2028</div>
+      </div>
+      <div class="now-pulse"></div>
+    </div>
+    <div class="now-item reveal d3">
+      <div class="now-year">'26</div>
+      <div>
+        <div class="now-title">MY_AI</div>
+        <div class="now-desc" data-fr="Assistant IA 100% local · Orchestrateur MCP · 9 agents" data-en="100% local AI assistant · MCP orchestrator · 9 agents">Assistant IA 100% local · Orchestrateur MCP · 9 agents</div>
+      </div>
+      <div class="now-pulse"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED WORK -->
+<section class="featured">
+  <div class="featured-head reveal">
+    <h2 data-fr-html="Projet <span>phare</span>." data-en-html="Featured <span>work</span>.">Projet <span>phare</span>.</h2>
+    <div class="meta">
+      <span data-fr="§ 02 — PROJET SÉLECTIONNÉ" data-en="§ 02 — SELECTED WORK">§ 02 — PROJET SÉLECTIONNÉ</span><br/>
+      2025 — 2026<br/>
+      <span style="color: var(--accent)">◼ LIVE</span>
+    </div>
+  </div>
+
+  <div class="showcase">
+    <div class="showcase-vis reveal">
+      <svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="grid-dots" width="24" height="24" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="1" fill="#333"/>
+          </pattern>
+        </defs>
+        <rect width="600" height="450" fill="url(#grid-dots)"/>
+
+        <!-- Orchestrator center -->
+        <g transform="translate(300, 225)">
+          <circle r="50" fill="none" stroke="#ff6b47" stroke-width="2"/>
+          <circle r="42" fill="#ff6b47"/>
+          <text text-anchor="middle" y="5" font-family="Archivo Black" font-size="12" fill="#0a0a0a">ORCH</text>
+        </g>
+
+        <!-- 9 agent nodes around -->
+        <g font-family="JetBrains Mono" font-size="9" fill="#f5f1ea">
+          <g transform="translate(140, 100)"><rect x="-35" y="-14" width="70" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">CODE</text></g>
+          <g transform="translate(300, 70)"><rect x="-35" y="-14" width="70" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">DOCS</text></g>
+          <g transform="translate(460, 100)"><rect x="-35" y="-14" width="70" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">SEARCH</text></g>
+          <g transform="translate(520, 225)"><rect x="-35" y="-14" width="70" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">MEMORY</text></g>
+          <g transform="translate(460, 350)"><rect x="-35" y="-14" width="70" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">PARSER</text></g>
+          <g transform="translate(300, 380)"><rect x="-35" y="-14" width="70" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">MCP</text></g>
+          <g transform="translate(140, 350)"><rect x="-35" y="-14" width="70" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">VECTOR</text></g>
+          <g transform="translate(80, 225)"><rect x="-35" y="-14" width="70" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">ROUTER</text></g>
+          <g transform="translate(200, 180)"><rect x="-30" y="-12" width="60" height="24" fill="none" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="4" fill="#ff6b47">OLLAMA</text></g>
+        </g>
+
+        <!-- Connections -->
+        <g stroke="#ff6b47" stroke-width="1" opacity="0.4" fill="none">
+          <line x1="300" y1="225" x2="140" y2="100"/>
+          <line x1="300" y1="225" x2="300" y2="70"/>
+          <line x1="300" y1="225" x2="460" y2="100"/>
+          <line x1="300" y1="225" x2="520" y2="225"/>
+          <line x1="300" y1="225" x2="460" y2="350"/>
+          <line x1="300" y1="225" x2="300" y2="380"/>
+          <line x1="300" y1="225" x2="140" y2="350"/>
+          <line x1="300" y1="225" x2="80" y2="225"/>
+          <line x1="300" y1="225" x2="200" y2="180"/>
+        </g>
+
+        <!-- Animated data flow particles -->
+        <circle r="3" fill="#ff6b47">
+          <animateMotion dur="3s" repeatCount="indefinite" path="M 300 225 L 140 100"/>
+        </circle>
+        <circle r="3" fill="#ff6b47">
+          <animateMotion dur="3.5s" repeatCount="indefinite" path="M 300 225 L 460 100"/>
+        </circle>
+        <circle r="3" fill="#ff6b47">
+          <animateMotion dur="4s" repeatCount="indefinite" path="M 300 225 L 140 350"/>
+        </circle>
+        <circle r="3" fill="#ff6b47">
+          <animateMotion dur="3.2s" repeatCount="indefinite" path="M 300 225 L 520 225"/>
+        </circle>
+
+        <!-- corners -->
+        <path d="M 10 10 L 30 10 M 10 10 L 10 30" stroke="#ff6b47" stroke-width="2" fill="none"/>
+        <path d="M 590 10 L 570 10 M 590 10 L 590 30" stroke="#ff6b47" stroke-width="2" fill="none"/>
+        <path d="M 10 440 L 30 440 M 10 440 L 10 420" stroke="#ff6b47" stroke-width="2" fill="none"/>
+        <path d="M 590 440 L 570 440 M 590 440 L 590 420" stroke="#ff6b47" stroke-width="2" fill="none"/>
+
+        <!-- labels -->
+        <text x="20" y="430" font-family="JetBrains Mono" font-size="9" fill="#666" letter-spacing="2">MY_AI · 2026</text>
+        <text x="500" y="430" font-family="JetBrains Mono" font-size="9" fill="#ff6b47" letter-spacing="2">◼ LIVE</text>
+      </svg>
+    </div>
+
+    <div class="showcase-info reveal d1">
+      <h3>MY_AI</h3>
+      <div class="tagline" data-fr="Assistant IA 100% local · Orchestrateur multi-agents" data-en="100% local AI assistant · Multi-agent orchestrator">Assistant IA 100% local · Orchestrateur multi-agents</div>
+      <p data-fr="Assistant conversationnel 100% local construit autour d'Ollama. Mémoire vectorielle jusqu'à 10M tokens (ChromaDB), 9 agents spécialisés, pipeline documents (PDF, DOCX, Excel, CSV, code), API REST FastAPI et accès mobile sécurisé via My_AI Relay." data-en="100% local conversational assistant built around Ollama. Vector memory up to 10M tokens (ChromaDB), 9 specialized agents, document pipeline (PDF, DOCX, Excel, CSV, code), FastAPI REST API and secure mobile access via My_AI Relay.">
+        Assistant conversationnel 100% local construit autour d'Ollama. Mémoire vectorielle jusqu'à 10M tokens (ChromaDB), 9 agents spécialisés, pipeline documents (PDF, DOCX, Excel, CSV, code), API REST FastAPI et accès mobile sécurisé via My_AI Relay.
+      </p>
+      <div class="showcase-stack">
+        <span class="chip">PYTHON</span>
+        <span class="chip">OLLAMA</span>
+        <span class="chip">CHROMADB</span>
+        <span class="chip">MCP</span>
+        <span class="chip">FASTAPI</span>
+      </div>
+      <div class="showcase-metrics">
+        <div class="sm-item"><div class="sm-v">9</div><div class="sm-k" data-fr="AGENTS" data-en="AGENTS">AGENTS</div></div>
+        <div class="sm-item"><div class="sm-v">100%</div><div class="sm-k" data-fr="LOCAL" data-en="LOCAL">LOCAL</div></div>
+        <div class="sm-item"><div class="sm-v">10M</div><div class="sm-k" data-fr="TOKENS" data-en="TOKENS">TOKENS</div></div>
+      </div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="work.html" class="btn btn-primary" style="background: var(--accent); color: #fff;" data-fr="ÉTUDE DE CAS →" data-en="CASE STUDY →">ÉTUDE DE CAS →</a>
+        <a href="https://github.com/gonicolas12/My_AI" target="_blank" class="btn btn-ghost" style="border-color: var(--bg); color: var(--bg);">GITHUB ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="sec-meta reveal">
+    <span data-fr="§ 03 — MA MÉTHODE" data-en="§ 03 — HOW I WORK">§ 03 — MA MÉTHODE</span>
+    <span data-fr="MÉTHODE" data-en="METHOD">MÉTHODE</span>
+  </div>
+  <h2 class="reveal" data-fr-html="Comprendre, puis <span class='accent'>livrer</span>." data-en-html="Understand, then <span class='accent'>ship</span>.">Comprendre, puis <span class="accent">livrer</span>.</h2>
+
+  <div class="process-grid">
+    <div class="proc reveal d1">
+      <div class="proc-num">01</div>
+      <h4 data-fr="CADRER" data-en="FRAME">CADRER</h4>
+      <p data-fr="Écouter le besoin métier. Challenger. Aligner sur un objectif clair, mesurable, et atteignable dans les contraintes." data-en="Listen to the business need. Challenge. Align on a clear, measurable goal that's achievable within constraints.">Écouter le besoin métier. Challenger. Aligner sur un objectif clair, mesurable, et atteignable dans les contraintes.</p>
+    </div>
+    <div class="proc reveal d2">
+      <div class="proc-num">02</div>
+      <h4 data-fr="EXPLORER" data-en="EXPLORE">EXPLORER</h4>
+      <p data-fr="Prototyper vite. Tester plusieurs approches data et IA. Montrer au lieu d'expliquer. Itérer sur du réel." data-en="Prototype fast. Test several data and AI approaches. Show, don't tell. Iterate on real data.">Prototyper vite. Tester plusieurs approches data et IA. Montrer au lieu d'expliquer. Itérer sur du réel.</p>
+    </div>
+    <div class="proc reveal d3">
+      <div class="proc-num">03</div>
+      <h4 data-fr="CONSTRUIRE" data-en="BUILD">CONSTRUIRE</h4>
+      <p data-fr="Code propre, architecture modulaire, tests. Documentation au fil de l'eau. Pas de dette silencieuse." data-en="Clean code, modular architecture, tests. Documentation as we go. No silent technical debt.">Code propre, architecture modulaire, tests. Documentation au fil de l'eau. Pas de dette silencieuse.</p>
+    </div>
+    <div class="proc reveal d4">
+      <div class="proc-num">04</div>
+      <h4 data-fr="LIVRER" data-en="SHIP">LIVRER</h4>
+      <p data-fr="Industrialiser. Monitorer. Former les équipes métier. Une solution qui ne tourne pas en prod ne compte pas." data-en="Industrialize. Monitor. Train business teams. A solution that doesn't run in production doesn't count.">Industrialiser. Monitorer. Former les équipes métier. Une solution qui ne tourne pas en prod ne compte pas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BIG -->
+<section class="cta-big">
+  <h2 class="reveal" data-fr-html="Un projet <em>data</em> ?<br/>Une <em>idée IA</em> ?<br/>Parlons-en." data-en-html="A <em>data</em> project?<br/>An <em>AI idea</em>?<br/>Let's talk.">Un projet <em>data</em> ?<br/>Une <em>idée IA</em> ?<br/>Parlons-en.</h2>
+  <div class="cta-big-links reveal d1">
+    <a href="contact.html" class="btn btn-primary" data-fr="ME CONTACTER →" data-en="CONTACT ME →">ME CONTACTER →</a>
+    <a href="mailto:nicolasgouy@yahoo.com" class="btn btn-ghost">NICOLASGOUY@YAHOO.COM</a>
+    <a href="https://www.linkedin.com/in/nicolas-gouy/" target="_blank" class="btn btn-ghost">LINKEDIN ↗</a>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+
+<script src="shared/content.js"></script>
+<script src="shared/header.js"></script>
+<script>
+  mountHeader('home');
+  mountFooter();
+</script>
+</body>
+</html>
