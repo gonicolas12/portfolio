@@ -1,0 +1,2 @@
+mountHeader('work');
+mountFooter();

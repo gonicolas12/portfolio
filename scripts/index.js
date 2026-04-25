@@ -1,0 +1,2 @@
+mountHeader('home');
+mountFooter();
