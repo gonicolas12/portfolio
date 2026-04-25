@@ -296,3 +296,62 @@ details.qa p {
   .copy-row { grid-template-columns: 1fr; }
   .avail { grid-template-columns: 1fr; }
 }
+
+@media (max-width: 720px) {
+  .page-head { padding: 36px 16px 24px; }
+  .page-head h1 { font-size: clamp(48px, 16vw, 96px); }
+
+  .statement { padding: 50px 16px 40px; }
+  .statement h2 { font-size: clamp(32px, 8vw, 60px); }
+  .statement .sub { font-size: 15px; margin-top: 22px; }
+
+  .methods { padding: 50px 16px; }
+  .method {
+    padding: 30px 22px;
+    padding-right: 60px;
+  }
+  .method:nth-last-child(-n+2) { border-bottom: 1px solid var(--ink); }
+  .method:last-child { border-bottom: none; }
+  .method h3 { font-size: clamp(22px, 6vw, 32px); }
+  .method .m-sub { font-size: 13px; }
+  .method .m-arrow { right: 20px; font-size: 26px; }
+  .method .m-label { font-size: 9px; margin-bottom: 12px; }
+
+  .copy-row {
+    padding: 40px 16px;
+    gap: 16px;
+  }
+  .copy-card {
+    padding: 22px 18px;
+    min-height: auto;
+  }
+  .copy-card .v { font-size: 17px; }
+
+  .avail { padding: 60px 16px; gap: 30px; }
+  .avail h2 { font-size: clamp(40px, 12vw, 72px); }
+  .avail-item {
+    grid-template-columns: 18px 1fr;
+    gap: 14px;
+    padding: 16px 18px;
+    font-size: 11px;
+  }
+  .avail-item .mk { width: 12px; height: 12px; }
+  .avail-item .status {
+    grid-column: 1 / -1;
+    font-size: 9px;
+    padding-left: 32px;
+    margin-top: 4px;
+  }
+
+  .faq { padding: 60px 16px; }
+  .faq h2 { margin-bottom: 32px; padding-bottom: 14px; }
+  details.qa { padding: 18px 0; }
+  details.qa summary { gap: 12px; font-size: clamp(17px, 4.5vw, 22px); }
+  details.qa summary::after { font-size: 28px; }
+  details.qa p { font-size: 14px; margin-top: 14px; }
+
+  .signoff { padding: 80px 16px 60px; }
+  .signoff h2 { font-size: clamp(56px, 18vw, 130px); }
+  .signoff .sig { font-size: 32px; margin-top: 12px; }
+  .signoff .mark { font-size: 9px; margin-top: 28px; }
+}

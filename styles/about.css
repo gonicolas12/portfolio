@@ -345,3 +345,69 @@
 }
 .mini-cta .btn-primary { background: var(--ink); color: var(--accent); }
 .mini-cta .btn-primary:hover { background: var(--bg); color: var(--ink); }
+
+@media (max-width: 720px) {
+  .page-head { padding: 36px 16px 24px; }
+  .page-head h1 { font-size: clamp(48px, 16vw, 96px); }
+  .page-head .crumb { font-size: 10px; gap: 10px; }
+
+  .intro { padding: 50px 16px; gap: 30px; }
+  .intro .portrait { max-width: 220px; margin: 0 auto; }
+  .intro-txt p { font-size: 17px; margin-bottom: 18px; }
+  .intro-txt p:first-child { font-size: 22px; }
+  .intro-facts {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 28px;
+    padding-top: 22px;
+  }
+  .fact .v { font-size: 18px; }
+
+  .timeline-sec { padding: 60px 16px; }
+  .tl-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .tl-head .meta { text-align: left; font-size: 10px; }
+  .timeline { padding-left: 24px; }
+  .tl-item { padding: 14px 0 28px 18px; }
+  .tl-item::before { left: -28px; width: 12px; height: 12px; top: 22px; }
+  .tl-item h3 { font-size: 22px; }
+  .tl-item .tl-co { font-size: 11px; }
+  .tl-item .tl-when { font-size: 10px; }
+  .tl-item p { font-size: 14px; }
+
+  .skills { padding: 60px 16px; }
+  .skills h2 { margin-bottom: 32px; padding-bottom: 14px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .skill-card {
+    padding: 22px 18px;
+    border-right: none;
+    border-bottom: 1px solid var(--ink);
+  }
+  .skill-card:last-child { border-bottom: none; }
+  .skill-card h4 { margin-bottom: 14px; }
+
+  .langs { padding: 50px 16px; }
+  .langs-grid { grid-template-columns: 1fr; gap: 20px; }
+  .lang-card { padding: 26px 22px; }
+  .lang-card h3 { font-size: 36px; }
+  .lang-card .lvl { margin-bottom: 16px; font-size: 10px; }
+  .dots .d { width: 14px; height: 14px; }
+
+  .interests { padding: 50px 16px; }
+  .interests-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .int-chip {
+    font-size: 16px;
+    padding: 12px 18px;
+  }
+
+  .mini-cta { padding: 60px 16px; }
+  .mini-cta p { font-size: 15px; margin-bottom: 24px; }
+}
