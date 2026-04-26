@@ -65,80 +65,105 @@
   </div>
 
   <div class="arch-vis reveal d1">
-    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <pattern id="dotgrid" width="20" height="20" patternUnits="userSpaceOnUse">
           <circle cx="1" cy="1" r="1" fill="#333"/>
         </pattern>
       </defs>
-      <rect width="500" height="500" fill="url(#dotgrid)"/>
+      <rect width="600" height="600" fill="url(#dotgrid)"/>
 
-      <!-- Orchestrator hub -->
-      <g transform="translate(250, 250)">
-        <circle r="65" fill="none" stroke="#ff6b47" stroke-width="2" stroke-dasharray="3 3">
-          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/>
-        </circle>
-        <circle r="50" fill="#ff6b47"/>
-        <text text-anchor="middle" y="4" font-family="Archivo Black" font-size="13" fill="#0a0a0a">ORCH.</text>
-      </g>
-
-      <!-- 9 agent nodes in circle -->
+      <!-- Layer 1 — Interfaces (top) -->
       <g font-family="JetBrains Mono" font-size="9" fill="#f5f1ea">
-        <g transform="translate(250, 60)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="4" fill="#ff6b47" letter-spacing="1">CODE</text></g>
-        <g transform="translate(400, 110)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">WEB</text></g>
-        <g transform="translate(450, 250)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">ANALYST</text></g>
-        <g transform="translate(400, 390)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">CREATIVE</text></g>
-        <g transform="translate(250, 440)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">DEBUG</text></g>
-        <g transform="translate(100, 390)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">PLANNER</text></g>
-        <g transform="translate(50, 250)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">SECURITY</text></g>
-        <g transform="translate(100, 110)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">OPTIMIZER</text></g>
-        <g transform="translate(370, 60)"><rect x="-44" y="-15" width="88" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">DATA SCIENCE</text></g>
+        <text x="300" y="50" text-anchor="middle" fill="#666" letter-spacing="3">INTERFACES</text>
+        <g transform="translate(110, 80)"><rect x="-46" y="-16" width="92" height="32" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">GUI · TKINTER</text></g>
+        <g transform="translate(230, 80)"><rect x="-40" y="-16" width="80" height="32" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">CLI</text></g>
+        <g transform="translate(350, 80)"><rect x="-50" y="-16" width="100" height="32" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">API · FASTAPI</text></g>
+        <g transform="translate(490, 80)"><rect x="-58" y="-16" width="116" height="32" fill="#0a0a0a" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="4" fill="#ff6b47" letter-spacing="1">RELAY · MOBILE</text></g>
       </g>
 
-      <!-- Ollama core engine label, anchored at top-left of the dotted ring -->
-      <g transform="translate(155, 165)" font-family="JetBrains Mono" font-size="9">
-        <rect x="-36" y="-12" width="72" height="24" fill="#0a0a0a" stroke="#ff6b47" stroke-width="1"/>
-        <text text-anchor="middle" y="4" fill="#ff6b47">OLLAMA</text>
-      </g>
-
-      <!-- Connections -->
+      <!-- Arrows interfaces -> orchestrator -->
       <g stroke="#ff6b47" stroke-width="1" opacity="0.35" fill="none">
-        <line x1="250" y1="250" x2="250" y2="60"/>
-        <line x1="250" y1="250" x2="400" y2="110"/>
-        <line x1="250" y1="250" x2="450" y2="250"/>
-        <line x1="250" y1="250" x2="400" y2="390"/>
-        <line x1="250" y1="250" x2="250" y2="440"/>
-        <line x1="250" y1="250" x2="100" y2="390"/>
-        <line x1="250" y1="250" x2="50" y2="250"/>
-        <line x1="250" y1="250" x2="100" y2="110"/>
-        <line x1="250" y1="250" x2="370" y2="60"/>
+        <line x1="110" y1="98" x2="280" y2="270"/>
+        <line x1="230" y1="98" x2="295" y2="265"/>
+        <line x1="350" y1="98" x2="305" y2="265"/>
+        <line x1="490" y1="98" x2="320" y2="270"/>
       </g>
 
-      <!-- Particles flowing -->
-      <circle r="3" fill="#ff6b47">
-        <animateMotion dur="2s" repeatCount="indefinite" path="M 250 250 L 250 60"/>
+      <!-- Layer 2 — Orchestrators (center) -->
+      <g transform="translate(300, 300)">
+        <circle r="95" fill="none" stroke="#ff6b47" stroke-width="1" stroke-dasharray="3 4" opacity="0.6">
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="50s" repeatCount="indefinite"/>
+        </circle>
+        <circle r="78" fill="#ff6b47"/>
+        <text text-anchor="middle" y="-6" font-family="Archivo Black" font-size="14" fill="#0a0a0a" letter-spacing="1">ORCH.</text>
+        <text text-anchor="middle" y="10" font-family="JetBrains Mono" font-size="8" fill="#0a0a0a" letter-spacing="2">CHAT · AGENT</text>
+        <text text-anchor="middle" y="22" font-family="JetBrains Mono" font-size="7" fill="#0a0a0a" opacity="0.7" letter-spacing="2">ReAct + P&amp;E</text>
+      </g>
+
+      <!-- Layer 3 — Subsystems (around) -->
+      <g font-family="JetBrains Mono" font-size="9" fill="#f5f1ea">
+        <!-- LLM left -->
+        <g transform="translate(95, 230)"><rect x="-50" y="-18" width="100" height="36" fill="#0a0a0a" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="-2" fill="#ff6b47" letter-spacing="1">LLM</text><text text-anchor="middle" y="11" fill="#999" font-size="7" letter-spacing="2">OLLAMA</text></g>
+        <!-- Memory left -->
+        <g transform="translate(95, 370)"><rect x="-58" y="-20" width="116" height="40" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="-4" letter-spacing="1">MEMORY</text><text text-anchor="middle" y="10" fill="#999" font-size="7" letter-spacing="2">CHROMA · SQLITE</text></g>
+        <!-- Agents bottom-left -->
+        <g transform="translate(180, 470)"><rect x="-58" y="-20" width="116" height="40" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="-4" letter-spacing="1">9 AGENTS</text><text text-anchor="middle" y="10" fill="#999" font-size="7" letter-spacing="2">SPECIALIZED</text></g>
+        <!-- KB bottom-right -->
+        <g transform="translate(420, 470)"><rect x="-50" y="-20" width="100" height="40" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="-4" letter-spacing="1">KB · FAQ</text><text text-anchor="middle" y="10" fill="#999" font-size="7" letter-spacing="2">SQLITE</text></g>
+        <!-- MCP right -->
+        <g transform="translate(505, 370)"><rect x="-50" y="-20" width="100" height="40" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="-4" letter-spacing="1">MCP</text><text text-anchor="middle" y="10" fill="#999" font-size="7" letter-spacing="2">TOOLS · I/O</text></g>
+        <!-- Web right -->
+        <g transform="translate(505, 230)"><rect x="-58" y="-20" width="116" height="40" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="-4" letter-spacing="1">WEB SEARCH</text><text text-anchor="middle" y="10" fill="#999" font-size="7" letter-spacing="2">DUCKDUCKGO</text></g>
+      </g>
+
+      <!-- Doc processors (bottom center) -->
+      <g font-family="JetBrains Mono" font-size="9" fill="#f5f1ea">
+        <g transform="translate(300, 510)"><rect x="-72" y="-20" width="144" height="40" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="-4" letter-spacing="1">DOC PROCESSORS</text><text text-anchor="middle" y="10" fill="#999" font-size="7" letter-spacing="2">PDF · DOCX · XLSX · CSV</text></g>
+      </g>
+
+      <!-- Connections orchestrator <-> subsystems -->
+      <g stroke="#ff6b47" stroke-width="1" opacity="0.35" fill="none">
+        <line x1="300" y1="300" x2="145" y2="230"/>
+        <line x1="300" y1="300" x2="145" y2="370"/>
+        <line x1="300" y1="300" x2="180" y2="450"/>
+        <line x1="300" y1="300" x2="420" y2="450"/>
+        <line x1="300" y1="300" x2="455" y2="370"/>
+        <line x1="300" y1="300" x2="455" y2="230"/>
+        <line x1="300" y1="300" x2="300" y2="490"/>
+      </g>
+
+      <!-- Animated particles — flow IN (interfaces -> orch) and OUT (orch -> subsystems) -->
+      <circle r="2.5" fill="#ff6b47">
+        <animateMotion dur="2.4s" repeatCount="indefinite" path="M 110 98 L 295 270"/>
       </circle>
-      <circle r="3" fill="#ff6b47">
-        <animateMotion dur="2.4s" repeatCount="indefinite" path="M 250 250 L 450 250"/>
+      <circle r="2.5" fill="#ff6b47">
+        <animateMotion dur="2.8s" repeatCount="indefinite" path="M 490 98 L 305 270"/>
       </circle>
-      <circle r="3" fill="#ff6b47">
-        <animateMotion dur="2.8s" repeatCount="indefinite" path="M 250 250 L 100 390"/>
+      <circle r="2.5" fill="#ff6b47">
+        <animateMotion dur="2.2s" repeatCount="indefinite" path="M 300 300 L 145 230"/>
       </circle>
-      <circle r="3" fill="#ff6b47">
-        <animateMotion dur="2.2s" repeatCount="indefinite" path="M 250 250 L 400 110"/>
+      <circle r="2.5" fill="#ff6b47">
+        <animateMotion dur="2.6s" repeatCount="indefinite" path="M 300 300 L 455 230"/>
       </circle>
-      <circle r="3" fill="#ff6b47">
-        <animateMotion dur="3s" repeatCount="indefinite" path="M 250 250 L 50 250"/>
+      <circle r="2.5" fill="#ff6b47">
+        <animateMotion dur="3s" repeatCount="indefinite" path="M 300 300 L 180 450"/>
+      </circle>
+      <circle r="2.5" fill="#ff6b47">
+        <animateMotion dur="2.7s" repeatCount="indefinite" path="M 300 300 L 420 450"/>
+      </circle>
+      <circle r="2.5" fill="#ff6b47">
+        <animateMotion dur="3.2s" repeatCount="indefinite" path="M 300 300 L 300 490"/>
       </circle>
 
       <!-- corners -->
       <path d="M 10 10 L 30 10 M 10 10 L 10 30" stroke="#ff6b47" stroke-width="2" fill="none"/>
-      <path d="M 490 10 L 470 10 M 490 10 L 490 30" stroke="#ff6b47" stroke-width="2" fill="none"/>
-      <path d="M 10 490 L 30 490 M 10 490 L 10 470" stroke="#ff6b47" stroke-width="2" fill="none"/>
-      <path d="M 490 490 L 470 490 M 490 490 L 490 470" stroke="#ff6b47" stroke-width="2" fill="none"/>
+      <path d="M 590 10 L 570 10 M 590 10 L 590 30" stroke="#ff6b47" stroke-width="2" fill="none"/>
+      <path d="M 10 590 L 30 590 M 10 590 L 10 570" stroke="#ff6b47" stroke-width="2" fill="none"/>
+      <path d="M 590 590 L 570 590 M 590 590 L 590 570" stroke="#ff6b47" stroke-width="2" fill="none"/>
 
-      <text x="20" y="480" font-family="JetBrains Mono" font-size="10" fill="#666" letter-spacing="2">MY_AI · 2026</text>
-      <text x="390" y="480" font-family="JetBrains Mono" font-size="10" fill="#ff6b47" letter-spacing="2">◼ LIVE</text>
+      <text x="20" y="582" font-family="JetBrains Mono" font-size="10" fill="#666" letter-spacing="2">MY_AI · ORCHESTRATOR</text>
+      <text x="490" y="582" font-family="JetBrains Mono" font-size="10" fill="#ff6b47" letter-spacing="2">◼ LIVE</text>
     </svg>
   </div>
 </section>
