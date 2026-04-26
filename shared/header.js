@@ -4,10 +4,10 @@ window.mountHeader = function(currentPage) {
   const mount = document.getElementById('header-mount');
   if (!mount) return;
   const pages = [
-    { id: 'home', href: 'index.html', label: 'HOME', idx: '01' },
-    { id: 'about', href: 'about.html', label: 'ABOUT', idx: '02' },
-    { id: 'work', href: 'work.html', label: 'WORK', idx: '03' },
-    { id: 'contact', href: 'contact.html', label: 'CONTACT', idx: '04' }
+    { id: 'home', href: 'index.html', labelFr: 'ACCUEIL', labelEn: 'HOME', idx: '01' },
+    { id: 'about', href: 'about.html', labelFr: 'À PROPOS', labelEn: 'ABOUT', idx: '02' },
+    { id: 'work', href: 'work.html', labelFr: 'TRAVAIL', labelEn: 'WORK', idx: '03' },
+    { id: 'contact', href: 'contact.html', labelFr: 'CONTACT', labelEn: 'CONTACT', idx: '04' }
   ];
   mount.innerHTML = `
     <div class="sysbar">
@@ -31,7 +31,7 @@ window.mountHeader = function(currentPage) {
     </div>
     <div class="scroll-progress" id="scroll-progress"></div>
     <nav class="mainnav">
-      ${pages.map(p => `<a href="${p.href}" class="${p.id===currentPage?'active':''}"><span class="idx">${p.idx}</span><span>${p.label}</span></a>`).join('')}
+      ${pages.map(p => `<a href="${p.href}" class="${p.id===currentPage?'active':''}"><span class="idx">${p.idx}</span><span data-fr="${p.labelFr}" data-en="${p.labelEn}">${p.labelFr}</span></a>`).join('')}
       <div class="spacer"></div>
       <div class="kb" id="kb-open">? SHORTCUTS</div>
     </nav>
