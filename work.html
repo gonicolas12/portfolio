@@ -85,14 +85,20 @@
       <!-- 9 agent nodes in circle -->
       <g font-family="JetBrains Mono" font-size="9" fill="#f5f1ea">
         <g transform="translate(250, 60)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="4" fill="#ff6b47" letter-spacing="1">CODE</text></g>
-        <g transform="translate(400, 110)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">DOCS</text></g>
-        <g transform="translate(450, 250)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">SEARCH</text></g>
-        <g transform="translate(400, 390)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">MEMORY</text></g>
-        <g transform="translate(250, 440)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">PARSER</text></g>
-        <g transform="translate(100, 390)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">MCP</text></g>
-        <g transform="translate(50, 250)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">VECTOR</text></g>
-        <g transform="translate(100, 110)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">ROUTER</text></g>
-        <g transform="translate(180, 190)"><rect x="-32" y="-12" width="64" height="24" fill="#0a0a0a" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="4" fill="#ff6b47">OLLAMA</text></g>
+        <g transform="translate(400, 110)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">WEB</text></g>
+        <g transform="translate(450, 250)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">ANALYST</text></g>
+        <g transform="translate(400, 390)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">CREATIVE</text></g>
+        <g transform="translate(250, 440)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">DEBUG</text></g>
+        <g transform="translate(100, 390)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">PLANNER</text></g>
+        <g transform="translate(50, 250)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">SECURITY</text></g>
+        <g transform="translate(100, 110)"><rect x="-38" y="-15" width="76" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">OPTIMIZER</text></g>
+        <g transform="translate(370, 60)"><rect x="-44" y="-15" width="88" height="30" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">DATA SCIENCE</text></g>
+      </g>
+
+      <!-- Ollama core engine label, anchored at top-left of the dotted ring -->
+      <g transform="translate(155, 165)" font-family="JetBrains Mono" font-size="9">
+        <rect x="-36" y="-12" width="72" height="24" fill="#0a0a0a" stroke="#ff6b47" stroke-width="1"/>
+        <text text-anchor="middle" y="4" fill="#ff6b47">OLLAMA</text>
       </g>
 
       <!-- Connections -->
@@ -105,7 +111,7 @@
         <line x1="250" y1="250" x2="100" y2="390"/>
         <line x1="250" y1="250" x2="50" y2="250"/>
         <line x1="250" y1="250" x2="100" y2="110"/>
-        <line x1="250" y1="250" x2="180" y2="190"/>
+        <line x1="250" y1="250" x2="370" y2="60"/>
       </g>
 
       <!-- Particles flowing -->
@@ -243,19 +249,28 @@
       <span>PY · UTF-8</span>
     </div>
     <pre class="code-body"><span class="cm"># my_ai/core/orchestrator.py</span>
-<span class="kw">from</span> agents <span class="kw">import</span> CodeAgent, DocsAgent, SearchAgent, MemoryAgent
+<span class="kw">from</span> models.agents <span class="kw">import</span> (
+    CodeAgent, WebAgent, AnalystAgent, CreativeAgent,
+    DebugAgent, PlannerAgent, SecurityAgent,
+    OptimizerAgent, DataScienceAgent,
+)
 <span class="kw">from</span> memory <span class="kw">import</span> VectorStore
 <span class="kw">from</span> mcp <span class="kw">import</span> MCPRegistry
 
 <span class="kw">class</span> <span class="fn">Orchestrator</span>:
-    <span class="kw">def</span> <span class="fn">__init__</span>(self, model=<span class="str">"qwen3.5:4b"</span>):
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, model=<span class="str">"qwen2.5:7b"</span>):
         self.llm = Ollama(model)
         self.memory = VectorStore(<span class="str">"./chroma"</span>)
         self.agents = {
-            <span class="str">"code"</span>:   CodeAgent(self.llm),
-            <span class="str">"docs"</span>:   DocsAgent(self.llm),
-            <span class="str">"search"</span>: SearchAgent(self.memory),
-            <span class="str">"memory"</span>: MemoryAgent(self.memory),
+            <span class="str">"code"</span>:     CodeAgent(self.llm),
+            <span class="str">"web"</span>:      WebAgent(self.llm),
+            <span class="str">"analyst"</span>:  AnalystAgent(self.llm),
+            <span class="str">"creative"</span>: CreativeAgent(self.llm),
+            <span class="str">"debug"</span>:    DebugAgent(self.llm),
+            <span class="str">"planner"</span>:  PlannerAgent(self.llm),
+            <span class="str">"security"</span>: SecurityAgent(self.llm),
+            <span class="str">"optim"</span>:    OptimizerAgent(self.llm),
+            <span class="str">"ds"</span>:       DataScienceAgent(self.llm),
         }
         self.mcp = MCPRegistry.discover()
 
