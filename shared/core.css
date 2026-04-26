@@ -26,6 +26,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
+h1, h2, h3, h4 { overflow-wrap: break-word; word-break: break-word; }
 a { color: inherit; }
 ::selection { background: var(--accent); color: #fff; }
 
@@ -154,7 +155,9 @@ body::before {
   cursor: pointer;
   border: none;
   transition: all 0.2s;
+  font-variant-emoji: text;
 }
+.btn, .m-arrow, .scroll-arrow, .crumb, .meta { font-variant-emoji: text; }
 .btn-primary { background: var(--accent); color: #fff; }
 .btn-primary:hover { background: var(--ink); color: var(--accent); }
 .btn-ghost { background: transparent; border: 1px solid var(--ink); color: var(--ink); }

@@ -108,7 +108,11 @@
   font-family: var(--display);
   font-size: 36px;
   transition: transform 0.3s;
+  font-variant-emoji: text;
+  -webkit-font-feature-settings: "ss01";
+  color: var(--ink);
 }
+.method:hover .m-arrow { color: #fff; }
 
 /* Copy row */
 .copy-row {
