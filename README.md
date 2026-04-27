@@ -47,7 +47,7 @@ portfolio/
 │   └── contact.js          # idem contact
 ├── assets/
 │   ├── favicon.svg
-│   ├── og-image.png        # Carte OpenGraph 1200×630
+│   ├── og-image-v2.png        # Carte OpenGraph 1200×630
 │   └── portrait.jpg
 ├── LICENSE                 # MIT — code uniquement
 └── README.md
