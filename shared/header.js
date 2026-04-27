@@ -75,7 +75,8 @@ window.mountHeader = function(currentPage) {
   };
   tick(); setInterval(tick, 1000);
 
-  // Apply initial state
+  // Apply initial state — strip any hard-coded mode class first
+  document.body.classList.remove('mode-rec', 'mode-dev');
   document.body.classList.add('mode-' + PORTFOLIO_STATE.mode);
   setLang(PORTFOLIO_STATE.lang);
 
