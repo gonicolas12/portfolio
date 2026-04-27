@@ -78,7 +78,7 @@ python3 -m http.server 8000
 
 1. Push ce dossier à la racine d'un repo `portfolio`
 2. Repo → **Settings → Pages → Source : `main` / `/ (root)`**
-3. Le site apparaît sur `https://<username>.github.io/portfolio/`
+3. Le site apparaît sur `https://gonicolas12.github.io/portfolio`
 
 ## Crédits
 
