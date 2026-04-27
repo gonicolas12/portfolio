@@ -121,7 +121,16 @@
   letter-spacing: -0.01em;
   animation: tick 22s linear infinite;
 }
-.ticker-row span.star { color: var(--accent); }
+.ticker-row span.star {
+  display: inline-block;
+  width: 0.65em;
+  height: 0.65em;
+  background: var(--accent);
+  vertical-align: middle;
+  font-size: 0;
+  line-height: 0;
+  align-self: center;
+}
 @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
 
 /* HIGHLIGHTS / STATS */
@@ -424,7 +433,7 @@
   .hero-ctas .scroll-hint { justify-content: flex-start; font-size: 10px; }
 
   .ticker { padding: 10px 0; }
-  .ticker-row { font-size: 18px; gap: 36px; animation-duration: 1s; }
+  .ticker-row { font-size: 18px; gap: 36px; animation-duration: 12s; }
 
   .highlights { padding: 50px 16px; }
   .highlights-grid { grid-template-columns: repeat(2, 1fr); }
