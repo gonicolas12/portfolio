@@ -424,7 +424,7 @@
   .hero-ctas .scroll-hint { justify-content: flex-start; font-size: 10px; }
 
   .ticker { padding: 10px 0; }
-  .ticker-row { font-size: 18px; gap: 36px; animation-duration: 10s; }
+  .ticker-row { font-size: 18px; gap: 36px; animation-duration: 1s; }
 
   .highlights { padding: 50px 16px; }
   .highlights-grid { grid-template-columns: repeat(2, 1fr); }
