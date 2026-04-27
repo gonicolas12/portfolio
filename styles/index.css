@@ -34,7 +34,7 @@
 }
 .manifesto {
   font-family: var(--display);
-  font-size: clamp(60px, 12vw, 180px);
+  font-size: clamp(46px, 8.8vw, 132px);
   line-height: 0.9;
   letter-spacing: -0.04em;
   font-weight: 900;
