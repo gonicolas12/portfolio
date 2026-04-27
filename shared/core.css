@@ -296,16 +296,24 @@ body.mode-dev .rec-only { display: none !important; }
   .sysbar .mark { font-size: 12px; }
 
   .mainnav {
-    overflow-x: auto;
-    overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    overflow: hidden;
+    width: 100%;
   }
   .mainnav::-webkit-scrollbar { display: none; }
-  .mainnav a { padding: 10px 14px; font-size: 10px; flex-shrink: 0; }
+  .mainnav a {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 10px 4px;
+    font-size: 9.5px;
+    letter-spacing: 0.05em;
+    gap: 4px;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+  }
   .mainnav .spacer { display: none; }
   .mainnav .kb { display: none; }
-  .mainnav .idx { font-size: 9px; }
+  .mainnav .idx { font-size: 8.5px; }
 
   .scroll-progress { top: 36px; }
 

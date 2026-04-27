@@ -12,7 +12,8 @@
   font-family: var(--display);
   font-size: clamp(60px, 11vw, 180px);
   letter-spacing: -0.04em;
-  line-height: 0.85;
+  line-height: 0.95;
+  padding-top: 0.12em;
   margin: 0 0 20px;
   font-weight: 900;
 }
