@@ -596,13 +596,36 @@
   .specs-grid .spec:last-child { border-bottom: none; }
   .spec { padding: 22px 18px; }
   .spec-num { font-size: 26px; }
-  .module-tree { padding: 16px; }
-  .module-tree pre { font-size: 11px; line-height: 1.65; }
-  .dual-col { padding: 22px 18px; }
-  .kv-table { font-size: 11px; }
-  .config-block { font-size: 11px; padding: 12px 14px; }
+  .module-tree { padding: 14px; }
+  .module-tree pre { font-size: 10.5px; line-height: 1.6; }
+  .dual { gap: 18px; }
+  .dual-col { padding: 18px 14px; min-width: 0; overflow: hidden; }
+  .kv-table { font-size: 10.5px; table-layout: fixed; }
+  .kv-table th, .kv-table td {
+    padding: 8px 4px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+  .kv-table th:nth-child(1), .kv-table td:nth-child(1) { width: 44%; }
+  .kv-table th:nth-child(2), .kv-table td:nth-child(2) { width: 22%; }
+  .kv-table th:nth-child(3), .kv-table td:nth-child(3) { width: 34%; }
+  .config-block {
+    font-size: 10.5px;
+    padding: 12px 12px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
   .dual-list { font-size: 13px; }
-  .release-note { font-size: 10px; letter-spacing: 0.1em; }
+  .dual-list li { padding-left: 18px; }
+  .dual-foot { font-size: 12px; }
+  .release-note {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    padding: 12px 14px;
+    gap: 10px;
+  }
+  .release-tag { padding: 3px 8px; }
 
   .other-proj { padding: 60px 16px; }
   .other-proj h2 { margin-bottom: 28px; padding-bottom: 14px; }
