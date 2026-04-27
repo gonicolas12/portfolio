@@ -119,7 +119,7 @@
   font-family: var(--display);
   font-size: 28px;
   letter-spacing: -0.01em;
-  animation: tick 50s linear infinite;
+  animation: tick 22s linear infinite;
 }
 .ticker-row span.star { color: var(--accent); }
 @keyframes tick { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
@@ -424,7 +424,7 @@
   .hero-ctas .scroll-hint { justify-content: flex-start; font-size: 10px; }
 
   .ticker { padding: 10px 0; }
-  .ticker-row { font-size: 18px; gap: 36px; }
+  .ticker-row { font-size: 18px; gap: 36px; animation-duration: 14s; }
 
   .highlights { padding: 50px 16px; }
   .highlights-grid { grid-template-columns: repeat(2, 1fr); }
