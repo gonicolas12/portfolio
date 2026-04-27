@@ -202,7 +202,7 @@
       <div class="agent-num">02 / 09</div>
       <h4>WEB</h4>
       <p data-fr="Recherche internet temps réel via DuckDuckGo. Fact-checking et résumés." data-en="Real-time internet search via DuckDuckGo. Fact-checking and summaries.">Recherche internet temps réel via DuckDuckGo. Fact-checking et résumés.</p>
-      <code class="agent-mod dev-only">models/ai_agents.py · WebAgent + smart_web_searcher.py</code>
+      <code class="agent-mod dev-only">models/ai_agents.py · WebAgent</code>
     </div>
     <div class="agent">
       <div class="agent-num">03 / 09</div>
@@ -220,7 +220,7 @@
       <div class="agent-num">05 / 09</div>
       <h4>DEBUG</h4>
       <p data-fr="Détection et correction d'erreurs. Analyse de traces et suggestions de fix." data-en="Error detection and fixing. Stack trace analysis and fix suggestions.">Détection et correction d'erreurs. Analyse de traces et suggestions de fix.</p>
-      <code class="agent-mod dev-only">models/ai_agents.py · DebugAgent · core/error_analysis.py</code>
+      <code class="agent-mod dev-only">models/ai_agents.py · DebugAgent</code>
     </div>
     <div class="agent">
       <div class="agent-num">06 / 09</div>
@@ -238,13 +238,13 @@
       <div class="agent-num">08 / 09</div>
       <h4>OPTIMIZER</h4>
       <p data-fr="Optimisation et performance. Profiling, refactor, réduction de coût." data-en="Optimization and performance. Profiling, refactoring, cost reduction.">Optimisation et performance. Profiling, refactor, réduction de coût.</p>
-      <code class="agent-mod dev-only">models/ai_agents.py · OptimizerAgent · core/optimization.py</code>
+      <code class="agent-mod dev-only">models/ai_agents.py · OptimizerAgent</code>
     </div>
     <div class="agent">
       <div class="agent-num">09 / 09</div>
       <h4>DATA SCIENCE</h4>
       <p data-fr="Data Science et Machine Learning. Pipelines ML, features, évaluation." data-en="Data Science and Machine Learning. ML pipelines, features, evaluation.">Data Science et Machine Learning. Pipelines ML, features, évaluation.</p>
-      <code class="agent-mod dev-only">models/ai_agents.py · DataScienceAgent · core/training_pipeline.py</code>
+      <code class="agent-mod dev-only">models/ai_agents.py · DataScienceAgent</code>
     </div>
   </div>
 </section>
@@ -454,8 +454,6 @@ relay:
       <div class="dots">
         <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
       </div>
-      <span>~/my_ai/core/agent_orchestrator.py</span>
-      <span>PY · UTF-8</span>
     </div>
     <pre class="code-body"><span class="cm"># my_ai/core/agent_orchestrator.py — extrait simplifié</span>
 <span class="kw">from</span> models.ai_agents <span class="kw">import</span> (
