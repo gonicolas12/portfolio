@@ -76,7 +76,8 @@ window.PORTFOLIO = {
 
   languages: [
     { name: { fr: "Français", en: "French" }, level: { fr: "Natif · Projet Voltaire", en: "Native · Projet Voltaire" }, dots: 5 },
-    { name: { fr: "Anglais", en: "English" }, level: { fr: "Cambridge English · B2", en: "Cambridge English · B2" }, dots: 4 }
+    { name: { fr: "Anglais", en: "English" }, level: { fr: "Cambridge English · B2", en: "Cambridge English · B2" }, dots: 4 },
+    { name: { fr: "Italien", en: "Italian" }, level: { fr: "Notions de base", en: "Basic notions" }, dots: 2 }
   ],
 
   interests: {

@@ -63,12 +63,15 @@ window.mountHeader = function(currentPage) {
 
   // Clock
   const clock = document.getElementById('clock');
+  const frTimeFormatter = new Intl.DateTimeFormat('fr-FR', {
+    timeZone: 'Europe/Paris',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+  });
   const tick = () => {
-    const d = new Date();
-    const hh = String(d.getUTCHours()).padStart(2,'0');
-    const mm = String(d.getUTCMinutes()).padStart(2,'0');
-    const ss = String(d.getUTCSeconds()).padStart(2,'0');
-    clock.textContent = `UTC ${hh}:${mm}:${ss}`;
+    clock.textContent = `FR ${frTimeFormatter.format(new Date())}`;
   };
   tick(); setInterval(tick, 1000);
 
