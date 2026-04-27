@@ -58,9 +58,21 @@
       <span class="chip accent">CHROMADB</span>
       <span class="chip accent">MCP</span>
       <span class="chip accent">FASTAPI</span>
+      <span class="chip dev-only">SENTENCE-TRANSFORMERS</span>
+      <span class="chip dev-only">HNSW</span>
+      <span class="chip dev-only">SQLITE</span>
+      <span class="chip dev-only">WEBSOCKET</span>
+      <span class="chip dev-only">CLOUDFLARED</span>
+      <span class="chip dev-only">DUCKDUCKGO</span>
+      <span class="chip dev-only">DISKCACHE</span>
+      <span class="chip dev-only">BS4</span>
+      <span class="chip dev-only">CUSTOMTKINTER</span>
+      <span class="chip dev-only">TIKTOKEN</span>
     </div>
+    <div class="dev-only dev-meta reveal d3" data-fr="v7.2.0 · MIT · Python 3.10+ · ~98% Python · 7★ / 3⑂ sur GitHub" data-en="v7.2.0 · MIT · Python 3.10+ · ~98% Python · 7★ / 3⑂ on GitHub">v7.2.0 · MIT · Python 3.10+ · ~98% Python · 7★ / 3⑂ sur GitHub</div>
     <div style="margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap;">
       <a href="https://github.com/gonicolas12/My_AI" target="_blank" class="btn btn-primary" style="background: var(--accent); color: #fff;">GITHUB ↗</a>
+      <a href="https://github.com/gonicolas12/My_AI/releases" target="_blank" class="btn btn-ghost dev-only" style="border-color: var(--bg); color: var(--bg);" data-fr="RELEASES ↗" data-en="RELEASES ↗">RELEASES ↗</a>
     </div>
   </div>
 
@@ -184,46 +196,55 @@
       <div class="agent-num">01 / 09</div>
       <h4>CODE</h4>
       <p data-fr="Génération et debug de code multi-langages. Python, C, JS et plus." data-en="Code generation and debugging across languages. Python, C, JS and more.">Génération et debug de code multi-langages. Python, C, JS et plus.</p>
+      <code class="agent-mod dev-only">models/ai_agents.py · CodeAgent</code>
     </div>
     <div class="agent">
       <div class="agent-num">02 / 09</div>
       <h4>WEB</h4>
       <p data-fr="Recherche internet temps réel via DuckDuckGo. Fact-checking et résumés." data-en="Real-time internet search via DuckDuckGo. Fact-checking and summaries.">Recherche internet temps réel via DuckDuckGo. Fact-checking et résumés.</p>
+      <code class="agent-mod dev-only">models/ai_agents.py · WebAgent + smart_web_searcher.py</code>
     </div>
     <div class="agent">
       <div class="agent-num">03 / 09</div>
       <h4>ANALYST</h4>
       <p data-fr="Analyse de données et extraction d'insights sur les corpus ingérés." data-en="Data analysis and insight extraction on ingested corpora.">Analyse de données et extraction d'insights sur les corpus ingérés.</p>
+      <code class="agent-mod dev-only">models/ai_agents.py · AnalystAgent</code>
     </div>
     <div class="agent">
       <div class="agent-num">04 / 09</div>
       <h4>CREATIVE</h4>
       <p data-fr="Rédaction et contenu créatif. Adapte le ton et le format à la demande." data-en="Writing and creative content. Adapts tone and format on demand.">Rédaction et contenu créatif. Adapte le ton et le format à la demande.</p>
+      <code class="agent-mod dev-only">models/ai_agents.py · CreativeAgent</code>
     </div>
     <div class="agent">
       <div class="agent-num">05 / 09</div>
       <h4>DEBUG</h4>
       <p data-fr="Détection et correction d'erreurs. Analyse de traces et suggestions de fix." data-en="Error detection and fixing. Stack trace analysis and fix suggestions.">Détection et correction d'erreurs. Analyse de traces et suggestions de fix.</p>
+      <code class="agent-mod dev-only">models/ai_agents.py · DebugAgent · core/error_analysis.py</code>
     </div>
     <div class="agent">
       <div class="agent-num">06 / 09</div>
       <h4>PLANNER</h4>
       <p data-fr="Découpe les projets complexes en étapes actionnables et séquencées." data-en="Breaks complex projects into actionable, sequenced steps.">Découpe les projets complexes en étapes actionnables et séquencées.</p>
+      <code class="agent-mod dev-only">models/ai_agents.py · PlannerAgent</code>
     </div>
     <div class="agent">
       <div class="agent-num">07 / 09</div>
       <h4>SECURITY</h4>
       <p data-fr="Audit de sécurité et détection de vulnérabilités dans le code." data-en="Security audit and vulnerability detection in code.">Audit de sécurité et détection de vulnérabilités dans le code.</p>
+      <code class="agent-mod dev-only">models/ai_agents.py · SecurityAgent</code>
     </div>
     <div class="agent">
       <div class="agent-num">08 / 09</div>
       <h4>OPTIMIZER</h4>
       <p data-fr="Optimisation et performance. Profiling, refactor, réduction de coût." data-en="Optimization and performance. Profiling, refactoring, cost reduction.">Optimisation et performance. Profiling, refactor, réduction de coût.</p>
+      <code class="agent-mod dev-only">models/ai_agents.py · OptimizerAgent · core/optimization.py</code>
     </div>
     <div class="agent">
       <div class="agent-num">09 / 09</div>
       <h4>DATA SCIENCE</h4>
       <p data-fr="Data Science et Machine Learning. Pipelines ML, features, évaluation." data-en="Data Science and Machine Learning. ML pipelines, features, evaluation.">Data Science et Machine Learning. Pipelines ML, features, évaluation.</p>
+      <code class="agent-mod dev-only">models/ai_agents.py · DataScienceAgent · core/training_pipeline.py</code>
     </div>
   </div>
 </section>
@@ -258,6 +279,169 @@
   </div>
 </section>
 
+<!-- DEV-ONLY: Tech specs (hard numbers) -->
+<section class="dev-only specs-section">
+  <div class="sec-meta reveal">
+    <span>// SPEC.01 — TECH METRICS</span>
+    <span data-fr="CHIFFRES DURS" data-en="HARD NUMBERS">CHIFFRES DURS</span>
+  </div>
+  <h3 class="reveal" data-fr-html="Les <em>chiffres</em>." data-en-html="The <em>numbers</em>.">Les <em>chiffres</em>.</h3>
+  <p class="reveal d1 specs-intro" data-fr="Les paramètres et seuils réels du projet, extraits de la doc et de config.yaml." data-en="Real parameters and thresholds from the project, pulled from the docs and config.yaml.">Les paramètres et seuils réels du projet, extraits de la doc et de config.yaml.</p>
+
+  <div class="specs-grid reveal d2">
+    <div class="spec">
+      <div class="spec-num">10 000 000</div>
+      <div class="spec-lbl" data-fr="TOKENS · MÉMOIRE VECTORIELLE MAX" data-en="TOKENS · MAX VECTOR MEMORY">TOKENS · MÉMOIRE VECTORIELLE MAX</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">256 / 32</div>
+      <div class="spec-lbl" data-fr="CHUNK / OVERLAP (TOKENS)" data-en="CHUNK / OVERLAP (TOKENS)">CHUNK / OVERLAP (TOKENS)</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">384</div>
+      <div class="spec-lbl" data-fr="DIM · all-MiniLM-L6-v2" data-en="DIM · all-MiniLM-L6-v2">DIM · all-MiniLM-L6-v2</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">~20 ms</div>
+      <div class="spec-lbl" data-fr="RECALL · HNSW + COSINUS" data-en="RECALL · HNSW + COSINE">RECALL · HNSW + COSINUS</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">32 768</div>
+      <div class="spec-lbl" data-fr="CTX LLM · 8 192 SIMPLE · 4 096 VISION" data-en="LLM CTX · 8 192 SIMPLE · 4 096 VISION">CTX LLM · 8 192 SIMPLE · 4 096 VISION</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">15</div>
+      <div class="spec-lbl" data-fr="MAX_TOURS · BOUCLE ReAct" data-en="MAX_TOURS · ReAct LOOP">MAX_TOURS · BOUCLE ReAct</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">8765</div>
+      <div class="spec-lbl" data-fr="PORT · WEBSOCKET RELAY" data-en="PORT · RELAY WEBSOCKET">PORT · WEBSOCKET RELAY</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">25 MB</div>
+      <div class="spec-lbl" data-fr="UPLOAD MAX · RELAY MOBILE" data-en="MAX UPLOAD · MOBILE RELAY">UPLOAD MAX · RELAY MOBILE</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">12</div>
+      <div class="spec-lbl" data-fr="LANGUES AUTO-DÉTECTÉES" data-en="AUTO-DETECTED LANGUAGES">LANGUES AUTO-DÉTECTÉES</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">1 — 5 ★</div>
+      <div class="spec-lbl" data-fr="ÉCHELLE FEEDBACK · RLHF" data-en="FEEDBACK SCALE · RLHF">ÉCHELLE FEEDBACK · RLHF</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">3.10+</div>
+      <div class="spec-lbl" data-fr="PYTHON · RUNTIME MIN" data-en="PYTHON · MIN RUNTIME">PYTHON · RUNTIME MIN</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">AES-256</div>
+      <div class="spec-lbl" data-fr="CHIFFREMENT MÉMOIRE · OPTIONNEL" data-en="MEMORY ENCRYPTION · OPTIONAL">CHIFFREMENT MÉMOIRE · OPTIONNEL</div>
+    </div>
+  </div>
+</section>
+
+<!-- DEV-ONLY: Module map -->
+<section class="dev-only modules-section">
+  <div class="sec-meta reveal" style="color: var(--dim); border-bottom-color: var(--dim);">
+    <span>// SPEC.02 — MODULE MAP</span>
+    <span>~/my_ai/</span>
+  </div>
+  <h3 class="reveal" data-fr-html="L'<em>arborescence</em>." data-en-html="The <em>tree</em>.">L'<em>arborescence</em>.</h3>
+  <p class="reveal d1 mod-intro" data-fr="Vue condensée des modules clés. Chaque dossier porte une responsabilité unique." data-en="Condensed view of key modules. Each folder owns a single responsibility.">Vue condensée des modules clés. Chaque dossier porte une responsabilité unique.</p>
+
+  <div class="module-tree reveal d2">
+<pre>my_ai/
+├─ <span class="tk-dir">core/</span>                    <span class="tk-cm"># moteur, orchestrateurs, API, MCP</span>
+│  ├─ ai_engine.py            <span class="tk-cm"># point d'entrée intelligence</span>
+│  ├─ chat_orchestrator.py    <span class="tk-cm"># boucle ReAct · scratchpad XML · MAX_TOURS=15</span>
+│  ├─ agent_orchestrator.py   <span class="tk-cm"># page Agents · historiques séparés</span>
+│  ├─ api_server.py           <span class="tk-cm"># FastAPI</span>
+│  ├─ mcp_client.py           <span class="tk-cm"># Model Context Protocol · stdio</span>
+│  ├─ rlhf_manager.py         <span class="tk-cm"># feedback 1—5 ★</span>
+│  ├─ knowledge_base_manager.py
+│  ├─ language_detector.py    <span class="tk-cm"># 12 langues</span>
+│  ├─ session_manager.py · conversation.py · validation.py
+│  ├─ optimization.py · evaluation.py · training_pipeline.py
+│  └─ web_cache.py · network.py · compression_monitor.py
+├─ <span class="tk-dir">memory/</span>                  <span class="tk-cm"># 10 M tokens · ChromaDB persistant</span>
+│  ├─ vector_memory.py        <span class="tk-cm"># tiktoken cl100k_base · all-MiniLM-L6-v2</span>
+│  └─ vector_store/chroma_db/
+├─ <span class="tk-dir">models/</span>                  <span class="tk-cm"># 9 agents + LLM local</span>
+│  ├─ ai_agents.py            <span class="tk-cm"># Code/Web/Analyst/Creative/Debug/Planner/Security/Optimizer/DS</span>
+│  ├─ local_llm.py            <span class="tk-cm"># wrapper Ollama</span>
+│  ├─ intelligent_code_orchestrator.py
+│  ├─ intelligent_document_analyzer.py
+│  ├─ smart_web_searcher.py · smart_code_searcher.py
+│  ├─ ml_faq_model.py · knowledge_base.py
+│  └─ mixins/ · weights/ · training_runs/
+├─ <span class="tk-dir">processors/</span>              <span class="tk-cm"># PDF · DOCX · XLSX · CSV · CODE</span>
+│  └─ pdf_processor.py · docx_processor.py · excel_processor.py · code_processor.py
+├─ <span class="tk-dir">generators/</span>              <span class="tk-cm"># export documents & code</span>
+├─ <span class="tk-dir">interfaces/</span>              <span class="tk-cm"># GUI CustomTkinter · CLI · Agents · Workflow</span>
+│  ├─ gui_modern.py · cli.py · agents_interface.py
+│  ├─ workflow_canvas.py · resource_monitor.py
+│  └─ gui/ · agents/
+├─ <span class="tk-accent">relay/</span>                   <span class="tk-cm"># PWA mobile · WebSocket · cloudflared tunnel</span>
+│  ├─ relay_server.py · relay_bridge.py
+│  └─ static/  (index.html · style.css · app.js)
+├─ <span class="tk-dir">data/</span>                    <span class="tk-cm"># enrichissement · KB · workspaces · web_cache</span>
+├─ <span class="tk-dir">utils/</span> · <span class="tk-dir">tests/</span> · <span class="tk-dir">tools/</span> · <span class="tk-dir">examples/</span> · <span class="tk-dir">docs/</span>
+├─ main.py · launch_unified.py · launch.bat
+├─ Modelfile · config.yaml · requirements.txt
+└─ create_custom_model.bat · clean_project.bat · test_features.bat</pre>
+  </div>
+</section>
+
+<!-- DEV-ONLY: Models & Relay -->
+<section class="dev-only mr-section">
+  <div class="sec-meta reveal">
+    <span>// SPEC.03 — MODELS &amp; RELAY</span>
+    <span data-fr="LLM SUPPORTÉS · ACCÈS MOBILE" data-en="SUPPORTED LLMs · MOBILE ACCESS">LLM SUPPORTÉS · ACCÈS MOBILE</span>
+  </div>
+  <h3 class="reveal" data-fr-html="Le <em>cœur</em> & le <em>relay</em>." data-en-html="The <em>core</em> & the <em>relay</em>.">Le <em>cœur</em> & le <em>relay</em>.</h3>
+
+  <div class="dual reveal d1">
+    <div class="dual-col">
+      <div class="dual-head" data-fr="MODÈLES OLLAMA · LOCAL" data-en="OLLAMA MODELS · LOCAL">MODÈLES OLLAMA · LOCAL</div>
+      <table class="kv-table">
+        <tr><th data-fr="TEXTE" data-en="TEXT">TEXTE</th><th>RAM</th><th data-fr="USAGE" data-en="USAGE">USAGE</th></tr>
+        <tr><td>qwen3.5:2b</td><td>4 GB</td><td data-fr="ultra-light" data-en="ultra-light">ultra-light</td></tr>
+        <tr><td>qwen3.5:4b</td><td>8 GB</td><td data-fr="recommandé" data-en="recommended">recommandé</td></tr>
+        <tr><td>qwen3.5:9b</td><td>16 GB</td><td data-fr="détaillé" data-en="detailed">détaillé</td></tr>
+        <tr><td>mistral</td><td>—</td><td data-fr="alternative" data-en="alternative">alternative</td></tr>
+        <tr><th data-fr="VISION" data-en="VISION">VISION</th><th>RAM</th><th data-fr="USAGE" data-en="USAGE">USAGE</th></tr>
+        <tr><td>minicpm-v</td><td>3 GB</td><td data-fr="recommandé" data-en="recommended">recommandé</td></tr>
+        <tr><td>llava</td><td>4.7 GB</td><td data-fr="alternative" data-en="alternative">alternative</td></tr>
+        <tr><td>llama3.2-vision</td><td>—</td><td data-fr="alternative" data-en="alternative">alternative</td></tr>
+      </table>
+      <p class="dual-foot" data-fr="Configurable via Modelfile + config.yaml › llm.local.default_model. Fallback automatique sur réponses pattern-based si Ollama indisponible." data-en="Configurable via Modelfile + config.yaml › llm.local.default_model. Automatic fallback to pattern-based responses if Ollama is unavailable.">Configurable via Modelfile + config.yaml › llm.local.default_model. Fallback automatique sur réponses pattern-based si Ollama indisponible.</p>
+    </div>
+
+    <div class="dual-col">
+      <div class="dual-head" data-fr="MY_AI RELAY · MOBILE PWA" data-en="MY_AI RELAY · MOBILE PWA">MY_AI RELAY · MOBILE PWA</div>
+      <pre class="config-block"><span class="tk-cm"># config.yaml</span>
+relay:
+  auto_start:        false
+  port:              <span class="tk-num">8765</span>
+  response_timeout:  <span class="tk-num">500</span>      <span class="tk-cm"># s</span>
+  password:          ""       <span class="tk-cm"># vide = token aléatoire</span>
+  tunnel:            true     <span class="tk-cm"># cloudflared HTTPS auto</span>
+  host:              <span class="tk-str">"0.0.0.0"</span></pre>
+      <ul class="dual-list">
+        <li data-fr="Tunnel cloudflared automatique → URL HTTPS publique + QR code partageable" data-en="Automatic cloudflared tunnel → public HTTPS URL + shareable QR code">Tunnel cloudflared automatique → URL HTTPS publique + QR code partageable</li>
+        <li data-fr="Sync messages temps réel via WebSocket, indicateurs de frappe, thème dark" data-en="Real-time message sync via WebSocket, typing indicators, dark theme">Sync messages temps réel via WebSocket, indicateurs de frappe, thème dark</li>
+        <li data-fr="Pièces jointes ≤ 25 MB (images, PDF, DOCX, XLSX, CSV, code)" data-en="Attachments ≤ 25 MB (images, PDF, DOCX, XLSX, CSV, code)">Pièces jointes ≤ 25 MB (images, PDF, DOCX, XLSX, CSV, code)</li>
+        <li data-fr="PWA installable, code servi depuis relay/static/ (Vanilla JS)" data-en="Installable PWA, code served from relay/static/ (Vanilla JS)">PWA installable, code servi depuis relay/static/ (Vanilla JS)</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="reveal d2 release-note">
+    <span class="release-tag">v7.2.0 · 2026-04-16</span>
+    <span data-fr="My_AI Relay — accès mobile via WebSocket sécurisé + tunnel Cloudflare." data-en="My_AI Relay — mobile access via secure WebSocket + Cloudflare tunnel.">My_AI Relay — accès mobile via WebSocket sécurisé + tunnel Cloudflare.</span>
+  </div>
+</section>
+
 <!-- Code snippet -->
 <section class="code-section">
   <div class="sec-meta reveal" style="color: var(--dim); border-bottom-color: var(--dim);">
@@ -270,22 +454,23 @@
       <div class="dots">
         <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
       </div>
-      <span>~/my_ai/core/orchestrator.py</span>
+      <span>~/my_ai/core/agent_orchestrator.py</span>
       <span>PY · UTF-8</span>
     </div>
-    <pre class="code-body"><span class="cm"># my_ai/core/orchestrator.py</span>
-<span class="kw">from</span> models.agents <span class="kw">import</span> (
+    <pre class="code-body"><span class="cm"># my_ai/core/agent_orchestrator.py — extrait simplifié</span>
+<span class="kw">from</span> models.ai_agents <span class="kw">import</span> (
     CodeAgent, WebAgent, AnalystAgent, CreativeAgent,
     DebugAgent, PlannerAgent, SecurityAgent,
     OptimizerAgent, DataScienceAgent,
 )
-<span class="kw">from</span> memory <span class="kw">import</span> VectorStore
-<span class="kw">from</span> mcp <span class="kw">import</span> MCPRegistry
+<span class="kw">from</span> memory.vector_memory <span class="kw">import</span> VectorMemory
+<span class="kw">from</span> core.mcp_client <span class="kw">import</span> MCPClient
+<span class="kw">from</span> models.local_llm <span class="kw">import</span> LocalLLM
 
-<span class="kw">class</span> <span class="fn">Orchestrator</span>:
-    <span class="kw">def</span> <span class="fn">__init__</span>(self, model=<span class="str">"qwen2.5:7b"</span>):
-        self.llm = Ollama(model)
-        self.memory = VectorStore(<span class="str">"./chroma"</span>)
+<span class="kw">class</span> <span class="fn">AgentOrchestrator</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, model=<span class="str">"qwen3.5:4b"</span>):
+        self.llm = LocalLLM(model)                  <span class="cm"># Ollama wrapper</span>
+        self.memory = VectorMemory(<span class="str">"memory/vector_store"</span>)
         self.agents = {
             <span class="str">"code"</span>:     CodeAgent(self.llm),
             <span class="str">"web"</span>:      WebAgent(self.llm),
@@ -297,17 +482,15 @@
             <span class="str">"optim"</span>:    OptimizerAgent(self.llm),
             <span class="str">"ds"</span>:       DataScienceAgent(self.llm),
         }
-        self.mcp = MCPRegistry.discover()
+        self.mcp = MCPClient.from_config(<span class="str">"config.yaml"</span>)
 
-    <span class="kw">async def</span> <span class="fn">route</span>(self, query: str) -> str:
-        <span class="cm"># 1. classify intent locally</span>
-        intent = <span class="kw">await</span> self.<span class="fn">_classify</span>(query)
-        <span class="cm"># 2. enrich w/ long-term memory</span>
-        ctx = self.memory.<span class="fn">recall</span>(query, k=<span class="str">5</span>)
-        <span class="cm"># 3. delegate to specialized agent</span>
-        agent = self.agents[intent]
-        answer = <span class="kw">await</span> agent.<span class="fn">run</span>(query, context=ctx)
-        <span class="cm"># 4. persist exchange</span>
+    <span class="kw">def</span> <span class="fn">ask_agent</span>(self, kind: str, query: str) -> str:
+        <span class="cm"># 1. recall — HNSW + cosinus, reranking CrossEncoder (~20 ms)</span>
+        ctx = self.memory.<span class="fn">search</span>(query, k=<span class="str">5</span>)
+        <span class="cm"># 2. delegate — agent ReAct + scratchpad XML</span>
+        agent = self.agents[kind]
+        answer = agent.<span class="fn">run</span>(query, context=ctx, tools=self.mcp.tools)
+        <span class="cm"># 3. persist — chunks 256 tok / overlap 32, jusqu'à 10M tokens</span>
         self.memory.<span class="fn">store</span>(query, answer)
         <span class="kw">return</span> answer</pre>
   </div>
