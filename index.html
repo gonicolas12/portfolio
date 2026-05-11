@@ -194,10 +194,11 @@
         <!-- Layer top — Interfaces -->
         <g font-family="JetBrains Mono" font-size="9" fill="#f5f1ea">
           <text x="300" y="32" text-anchor="middle" fill="#666" letter-spacing="3">INTERFACES</text>
-          <g transform="translate(110, 60)"><rect x="-40" y="-14" width="80" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">GUI</text></g>
-          <g transform="translate(230, 60)"><rect x="-40" y="-14" width="80" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">CLI</text></g>
-          <g transform="translate(370, 60)"><rect x="-44" y="-14" width="88" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">FASTAPI</text></g>
-          <g transform="translate(500, 60)"><rect x="-50" y="-14" width="100" height="28" fill="none" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="4" fill="#ff6b47">RELAY · MOBILE</text></g>
+          <g transform="translate(75, 60)"><rect x="-35" y="-14" width="70" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">GUI</text></g>
+          <g transform="translate(170, 60)"><rect x="-30" y="-14" width="60" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">CLI</text></g>
+          <g transform="translate(275, 60)"><rect x="-40" y="-14" width="80" height="28" fill="none" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4">FASTAPI</text></g>
+          <g transform="translate(390, 60)"><rect x="-48" y="-14" width="96" height="28" fill="none" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="4" fill="#ff6b47">RELAY · MOBILE</text></g>
+          <g transform="translate(515, 60)"><rect x="-50" y="-14" width="100" height="28" fill="none" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="4" fill="#ff6b47">VSX · AGENT</text></g>
         </g>
 
         <!-- Orchestrator center -->
@@ -230,10 +231,11 @@
 
         <!-- Connections interfaces -> orchestrator -->
         <g stroke="#ff6b47" stroke-width="1" opacity="0.3" fill="none">
-          <line x1="110" y1="74" x2="280" y2="200"/>
-          <line x1="230" y1="74" x2="295" y2="195"/>
-          <line x1="370" y1="74" x2="305" y2="195"/>
-          <line x1="500" y1="74" x2="320" y2="200"/>
+          <line x1="75" y1="74" x2="275" y2="195"/>
+          <line x1="170" y1="74" x2="290" y2="195"/>
+          <line x1="275" y1="74" x2="300" y2="195"/>
+          <line x1="390" y1="74" x2="310" y2="195"/>
+          <line x1="515" y1="74" x2="325" y2="195"/>
         </g>
 
         <!-- Connections orchestrator -> subsystems -->
@@ -249,10 +251,13 @@
 
         <!-- Animated data flow -->
         <circle r="3" fill="#ff6b47">
-          <animateMotion dur="2.6s" repeatCount="indefinite" path="M 110 74 L 280 200"/>
+          <animateMotion dur="2.6s" repeatCount="indefinite" path="M 75 74 L 275 195"/>
         </circle>
         <circle r="3" fill="#ff6b47">
-          <animateMotion dur="2.8s" repeatCount="indefinite" path="M 500 74 L 320 200"/>
+          <animateMotion dur="2.8s" repeatCount="indefinite" path="M 390 74 L 310 195"/>
+        </circle>
+        <circle r="3" fill="#ff6b47">
+          <animateMotion dur="2.5s" repeatCount="indefinite" path="M 515 74 L 325 195"/>
         </circle>
         <circle r="3" fill="#ff6b47">
           <animateMotion dur="2.4s" repeatCount="indefinite" path="M 300 225 L 129 175"/>

@@ -296,7 +296,7 @@
   white-space: pre;
 }
 .module-tree .tk-dir { color: var(--accent); font-weight: 700; }
-.module-tree .tk-accent { color: var(--accent); font-weight: 700; text-decoration: underline; }
+.module-tree .tk-accent { color: var(--accent); font-weight: 700; }
 .module-tree .tk-cm { color: #777; font-style: italic; }
 .module-tree .tk-num { color: #c9e265; }
 .module-tree .tk-str { color: #c9e265; }
@@ -329,7 +329,14 @@
   font-weight: 900;
 }
 .vsx-section h3 em { font-style: italic; color: var(--accent); font-family: 'Space Grotesk'; font-weight: 700; }
-.vsx-section .specs-grid { margin-top: 36px; }
+.vsx-section .specs-grid {
+  margin-top: 36px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.vsx-section .specs-grid .spec:nth-child(4n) { border-right: 1px solid var(--ink); }
+.vsx-section .specs-grid .spec:nth-child(3n) { border-right: none; }
+.vsx-section .specs-grid .spec:nth-last-child(-n+4) { border-bottom: 1px solid var(--ink); }
+.vsx-section .specs-grid .spec:nth-last-child(-n+3) { border-bottom: none; }
 
 .dual {
   display: grid;

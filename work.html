@@ -91,18 +91,20 @@
       <!-- Layer 1 — Interfaces (top) -->
       <g font-family="JetBrains Mono" font-size="9" fill="#f5f1ea">
         <text x="300" y="50" text-anchor="middle" fill="#666" letter-spacing="3">INTERFACES</text>
-        <g transform="translate(110, 80)"><rect x="-46" y="-16" width="92" height="32" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">GUI · TKINTER</text></g>
-        <g transform="translate(230, 80)"><rect x="-40" y="-16" width="80" height="32" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">CLI</text></g>
-        <g transform="translate(350, 80)"><rect x="-50" y="-16" width="100" height="32" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">API · FASTAPI</text></g>
-        <g transform="translate(490, 80)"><rect x="-58" y="-16" width="116" height="32" fill="#0a0a0a" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="4" fill="#ff6b47" letter-spacing="1">RELAY · MOBILE</text></g>
+        <g transform="translate(70, 80)"><rect x="-44" y="-16" width="88" height="32" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">GUI · TKINTER</text></g>
+        <g transform="translate(180, 80)"><rect x="-28" y="-16" width="56" height="32" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">CLI</text></g>
+        <g transform="translate(295, 80)"><rect x="-48" y="-16" width="96" height="32" fill="#0a0a0a" stroke="#f5f1ea" stroke-width="1"/><text text-anchor="middle" y="4" letter-spacing="1">API · FASTAPI</text></g>
+        <g transform="translate(410, 80)"><rect x="-45" y="-16" width="90" height="32" fill="#0a0a0a" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="4" fill="#ff6b47" letter-spacing="1">RELAY · PWA</text></g>
+        <g transform="translate(525, 80)"><rect x="-50" y="-16" width="100" height="32" fill="#0a0a0a" stroke="#ff6b47" stroke-width="1"/><text text-anchor="middle" y="4" fill="#ff6b47" letter-spacing="1">VSX · AGENT</text></g>
       </g>
 
       <!-- Arrows interfaces -> orchestrator -->
       <g stroke="#ff6b47" stroke-width="1" opacity="0.35" fill="none">
-        <line x1="110" y1="98" x2="280" y2="270"/>
-        <line x1="230" y1="98" x2="295" y2="265"/>
-        <line x1="350" y1="98" x2="305" y2="265"/>
-        <line x1="490" y1="98" x2="320" y2="270"/>
+        <line x1="70" y1="98" x2="275" y2="270"/>
+        <line x1="180" y1="98" x2="290" y2="265"/>
+        <line x1="295" y1="98" x2="300" y2="265"/>
+        <line x1="410" y1="98" x2="310" y2="265"/>
+        <line x1="525" y1="98" x2="325" y2="270"/>
       </g>
 
       <!-- Layer 2 — Orchestrators (center) -->
@@ -150,10 +152,13 @@
 
       <!-- Animated particles — flow IN (interfaces -> orch) and OUT (orch -> subsystems) -->
       <circle r="2.5" fill="#ff6b47">
-        <animateMotion dur="2.4s" repeatCount="indefinite" path="M 110 98 L 280 270"/>
+        <animateMotion dur="2.4s" repeatCount="indefinite" path="M 70 98 L 275 270"/>
       </circle>
       <circle r="2.5" fill="#ff6b47">
-        <animateMotion dur="2.8s" repeatCount="indefinite" path="M 490 98 L 320 270"/>
+        <animateMotion dur="2.8s" repeatCount="indefinite" path="M 410 98 L 310 265"/>
+      </circle>
+      <circle r="2.5" fill="#ff6b47">
+        <animateMotion dur="2.5s" repeatCount="indefinite" path="M 525 98 L 325 270"/>
       </circle>
       <circle r="2.5" fill="#ff6b47">
         <animateMotion dur="2.2s" repeatCount="indefinite" path="M 300 300 L 145 230"/>
