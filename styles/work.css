@@ -316,6 +316,21 @@
 }
 .mr-section h3 em { font-style: italic; color: var(--accent); font-family: 'Space Grotesk'; font-weight: 700; }
 
+.vsx-section {
+  padding: 100px 32px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--ink);
+}
+.vsx-section h3 {
+  font-family: var(--display);
+  font-size: clamp(40px, 6vw, 72px);
+  letter-spacing: -0.03em;
+  margin: 0 0 40px;
+  font-weight: 900;
+}
+.vsx-section h3 em { font-style: italic; color: var(--accent); font-family: 'Space Grotesk'; font-weight: 700; }
+.vsx-section .specs-grid { margin-top: 36px; }
+
 .dual {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -587,7 +602,8 @@
 
   .specs-section,
   .modules-section,
-  .mr-section { padding: 60px 16px; }
+  .mr-section,
+  .vsx-section { padding: 60px 16px; }
   .specs-section h3,
   .modules-section h3,
   .mr-section h3 { font-size: clamp(30px, 9vw, 48px); margin-bottom: 20px; }

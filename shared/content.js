@@ -95,10 +95,10 @@ window.PORTFOLIO = {
       featured: true,
       repo: "gonicolas12/My_AI",
       desc: {
-        fr: "Assistant IA 100% local en Python via Ollama. Mémoire vectorielle jusqu'à 10M tokens (ChromaDB), 9 agents spécialisés, pipeline documents (PDF, DOCX, Excel, CSV, code), API REST FastAPI, MCP et accès mobile via Relay.",
-        en: "100% local AI assistant in Python via Ollama. Vector memory up to 10M tokens (ChromaDB), 9 specialized agents, document pipeline (PDF, DOCX, Excel, CSV, code), FastAPI REST API, MCP and mobile access via Relay."
+        fr: "Assistant IA 100% local en Python via Ollama. Mémoire vectorielle jusqu'à 10M tokens (ChromaDB), 9 agents spécialisés, pipeline documents (PDF, DOCX, Excel, CSV, code), API REST FastAPI, MCP, accès mobile via Relay et extension VS Code agentique (9 outils workspace, E2EE AES-256-GCM).",
+        en: "100% local AI assistant in Python via Ollama. Vector memory up to 10M tokens (ChromaDB), 9 specialized agents, document pipeline (PDF, DOCX, Excel, CSV, code), FastAPI REST API, MCP, mobile access via Relay and an agentic VS Code extension (9 workspace tools, AES-256-GCM E2EE)."
       },
-      stack: ["Python", "Ollama", "ChromaDB", "MCP", "FastAPI"],
+      stack: ["Python", "Ollama", "ChromaDB", "MCP", "FastAPI", "VS Code Extension"],
       metrics: [
         { k: "AGENTS", v: "9" },
         { k: "LOCAL", v: "100%" },

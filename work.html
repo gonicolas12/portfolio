@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Travail — Nicolas Gouy</title>
-<meta name="description" content="Étude de cas : My_AI, assistant IA 100% local en Python. Architecture multi-agents, mémoire vectorielle ChromaDB, protocole MCP, FastAPI.">
+<meta name="description" content="Étude de cas : My_AI, assistant IA 100% local en Python. Architecture multi-agents, mémoire vectorielle ChromaDB, protocole MCP, FastAPI, extension VS Code agentique.">
 <meta name="author" content="Nicolas Gouy">
 <meta name="theme-color" content="#0a0a0a">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gonicolas12.github.io/portfolio/work.html">
 <meta property="og:title" content="Travail — Nicolas Gouy">
-<meta property="og:description" content="Étude de cas : My_AI, assistant IA 100% local en Python. Architecture multi-agents, mémoire vectorielle ChromaDB, protocole MCP, FastAPI.">
+<meta property="og:description" content="Étude de cas : My_AI, assistant IA 100% local en Python. Architecture multi-agents, mémoire vectorielle ChromaDB, protocole MCP, FastAPI, extension VS Code agentique.">
 <meta property="og:image" content="https://gonicolas12.github.io/portfolio/assets/og-image-v2.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,7 +22,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Travail — Nicolas Gouy">
-<meta name="twitter:description" content="Étude de cas : My_AI, assistant IA 100% local en Python. Architecture multi-agents, mémoire vectorielle ChromaDB, protocole MCP, FastAPI.">
+<meta name="twitter:description" content="Étude de cas : My_AI, assistant IA 100% local en Python. Architecture multi-agents, mémoire vectorielle ChromaDB, protocole MCP, FastAPI, extension VS Code agentique.">
 <meta name="twitter:image" content="https://gonicolas12.github.io/portfolio/assets/og-image-v2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,8 +68,11 @@
       <span class="chip dev-only">BS4</span>
       <span class="chip dev-only">CUSTOMTKINTER</span>
       <span class="chip dev-only">TIKTOKEN</span>
+      <span class="chip dev-only">TYPESCRIPT</span>
+      <span class="chip dev-only">VS CODE API</span>
+      <span class="chip dev-only">AES-256-GCM</span>
     </div>
-    <div class="dev-only dev-meta reveal d3" data-fr="v7.2.0 · MIT · Python 3.10+ · ~98% Python · 7★ / 3⑂ sur GitHub" data-en="v7.2.0 · MIT · Python 3.10+ · ~98% Python · 7★ / 3⑂ on GitHub">v7.2.0 · MIT · Python 3.10+ · ~98% Python · 7★ / 3⑂ sur GitHub</div>
+    <div class="dev-only dev-meta reveal d3" data-fr="v7.3.0 · MIT · Python 3.10+ · ~98% Python · 7★ / 3⑂ sur GitHub · Extension VS Code v1.2.1" data-en="v7.3.0 · MIT · Python 3.10+ · ~98% Python · 7★ / 3⑂ on GitHub · VS Code extension v1.2.1">v7.3.0 · MIT · Python 3.10+ · ~98% Python · 7★ / 3⑂ sur GitHub · Extension VS Code v1.2.1</div>
     <div style="margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap;">
       <a href="https://github.com/gonicolas12/My_AI" target="_blank" class="btn btn-primary" style="background: var(--accent); color: #fff;">GITHUB ↗</a>
       <a href="https://github.com/gonicolas12/My_AI/releases" target="_blank" class="btn btn-ghost dev-only" style="border-color: var(--bg); color: var(--bg);" data-fr="RELEASES ↗" data-en="RELEASES ↗">RELEASES ↗</a>
@@ -384,6 +387,11 @@
 ├─ <span class="tk-accent">relay/</span>                   <span class="tk-cm"># PWA mobile · WebSocket · cloudflared tunnel</span>
 │  ├─ relay_server.py · relay_bridge.py
 │  └─ static/  (index.html · style.css · app.js)
+├─ <span class="tk-accent">vscode_extension/</span>        <span class="tk-cm"># extension VS Code agentique · TypeScript · esbuild</span>
+│  ├─ src/                    <span class="tk-cm"># client WebSocket E2EE · UI webview · 9 outils workspace</span>
+│  ├─ l10n/ · media/          <span class="tk-cm"># i18n (FR/EN) · icônes</span>
+│  ├─ package.json · esbuild.js · tsconfig.json
+│  └─ README.md · README.fr.md · CHANGELOG.md
 ├─ <span class="tk-dir">data/</span>                    <span class="tk-cm"># enrichissement · KB · workspaces · web_cache</span>
 ├─ <span class="tk-dir">utils/</span> · <span class="tk-dir">tests/</span> · <span class="tk-dir">tools/</span> · <span class="tk-dir">examples/</span> · <span class="tk-dir">docs/</span>
 ├─ main.py · launch_unified.py · launch.bat
@@ -437,8 +445,89 @@ relay:
   </div>
 
   <div class="reveal d2 release-note">
-    <span class="release-tag">v7.2.0 · 2026-04-16</span>
-    <span data-fr="My_AI Relay — accès mobile via WebSocket sécurisé + tunnel Cloudflare." data-en="My_AI Relay — mobile access via secure WebSocket + Cloudflare tunnel.">My_AI Relay — accès mobile via WebSocket sécurisé + tunnel Cloudflare.</span>
+    <span class="release-tag">v7.3.0 · 2026-05-07</span>
+    <span data-fr="Extension VS Code agentique — 9 outils workspace · E2EE AES-256-GCM · multi-tunnel failover." data-en="Agentic VS Code extension — 9 workspace tools · AES-256-GCM E2EE · multi-tunnel failover.">Extension VS Code agentique — 9 outils workspace · E2EE AES-256-GCM · multi-tunnel failover.</span>
+  </div>
+</section>
+
+<!-- DEV-ONLY: VS Code Extension deep dive -->
+<section class="dev-only vsx-section">
+  <div class="sec-meta reveal">
+    <span>// SPEC.04 — VS CODE EXTENSION</span>
+    <span data-fr="MY_AI RELAY · AGENTIC IDE" data-en="MY_AI RELAY · AGENTIC IDE">MY_AI RELAY · AGENTIC IDE</span>
+  </div>
+  <h3 class="reveal" data-fr-html="L'<em>extension</em> VS Code." data-en-html="The VS Code <em>extension</em>.">L'<em>extension</em> VS Code.</h3>
+  <p class="reveal d1 specs-intro" data-fr="Une extension VS Code (TypeScript) qui transforme My_AI en agent capable d'éditer, exécuter et fouiller le workspace — façon Claude Code, mais 100% local, sur n'importe quel modèle Ollama. Marketplace : gonicolas12.my-ai." data-en="A VS Code extension (TypeScript) that turns My_AI into an agent able to edit, execute and search the workspace — Claude Code style, but 100% local, on any Ollama model. Marketplace: gonicolas12.my-ai.">Une extension VS Code (TypeScript) qui transforme My_AI en agent capable d'éditer, exécuter et fouiller le workspace — façon Claude Code, mais 100% local, sur n'importe quel modèle Ollama. Marketplace : gonicolas12.my-ai.</p>
+
+  <div class="dual reveal d2">
+    <div class="dual-col">
+      <div class="dual-head" data-fr="9 OUTILS EXPOSÉS AU LLM" data-en="9 TOOLS EXPOSED TO THE LLM">9 OUTILS EXPOSÉS AU LLM</div>
+      <table class="kv-table">
+        <tr><th data-fr="OUTIL" data-en="TOOL">OUTIL</th><th data-fr="RÔLE" data-en="ROLE">RÔLE</th><th data-fr="APPROBATION" data-en="APPROVAL">APPROBATION</th></tr>
+        <tr><td>read_file</td><td data-fr="lecture · offset/limit" data-en="read · offset/limit">lecture · offset/limit</td><td data-fr="auto" data-en="auto">auto</td></tr>
+        <tr><td>write_file</td><td data-fr="création/écrasement" data-en="create/overwrite">création/écrasement</td><td data-fr="modale" data-en="modal">modale</td></tr>
+        <tr><td>edit_file</td><td data-fr="remplacement exact" data-en="exact replace">remplacement exact</td><td data-fr="modale" data-en="modal">modale</td></tr>
+        <tr><td>list_dir</td><td data-fr="contenu d'un dossier" data-en="folder contents">contenu d'un dossier</td><td data-fr="auto" data-en="auto">auto</td></tr>
+        <tr><td>glob</td><td data-fr="recherche par motif" data-en="pattern search">recherche par motif</td><td data-fr="auto" data-en="auto">auto</td></tr>
+        <tr><td>grep</td><td data-fr="ripgrep + fallback JS" data-en="ripgrep + JS fallback">ripgrep + fallback JS</td><td data-fr="auto" data-en="auto">auto</td></tr>
+        <tr><td>run_command</td><td data-fr="shell workspace" data-en="workspace shell">shell workspace</td><td data-fr="modale" data-en="modal">modale</td></tr>
+        <tr><td>get_active_editor</td><td data-fr="fichier + sélection" data-en="file + selection">fichier + sélection</td><td data-fr="auto" data-en="auto">auto</td></tr>
+        <tr><td>open_file</td><td data-fr="ouvrir · ligne précise" data-en="open · specific line">ouvrir · ligne précise</td><td data-fr="auto" data-en="auto">auto</td></tr>
+      </table>
+      <p class="dual-foot" data-fr="Tous les chemins sont résolus depuis le workspace VS Code. Toute sortie de ce périmètre exige une approbation modale par chemin (pas d'auto-approve)." data-en="All paths resolve from the VS Code workspace. Anything outside requires a modal per-path approval (no auto-approve).">Tous les chemins sont résolus depuis le workspace VS Code. Toute sortie de ce périmètre exige une approbation modale par chemin (pas d'auto-approve).</p>
+    </div>
+
+    <div class="dual-col">
+      <div class="dual-head" data-fr="SÉCURITÉ · TRANSPORT · APPROBATIONS" data-en="SECURITY · TRANSPORT · APPROVALS">SÉCURITÉ · TRANSPORT · APPROBATIONS</div>
+      <pre class="config-block"><span class="tk-cm"># package.json — settings</span>
+myaiRelay.openInSecondarySidebar:    <span class="tk-num">true</span>
+myaiRelay.healthCheckIntervalSeconds: <span class="tk-num">10</span>
+myaiRelay.autoReconnect:             <span class="tk-num">true</span>
+myaiRelay.requestTimeoutSeconds:     <span class="tk-num">15</span></pre>
+      <ul class="dual-list">
+        <li data-fr="E2EE AES-256-GCM · clé éphémère dans le fragment d'URL (jamais sur le serveur)" data-en="AES-256-GCM E2EE · ephemeral key in URL fragment (never on the server)">E2EE AES-256-GCM · clé éphémère dans le fragment d'URL (jamais sur le serveur)</li>
+        <li data-fr="Multi-tunnel failover : cloudflared · serveo · localhost.run en parallèle" data-en="Multi-tunnel failover: cloudflared · serveo · localhost.run in parallel">Multi-tunnel failover : cloudflared · serveo · localhost.run en parallèle</li>
+        <li data-fr="Credentials chiffrés dans VS Code SecretStorage (OS keychain)" data-en="Credentials encrypted in VS Code SecretStorage (OS keychain)">Credentials chiffrés dans VS Code SecretStorage (OS keychain)</li>
+        <li data-fr="3 niveaux d'approbation : once · per-file · session-wide (reset à la reconnexion)" data-en="3 approval levels: once · per-file · session-wide (reset on reconnect)">3 niveaux d'approbation : once · per-file · session-wide (reset à la reconnexion)</li>
+        <li data-fr="Parser <tool_use> custom → compatible n'importe quel modèle Ollama" data-en="Custom <tool_use> parser → works with any Ollama model">Parser &lt;tool_use&gt; custom → compatible n'importe quel modèle Ollama</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="specs-grid reveal d3">
+    <div class="spec">
+      <div class="spec-num">v1.2.1</div>
+      <div class="spec-lbl" data-fr="EXTENSION · MARKETPLACE" data-en="EXTENSION · MARKETPLACE">EXTENSION · MARKETPLACE</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">≥ 1.85</div>
+      <div class="spec-lbl" data-fr="VS CODE · ENGINE MIN" data-en="VS CODE · MIN ENGINE">VS CODE · ENGINE MIN</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">9</div>
+      <div class="spec-lbl" data-fr="OUTILS WORKSPACE EXPOSÉS" data-en="EXPOSED WORKSPACE TOOLS">OUTILS WORKSPACE EXPOSÉS</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">3</div>
+      <div class="spec-lbl" data-fr="TUNNELS PARALLÈLES · FAILOVER" data-en="PARALLEL TUNNELS · FAILOVER">TUNNELS PARALLÈLES · FAILOVER</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">AES-256-GCM</div>
+      <div class="spec-lbl" data-fr="CHIFFREMENT BOUT-EN-BOUT" data-en="END-TO-END ENCRYPTION">CHIFFREMENT BOUT-EN-BOUT</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">FR / EN</div>
+      <div class="spec-lbl" data-fr="UI · APPROBATIONS · DOCS" data-en="UI · APPROVALS · DOCS">UI · APPROBATIONS · DOCS</div>
+    </div>
+  </div>
+
+  <p class="reveal d3" style="margin-top: 24px; font-family: var(--mono); font-size: 12px; color: var(--muted); line-height: 1.7;" data-fr="<strong style='color: var(--accent)'>Workflow :</strong> on lance My_AI sur la machine hôte → bouton Relay → on copie la connection string → on la colle dans VS Code. À partir de là, le LLM local voit le workspace, propose des modifs, demande l'autorisation pour write/edit/run, et affiche chaque tool call sous forme de carte inline (orange = en cours · vert = succès · rouge = erreur · gris = refusé)." data-en="<strong style='color: var(--accent)'>Workflow:</strong> launch My_AI on the host machine → Relay button → copy the connection string → paste it in VS Code. From there, the local LLM sees the workspace, proposes edits, asks for approval on write/edit/run, and renders each tool call as an inline card (orange = running · green = success · red = error · gray = denied).">
+    <strong style="color: var(--accent)">Workflow :</strong> on lance My_AI sur la machine hôte → bouton Relay → on copie la connection string → on la colle dans VS Code. À partir de là, le LLM local voit le workspace, propose des modifs, demande l'autorisation pour write/edit/run, et affiche chaque tool call sous forme de carte inline (orange = en cours · vert = succès · rouge = erreur · gris = refusé).
+  </p>
+
+  <div style="margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap;" class="reveal d3">
+    <a href="https://marketplace.visualstudio.com/items?itemName=gonicolas12.my-ai" target="_blank" class="btn btn-primary" style="background: var(--accent); color: #fff;" data-fr="MARKETPLACE ↗" data-en="MARKETPLACE ↗">MARKETPLACE ↗</a>
+    <a href="https://github.com/gonicolas12/My_AI/tree/main/vscode_extension" target="_blank" class="btn btn-ghost" style="border-color: var(--bg); color: var(--bg);" data-fr="SOURCE ↗" data-en="SOURCE ↗">SOURCE ↗</a>
   </div>
 </section>
 
