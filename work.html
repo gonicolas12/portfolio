@@ -467,7 +467,7 @@ relay:
 
 <span class="kw">class</span> <span class="fn">AgentOrchestrator</span>:
     <span class="kw">def</span> <span class="fn">__init__</span>(self, model=<span class="str">"qwen3.5:4b"</span>):
-        self.llm = LocalLLM(model)                  <span class="cm"># Ollama wrapper</span>
+        self.llm = LocalLLM(model)
         self.memory = VectorMemory(<span class="str">"memory/vector_store"</span>)
         self.agents = {
             <span class="str">"code"</span>:     CodeAgent(self.llm),
