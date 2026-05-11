@@ -559,6 +559,11 @@
   .specs-grid .spec:nth-child(2n) { border-right: none; }
   .specs-grid .spec:nth-last-child(-n+4) { border-bottom: 1px solid var(--ink); }
   .specs-grid .spec:nth-last-child(-n+2) { border-bottom: none; }
+  .vsx-section .specs-grid { grid-template-columns: repeat(2, 1fr); }
+  .vsx-section .specs-grid .spec:nth-child(3n) { border-right: 1px solid var(--ink); }
+  .vsx-section .specs-grid .spec:nth-child(2n) { border-right: none; }
+  .vsx-section .specs-grid .spec:nth-last-child(-n+3) { border-bottom: 1px solid var(--ink); }
+  .vsx-section .specs-grid .spec:nth-last-child(-n+2) { border-bottom: none; }
   .dual { grid-template-columns: 1fr; }
 }
 
@@ -613,10 +618,14 @@
   .vsx-section { padding: 60px 16px; }
   .specs-section h3,
   .modules-section h3,
-  .mr-section h3 { font-size: clamp(30px, 9vw, 48px); margin-bottom: 20px; }
+  .mr-section h3,
+  .vsx-section h3 { font-size: clamp(30px, 9vw, 48px); margin-bottom: 20px; }
   .specs-grid { grid-template-columns: 1fr; }
   .specs-grid .spec { border-right: none; border-bottom: 1px solid var(--ink); }
   .specs-grid .spec:last-child { border-bottom: none; }
+  .vsx-section .specs-grid { grid-template-columns: 1fr; }
+  .vsx-section .specs-grid .spec { border-right: none; border-bottom: 1px solid var(--ink); }
+  .vsx-section .specs-grid .spec:last-child { border-bottom: none; }
   .spec { padding: 22px 18px; }
   .spec-num { font-size: 26px; }
   .module-tree { padding: 14px; }
