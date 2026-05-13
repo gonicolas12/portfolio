@@ -574,7 +574,10 @@
 @media (max-width: 900px) {
   .proj-hero { grid-template-columns: 1fr; }
   .agents-grid { grid-template-columns: 1fr; }
-  .agent { border-right: none; }
+  .agent,
+  .agent:nth-child(3n) { border-right: none; }
+  .agent:nth-last-child(-n+3) { border-bottom: 1px solid var(--ink); }
+  .agent:last-child { border-bottom: none; }
   .deep-grid { grid-template-columns: 1fr; }
   .specs-grid { grid-template-columns: repeat(2, 1fr); }
   .specs-grid .spec:nth-child(4n) { border-right: 1px solid var(--ink); }
@@ -658,10 +661,22 @@
   .voice-section .specs-grid .spec:nth-last-child(-n+3) { border-bottom: 1px solid var(--ink); }
   .voice-section .specs-grid .spec:last-child { border-bottom: none; }
   .specs-grid { grid-template-columns: 1fr; }
-  .specs-grid .spec { border-right: none; border-bottom: 1px solid var(--ink); }
+  .specs-grid .spec,
+  .specs-grid .spec:nth-child(4n),
+  .specs-grid .spec:nth-child(2n) { border-right: none; }
+  .specs-grid .spec,
+  .specs-grid .spec:nth-last-child(-n+4),
+  .specs-grid .spec:nth-last-child(-n+2) { border-bottom: 1px solid var(--ink); }
   .specs-grid .spec:last-child { border-bottom: none; }
   .vsx-section .specs-grid { grid-template-columns: 1fr; }
-  .vsx-section .specs-grid .spec { border-right: none; border-bottom: 1px solid var(--ink); }
+  .vsx-section .specs-grid .spec,
+  .vsx-section .specs-grid .spec:nth-child(4n),
+  .vsx-section .specs-grid .spec:nth-child(3n),
+  .vsx-section .specs-grid .spec:nth-child(2n) { border-right: none; }
+  .vsx-section .specs-grid .spec,
+  .vsx-section .specs-grid .spec:nth-last-child(-n+4),
+  .vsx-section .specs-grid .spec:nth-last-child(-n+3),
+  .vsx-section .specs-grid .spec:nth-last-child(-n+2) { border-bottom: 1px solid var(--ink); }
   .vsx-section .specs-grid .spec:last-child { border-bottom: none; }
   .spec { padding: 22px 18px; }
   .spec-num { font-size: 26px; }
