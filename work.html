@@ -58,6 +58,7 @@
       <span class="chip accent">CHROMADB</span>
       <span class="chip accent">MCP</span>
       <span class="chip accent">FASTAPI</span>
+      <span class="chip accent">FASTER-WHISPER</span>
       <span class="chip dev-only">SENTENCE-TRANSFORMERS</span>
       <span class="chip dev-only">HNSW</span>
       <span class="chip dev-only">SQLITE</span>
@@ -71,8 +72,9 @@
       <span class="chip dev-only">TYPESCRIPT</span>
       <span class="chip dev-only">VS CODE API</span>
       <span class="chip dev-only">AES-256-GCM</span>
+      <span class="chip dev-only">SOUNDDEVICE</span>
     </div>
-    <div class="dev-only dev-meta reveal d3" data-fr="v7.3.0 · MIT · Python 3.10+ · Extension VS Code v1.2.2" data-en="v7.3.0 · MIT · Python 3.10+ · VS Code extension v1.2.2">v7.3.0 · MIT · Python 3.10+ · Extension VS Code v1.2.2</div>
+    <div class="dev-only dev-meta reveal d3" data-fr="v7.4.0 · MIT · Python 3.10+ · Extension VS Code v1.2.2" data-en="v7.4.0 · MIT · Python 3.10+ · VS Code extension v1.2.2">v7.4.0 · MIT · Python 3.10+ · Extension VS Code v1.2.2</div>
     <div style="margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap;">
       <a href="https://github.com/gonicolas12/My_AI" target="_blank" class="btn btn-primary" style="background: var(--accent); color: #fff;">GITHUB ↗</a>
       <a href="https://github.com/gonicolas12/My_AI/releases" target="_blank" class="btn btn-ghost dev-only" style="border-color: var(--bg); color: var(--bg);" data-fr="RELEASES ↗" data-en="RELEASES ↗">RELEASES ↗</a>
@@ -388,7 +390,9 @@
 ├─ <span class="tk-dir">interfaces/</span>              <span class="tk-cm"># GUI CustomTkinter · CLI · Agents · Workflow</span>
 │  ├─ gui_modern.py · cli.py · agents_interface.py
 │  ├─ workflow_canvas.py · resource_monitor.py
-│  └─ gui/ · agents/
+│  ├─ gui/                    <span class="tk-cm"># widgets · chat_area · sidebar · streaming</span>
+│  │  └─ <span class="tk-accent">voice_input.py</span>           <span class="tk-cm"># faster-whisper · STT 100% local · 99+ langues</span>
+│  └─ agents/
 ├─ <span class="tk-accent">relay/</span>                   <span class="tk-cm"># PWA mobile · WebSocket · cloudflared tunnel</span>
 │  ├─ relay_server.py · relay_bridge.py
 │  └─ static/  (index.html · style.css · app.js)
@@ -450,8 +454,8 @@ relay:
   </div>
 
   <div class="reveal d2 release-note">
-    <span class="release-tag">v7.3.0 · 2026-05-07</span>
-    <span data-fr="Extension VS Code agentique — 9 outils workspace · E2EE AES-256-GCM · multi-tunnel failover." data-en="Agentic VS Code extension — 9 workspace tools · AES-256-GCM E2EE · multi-tunnel failover.">Extension VS Code agentique — 9 outils workspace · E2EE AES-256-GCM · multi-tunnel failover.</span>
+    <span class="release-tag">v7.4.0 · 2026-05-13</span>
+    <span data-fr="Saisie vocale 100% locale — faster-whisper, modèle `small` INT8, 99+ langues auto-détectées." data-en="100% local voice input — faster-whisper, `small` INT8 model, 99+ auto-detected languages.">Saisie vocale 100% locale — faster-whisper, modèle `small` INT8, 99+ langues auto-détectées.</span>
   </div>
 </section>
 
@@ -534,6 +538,83 @@ myaiRelay.requestTimeoutSeconds:     <span class="tk-num">15</span></pre>
     <a href="https://marketplace.visualstudio.com/items?itemName=gonicolas12.my-ai" target="_blank" class="btn btn-primary" style="background: var(--accent); color: #fff;" data-fr="MARKETPLACE ↗" data-en="MARKETPLACE ↗">MARKETPLACE ↗</a>
     <a href="https://github.com/gonicolas12/My_AI/tree/main/vscode_extension" target="_blank" class="btn btn-ghost" data-fr="SOURCE ↗" data-en="SOURCE ↗">SOURCE ↗</a>
   </div>
+</section>
+
+<!-- DEV-ONLY: Voice mode (v7.4.0) -->
+<section class="dev-only voice-section">
+  <div class="sec-meta reveal">
+    <span>// SPEC.05 — VOICE MODE</span>
+    <span data-fr="SAISIE VOCALE · 100% LOCAL" data-en="VOICE INPUT · 100% LOCAL">SAISIE VOCALE · 100% LOCAL</span>
+  </div>
+  <h3 class="reveal" data-fr-html="Le <em>mode vocal</em>." data-en-html="The <em>voice mode</em>.">Le <em>mode vocal</em>.</h3>
+  <p class="reveal d1 specs-intro" data-fr="Saisie vocale intégrée à chaque zone de texte de l'app — chat principal, conversation, onglet Agents. Tout est transcrit en local via faster-whisper. La voix ne quitte jamais la machine. Nouveau dans la v7.4.0." data-en="Voice input wired into every text area of the app — main chat, conversation view, Agents tab. Everything is transcribed locally via faster-whisper. Voice never leaves the machine. New in v7.4.0.">Saisie vocale intégrée à chaque zone de texte de l'app — chat principal, conversation, onglet Agents. Tout est transcrit en local via faster-whisper. La voix ne quitte jamais la machine. Nouveau dans la v7.4.0.</p>
+
+  <div class="dual reveal d2">
+    <div class="dual-col">
+      <div class="dual-head" data-fr="STACK · PIPELINE AUDIO" data-en="STACK · AUDIO PIPELINE">STACK · PIPELINE AUDIO</div>
+      <table class="kv-table">
+        <tr><th data-fr="COMPOSANT" data-en="COMPONENT">COMPOSANT</th><th data-fr="VALEUR" data-en="VALUE">VALEUR</th></tr>
+        <tr><td data-fr="Moteur STT" data-en="STT engine">Moteur STT</td><td>faster-whisper</td></tr>
+        <tr><td data-fr="Modèle" data-en="Model">Modèle</td><td>small · INT8 · ~150 Mo</td></tr>
+        <tr><td data-fr="Capture audio" data-en="Audio capture">Capture audio</td><td>sounddevice · 16 kHz mono</td></tr>
+        <tr><td>VAD</td><td data-fr="intégré · filtre silences" data-en="built-in · silence filter">intégré · filtre silences</td></tr>
+        <tr><td data-fr="Chargement" data-en="Loading">Chargement</td><td data-fr="lazy · ~5 s au 1er usage" data-en="lazy · ~5 s on first use">lazy · ~5 s au 1er usage</td></tr>
+        <tr><td data-fr="Transcription" data-en="Transcription">Transcription</td><td data-fr="1 à 3 s · CPU only" data-en="1 to 3 s · CPU only">1 à 3 s · CPU only</td></tr>
+        <tr><td data-fr="Langues" data-en="Languages">Langues</td><td data-fr="99+ · auto-détectées" data-en="99+ · auto-detected">99+ · auto-détectées</td></tr>
+        <tr><td data-fr="Threading" data-en="Threading">Threading</td><td data-fr="thread-safe · callback async vers GUI" data-en="thread-safe · async callback to GUI">thread-safe · callback async vers GUI</td></tr>
+      </table>
+      <p class="dual-foot" data-fr="Module : interfaces/gui/voice_input.py · classe VoiceInput. Dégradation gracieuse si faster-whisper / sounddevice ne sont pas installés." data-en="Module: interfaces/gui/voice_input.py · class VoiceInput. Graceful degradation if faster-whisper / sounddevice aren't installed.">Module : <code>interfaces/gui/voice_input.py</code> · classe <code>VoiceInput</code>. Dégradation gracieuse si faster-whisper / sounddevice ne sont pas installés.</p>
+    </div>
+
+    <div class="dual-col">
+      <div class="dual-head" data-fr="UX · TOGGLE 1 BOUTON" data-en="UX · 1-BUTTON TOGGLE">UX · TOGGLE 1 BOUTON</div>
+      <pre class="config-block"><span class="tk-cm"># 3 états visuels du bouton micro</span>
+idle:         🎙️  <span class="tk-cm"># gris</span>
+recording:    <span class="tk-accent">●</span>   <span class="tk-cm"># rouge pulsant</span>
+transcribing: ⏳  <span class="tk-cm"># orange</span>
+
+<span class="tk-cm"># 3 zones de saisie équipées</span>
+chat_home · conversation · agents_tab</pre>
+      <ul class="dual-list">
+        <li data-fr="1er clic : enregistrement démarre · pas de limite de durée" data-en="1st click: recording starts · no time limit">1er clic : enregistrement démarre · pas de limite de durée</li>
+        <li data-fr="2e clic : arrêt + transcription auto · texte inséré au curseur (avec espace auto)" data-en="2nd click: stop + auto transcription · text inserted at cursor (with auto space)">2e clic : arrêt + transcription auto · texte inséré au curseur (avec espace auto)</li>
+        <li data-fr="Dictée et frappe alternables sans perte de focus — idéal pour les prompts longs" data-en="Voice and keyboard interchangeable without losing focus — ideal for long prompts">Dictée et frappe alternables sans perte de focus — idéal pour les prompts longs</li>
+        <li data-fr="Aucune transmission réseau · zéro API · zéro clé · zéro compte" data-en="No network traffic · zero API · zero key · zero account">Aucune transmission réseau · zéro API · zéro clé · zéro compte</li>
+        <li data-fr="Compatible Relay mobile (PWA) — la dictée fonctionne aussi côté téléphone" data-en="Mobile Relay (PWA) compatible — voice input also works on phone">Compatible Relay mobile (PWA) — la dictée fonctionne aussi côté téléphone</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="specs-grid reveal d3">
+    <div class="spec">
+      <div class="spec-num">~150 MB</div>
+      <div class="spec-lbl" data-fr="WHISPER · MODÈLE SMALL INT8" data-en="WHISPER · SMALL INT8 MODEL">WHISPER · MODÈLE SMALL INT8</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">99+</div>
+      <div class="spec-lbl" data-fr="LANGUES · AUTO-DÉTECTION" data-en="LANGUAGES · AUTO-DETECT">LANGUES · AUTO-DÉTECTION</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">16 kHz</div>
+      <div class="spec-lbl" data-fr="CAPTURE · MONO · SOUNDDEVICE" data-en="CAPTURE · MONO · SOUNDDEVICE">CAPTURE · MONO · SOUNDDEVICE</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">1 — 3 s</div>
+      <div class="spec-lbl" data-fr="LATENCE TRANSCRIPTION · CPU" data-en="TRANSCRIPTION LATENCY · CPU">LATENCE TRANSCRIPTION · CPU</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">3</div>
+      <div class="spec-lbl" data-fr="ZONES DE SAISIE ÉQUIPÉES" data-en="EQUIPPED INPUT AREAS">ZONES DE SAISIE ÉQUIPÉES</div>
+    </div>
+    <div class="spec">
+      <div class="spec-num">0</div>
+      <div class="spec-lbl" data-fr="OCTET ENVOYÉ · 100% LOCAL" data-en="BYTES SENT · 100% LOCAL">OCTET ENVOYÉ · 100% LOCAL</div>
+    </div>
+  </div>
+
+  <p class="reveal d3" style="margin-top: 24px; font-family: var(--mono); font-size: 12px; color: var(--muted); line-height: 1.7;" data-fr="<strong style='color: var(--accent)'>Pourquoi local ?</strong> Les services STT cloud (Whisper API, Google, Azure) impliquent d'envoyer chaque enregistrement chez un tiers. Pour un assistant pensé local-first, c'était disqualifiant. faster-whisper tourne sur CPU en INT8 avec des perfs proches du temps réel, donc plus aucun compromis : la voix reste sur la machine, point." data-en="<strong style='color: var(--accent)'>Why local?</strong> Cloud STT services (Whisper API, Google, Azure) all mean shipping every recording to a third party. For a local-first assistant, that was a non-starter. faster-whisper runs CPU-side in INT8 close to real-time, so no compromise needed: voice stays on the machine, period.">
+    <strong style="color: var(--accent)">Pourquoi local ?</strong> Les services STT cloud (Whisper API, Google, Azure) impliquent d'envoyer chaque enregistrement chez un tiers. Pour un assistant pensé local-first, c'était disqualifiant. faster-whisper tourne sur CPU en INT8 avec des perfs proches du temps réel, donc plus aucun compromis : la voix reste sur la machine, point.
+  </p>
 </section>
 
 <!-- Code snippet -->
