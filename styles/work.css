@@ -650,7 +650,12 @@
   .vsx-section h3,
   .voice-section h3 { font-size: clamp(30px, 9vw, 48px); margin-bottom: 20px; }
   .voice-section .specs-grid { grid-template-columns: 1fr; }
-  .voice-section .specs-grid .spec { border-right: none; border-bottom: 1px solid var(--ink); }
+  .voice-section .specs-grid .spec,
+  .voice-section .specs-grid .spec:nth-child(4n),
+  .voice-section .specs-grid .spec:nth-child(3n) { border-right: none; }
+  .voice-section .specs-grid .spec,
+  .voice-section .specs-grid .spec:nth-last-child(-n+4),
+  .voice-section .specs-grid .spec:nth-last-child(-n+3) { border-bottom: 1px solid var(--ink); }
   .voice-section .specs-grid .spec:last-child { border-bottom: none; }
   .specs-grid { grid-template-columns: 1fr; }
   .specs-grid .spec { border-right: none; border-bottom: 1px solid var(--ink); }
