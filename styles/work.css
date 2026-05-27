@@ -525,33 +525,62 @@
 }
 .other-proj h2 em { font-style: italic; color: var(--accent); font-family: 'Space Grotesk'; font-weight: 700; }
 
-.coming-soon {
-  border: 1px dashed var(--line-soft);
-  padding: 80px 40px;
-  text-align: center;
+/* Project teaser card */
+.proj-teaser {
+  border: 1px solid var(--ink);
+  padding: 48px 40px;
   background: var(--paper);
+  position: relative;
 }
-.coming-soon .blink {
-  display: inline-block;
-  width: 12px; height: 12px; background: var(--accent);
-  margin-right: 10px; vertical-align: middle;
-  animation: blink 1.4s step-end infinite;
+.proj-teaser-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
 }
-@keyframes blink { 50% { opacity: 0.2; } }
-.coming-soon h4 {
-  font-family: var(--display);
-  font-size: 36px;
-  margin: 0 0 12px;
-  letter-spacing: -0.02em;
-}
-.coming-soon p {
-  font-family: var(--serif);
+.proj-teaser-year {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
   color: var(--muted);
-  max-width: 500px;
-  margin: 0 auto 20px;
 }
-.coming-soon .btn {
-  margin-top: 10px;
+.proj-teaser h3 {
+  font-family: var(--display);
+  font-size: clamp(40px, 6vw, 72px);
+  letter-spacing: -0.03em;
+  margin: 0 0 12px;
+  font-weight: 900;
+  line-height: 0.95;
+}
+.proj-teaser-tagline {
+  font-family: var(--serif);
+  font-size: 20px;
+  color: var(--accent);
+  margin: 0 0 20px;
+}
+.proj-teaser-desc {
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 700px;
+  margin: 0 0 24px;
+}
+.proj-teaser-stack {
+  margin-bottom: 24px;
+}
+.proj-teaser-dev {
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  border: 1px dashed var(--line-soft);
+  background: var(--bg);
+}
+.proj-teaser-dev p {
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
 }
 
 /* Mini CTA */
@@ -713,9 +742,12 @@
 
   .other-proj { padding: 60px 16px; }
   .other-proj h2 { margin-bottom: 28px; padding-bottom: 14px; }
-  .coming-soon { padding: 50px 24px; }
-  .coming-soon h4 { font-size: 26px; }
-  .coming-soon p { font-size: 14px; }
+  .proj-teaser { padding: 32px 20px; }
+  .proj-teaser h3 { font-size: clamp(30px, 10vw, 48px); }
+  .proj-teaser-tagline { font-size: 16px; }
+  .proj-teaser-desc { font-size: 14px; }
+  .proj-teaser-dev { padding: 12px 14px; }
+  .proj-teaser-dev p { font-size: 13px; }
 
   .mini-cta { padding: 60px 16px; }
 }

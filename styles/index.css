@@ -226,6 +226,16 @@
 }
 @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.3; transform: scale(1.4); } }
 
+/* "Coming soon" timeline item */
+.now-item-soon {
+  border-style: dashed;
+  border-color: var(--line-soft);
+  background: var(--bg);
+}
+.now-item-soon:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.now-item-soon .now-year { color: var(--muted); }
+.now-item-soon:hover .now-year { color: var(--accent); }
+
 /* FEATURED WORK */
 .featured {
   background: var(--ink);

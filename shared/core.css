@@ -143,6 +143,20 @@ body::before {
 .chip.accent { background: var(--accent); color: #fff; border-color: var(--accent); }
 .chip.dark { background: var(--ink); color: var(--bg); }
 
+/* Badge "coming soon" */
+.badge-soon {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  padding: 4px 12px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+  animation: badge-blink 1.4s step-end infinite;
+}
+@keyframes badge-blink { 50% { opacity: 0.4; } }
+
 /* Buttons */
 .btn {
   display: inline-block;

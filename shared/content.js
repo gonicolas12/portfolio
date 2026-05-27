@@ -104,6 +104,21 @@ window.PORTFOLIO = {
         { k: "LOCAL", v: "100%" },
         { k: "TOKENS", v: "10M" }
       ]
+    },
+    {
+      id: "my-os",
+      name: "MY_OS",
+      tagline: { fr: "Linux avec IA intégrée au système", en: "Linux with system-integrated AI" },
+      year: "2026",
+      status: "COMING_SOON",
+      featured: false,
+      repo: "gonicolas12/My_OS",
+      desc: {
+        fr: "Distribution Linux avec un assistant IA intégré au système. Raccourci clavier global, pilotage du PC en langage naturel, modèle local Ollama par défaut + cloud Claude optionnel, sécurisé par conception.",
+        en: "Linux distribution with a system-integrated AI assistant. Global keyboard shortcut, natural language PC control, local Ollama model by default + optional Claude cloud, secure by design."
+      },
+      stack: ["Linux", "Ollama", "Claude", "Python"],
+      metrics: []
     }
   ]
 };
