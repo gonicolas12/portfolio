@@ -195,6 +195,24 @@
   margin: 0 0 14px;
 }
 .tl-stack { margin-top: 10px; }
+.tl-item h3 .badge-soon {
+  vertical-align: middle;
+  margin-left: 12px;
+  position: relative;
+  top: -3px;
+}
+.tl-repo {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.tl-repo:hover { border-bottom-color: var(--accent); }
 
 @media (max-width: 900px) {
   .timeline { padding-left: 32px; }
