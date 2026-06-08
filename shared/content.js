@@ -1,7 +1,7 @@
 // Shared content data for Nicolas Gouy portfolio V2
 window.PORTFOLIO = {
   name: { first: "NICOLAS", last: "GOUY" },
-  age: 21,
+  age: 22,
   location: "Toulouse, France",
   email: "nicolasgouy@yahoo.com",
   phone: "07 86 33 41 38",
@@ -12,8 +12,8 @@ window.PORTFOLIO = {
   permis: "B + véhiculé",
 
   profile: {
-    fr: "J'ai 21 ans, je suis à la recherche d'une alternance en data / IA pour mettre en pratique mes compétences en analyse de données et intelligence artificielle. Curieux et motivé, je souhaite contribuer activement à des projets innovants tout en enrichissant mon expérience professionnelle.",
-    en: "I'm 21 and looking for a data / AI apprenticeship to put my skills in data analysis and artificial intelligence into practice. Curious and motivated, I want to actively contribute to innovative projects while growing my professional experience."
+    fr: "J'ai 22 ans, je suis à la recherche d'une alternance en data / IA pour mettre en pratique mes compétences en analyse de données et intelligence artificielle. Curieux et motivé, je souhaite contribuer activement à des projets innovants tout en enrichissant mon expérience professionnelle.",
+    en: "I'm 22 and looking for a data / AI apprenticeship to put my skills in data analysis and artificial intelligence into practice. Curious and motivated, I want to actively contribute to innovative projects while growing my professional experience."
   },
 
   manifesto: {
