@@ -74,7 +74,7 @@
       <span class="chip dev-only">AES-256-GCM</span>
       <span class="chip dev-only">SOUNDDEVICE</span>
     </div>
-    <div class="dev-only dev-meta reveal d3" data-fr="v7.4.0 · MIT · Python 3.10+ · Extension VS Code v1.2.3" data-en="v7.4.0 · MIT · Python 3.10+ · VS Code extension v1.2.3">v7.4.0 · MIT · Python 3.10+ · Extension VS Code v1.2.3</div>
+    <div class="dev-only dev-meta reveal d3" data-fr="v7.5.0 · MIT · Python 3.10+ · Extension VS Code v1.2.3" data-en="v7.5.0 · MIT · Python 3.10+ · VS Code extension v1.2.3">v7.5.0 · MIT · Python 3.10+ · Extension VS Code v1.2.3</div>
     <div style="margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap;">
       <a href="https://github.com/gonicolas12/My_AI" target="_blank" class="btn btn-primary" style="background: var(--accent); color: #fff;">GITHUB ↗</a>
       <a href="https://github.com/gonicolas12/My_AI/releases" target="_blank" class="btn btn-ghost dev-only" style="border-color: var(--bg); color: var(--bg);" data-fr="RELEASES ↗" data-en="RELEASES ↗">RELEASES ↗</a>
@@ -446,7 +446,8 @@ relay:
   host:              <span class="tk-str">"0.0.0.0"</span></pre>
       <ul class="dual-list">
         <li data-fr="Tunnel cloudflared automatique → URL HTTPS publique + QR code partageable" data-en="Automatic cloudflared tunnel → public HTTPS URL + shareable QR code">Tunnel cloudflared automatique → URL HTTPS publique + QR code partageable</li>
-        <li data-fr="Sync messages temps réel via WebSocket, indicateurs de frappe, thème dark" data-en="Real-time message sync via WebSocket, typing indicators, dark theme">Sync messages temps réel via WebSocket, indicateurs de frappe, thème dark</li>
+        <li data-fr="Onglets Chat / Agents — sync messages temps réel via WebSocket, indicateurs de frappe, thème dark" data-en="Chat / Agents tabs — real-time message sync via WebSocket, typing indicators, dark theme">Onglets Chat / Agents — sync messages temps réel via WebSocket, indicateurs de frappe, thème dark</li>
+        <li data-fr="Page Agents mobile : grille des 9 agents + custom, canvas workflow type n8n, mode débat, exécution sur le PC hôte" data-en="Mobile Agents page: grid of the 9 agents + custom, n8n-style workflow canvas, debate mode, execution on the host PC">Page Agents mobile : grille des 9 agents + custom, canvas workflow type n8n, mode débat, exécution sur le PC hôte</li>
         <li data-fr="Pièces jointes ≤ 25 MB (images, PDF, DOCX, XLSX, CSV, code)" data-en="Attachments ≤ 25 MB (images, PDF, DOCX, XLSX, CSV, code)">Pièces jointes ≤ 25 MB (images, PDF, DOCX, XLSX, CSV, code)</li>
         <li data-fr="PWA installable, code servi depuis relay/static/ (Vanilla JS)" data-en="Installable PWA, code served from relay/static/ (Vanilla JS)">PWA installable, code servi depuis relay/static/ (Vanilla JS)</li>
       </ul>
@@ -454,8 +455,8 @@ relay:
   </div>
 
   <div class="reveal d2 release-note">
-    <span class="release-tag">v7.4.0 · 2026-05-13</span>
-    <span data-fr="Saisie vocale 100% locale — faster-whisper, modèle `small` INT8, 99+ langues auto-détectées." data-en="100% local voice input — faster-whisper, `small` INT8 model, 99+ auto-detected languages.">Saisie vocale 100% locale — faster-whisper, modèle `small` INT8, 99+ langues auto-détectées.</span>
+    <span class="release-tag">v7.5.0 · 2026-06-10</span>
+    <span data-fr="Page Agents sur My_AI Relay — la grille d'agents, le canvas workflow type n8n et le mode débat arrivent sur l'interface mobile." data-en="Agents page on My_AI Relay — the agent grid, the n8n-style workflow canvas and debate mode come to the mobile interface.">Page Agents sur My_AI Relay — la grille d'agents, le canvas workflow type n8n et le mode débat arrivent sur l'interface mobile.</span>
   </div>
 </section>
 
@@ -540,14 +541,14 @@ myaiRelay.requestTimeoutSeconds:     <span class="tk-num">15</span></pre>
   </div>
 </section>
 
-<!-- DEV-ONLY: Voice mode (v7.4.0) -->
+<!-- DEV-ONLY: Voice mode -->
 <section class="dev-only voice-section">
   <div class="sec-meta reveal">
     <span>// SPEC.05 — VOICE MODE</span>
     <span data-fr="SAISIE VOCALE · 100% LOCAL" data-en="VOICE INPUT · 100% LOCAL">SAISIE VOCALE · 100% LOCAL</span>
   </div>
   <h3 class="reveal" data-fr-html="Le <em>mode vocal</em>." data-en-html="The <em>voice mode</em>.">Le <em>mode vocal</em>.</h3>
-  <p class="reveal d1 specs-intro" data-fr="Saisie vocale intégrée à chaque zone de texte de l'app — chat principal, conversation, onglet Agents. Tout est transcrit en local via faster-whisper. La voix ne quitte jamais la machine. Nouveau dans la v7.4.0." data-en="Voice input wired into every text area of the app — main chat, conversation view, Agents tab. Everything is transcribed locally via faster-whisper. Voice never leaves the machine. New in v7.4.0.">Saisie vocale intégrée à chaque zone de texte de l'app — chat principal, conversation, onglet Agents. Tout est transcrit en local via faster-whisper. La voix ne quitte jamais la machine. Nouveau dans la v7.4.0.</p>
+  <p class="reveal d1 specs-intro" data-fr="Saisie vocale intégrée à chaque zone de texte de l'app — chat principal, conversation, onglet Agents. Tout est transcrit en local via faster-whisper. La voix ne quitte jamais la machine." data-en="Voice input wired into every text area of the app — main chat, conversation view, Agents tab. Everything is transcribed locally via faster-whisper. Voice never leaves the machine.">Saisie vocale intégrée à chaque zone de texte de l'app — chat principal, conversation, onglet Agents. Tout est transcrit en local via faster-whisper. La voix ne quitte jamais la machine.</p>
 
   <div class="dual reveal d2">
     <div class="dual-col">
