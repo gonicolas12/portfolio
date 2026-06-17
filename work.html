@@ -390,9 +390,11 @@
 ├─ <span class="tk-dir">generators/</span>              <span class="tk-cm"># export documents & code</span>
 ├─ <span class="tk-dir">interfaces/</span>              <span class="tk-cm"># GUI CustomTkinter · CLI · Agents · Workflow</span>
 │  ├─ gui_modern.py · cli.py · agents_interface.py
+│  ├─ onboarding.py           <span class="tk-cm"># assistant 1er lancement · détecte RAM/CPU/GPU · modèle auto</span>
 │  ├─ workflow_canvas.py · resource_monitor.py
-│  ├─ gui/                    <span class="tk-cm"># widgets · chat_area · sidebar · streaming</span>
-│  │  └─ voice_input.py       <span class="tk-cm"># faster-whisper · STT 100% local · 99+ langues</span>
+│  ├─ gui/                    <span class="tk-cm"># widgets · chat_area · sidebar · streaming · settings_panel</span>
+│  │  ├─ voice_input.py       <span class="tk-cm"># faster-whisper · STT 100% local · 99+ langues</span>
+│  │  └─ voice_output.py      <span class="tk-cm"># pyttsx3 · TTS · voix par langue · auto-lecture</span>
 │  └─ agents/
 ├─ <span class="tk-accent">relay/</span>                   <span class="tk-cm"># PWA mobile · onglets Chat / Agents · WebSocket · cloudflared</span>
 │  ├─ relay_server.py · relay_bridge.py · agent_relay.py
