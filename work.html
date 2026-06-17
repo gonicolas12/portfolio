@@ -73,8 +73,9 @@
       <span class="chip dev-only">VS CODE API</span>
       <span class="chip dev-only">AES-256-GCM</span>
       <span class="chip dev-only">SOUNDDEVICE</span>
+      <span class="chip dev-only">PYTTSX3</span>
     </div>
-    <div class="dev-only dev-meta reveal d3" data-fr="v7.5.0 · MIT · Python 3.10+ · Extension VS Code v1.2.3" data-en="v7.5.0 · MIT · Python 3.10+ · VS Code extension v1.2.3">v7.5.0 · MIT · Python 3.10+ · Extension VS Code v1.2.3</div>
+    <div class="dev-only dev-meta reveal d3" data-fr="v7.6.0 · MIT · Python 3.10+ · Extension VS Code v1.2.3" data-en="v7.6.0 · MIT · Python 3.10+ · VS Code extension v1.2.3">v7.6.0 · MIT · Python 3.10+ · Extension VS Code v1.2.3</div>
     <div style="margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap;">
       <a href="https://github.com/gonicolas12/My_AI" target="_blank" class="btn btn-primary" style="background: var(--accent); color: #fff;">GITHUB ↗</a>
       <a href="https://github.com/gonicolas12/My_AI/releases" target="_blank" class="btn btn-ghost dev-only" style="border-color: var(--bg); color: var(--bg);" data-fr="RELEASES ↗" data-en="RELEASES ↗">RELEASES ↗</a>
@@ -431,7 +432,7 @@
         <tr><td>llava</td><td>4.7 GB</td><td data-fr="alternative" data-en="alternative">alternative</td></tr>
         <tr><td>llama3.2-vision</td><td>—</td><td data-fr="alternative" data-en="alternative">alternative</td></tr>
       </table>
-      <p class="dual-foot" data-fr="Configurable via Modelfile + config.yaml › llm.local.default_model. Fallback automatique sur réponses pattern-based si Ollama indisponible." data-en="Configurable via Modelfile + config.yaml › llm.local.default_model. Automatic fallback to pattern-based responses if Ollama is unavailable.">Configurable via Modelfile + config.yaml › llm.local.default_model. Fallback automatique sur réponses pattern-based si Ollama indisponible.</p>
+      <p class="dual-foot" data-fr="Au 1er lancement, l'assistant de configuration détecte RAM / CPU / GPU et recommande puis télécharge le modèle adapté — sans édition manuelle. Réglages affinables ensuite via le panneau intégré (température, contexte, timeout) ou config.yaml › llm.local.default_model. Fallback automatique sur réponses pattern-based si Ollama indisponible." data-en="On first launch, the setup assistant detects RAM / CPU / GPU and recommends then downloads the right model — no manual editing. Fine-tune afterwards via the built-in settings panel (temperature, context, timeout) or config.yaml › llm.local.default_model. Automatic fallback to pattern-based responses if Ollama is unavailable.">Au 1er lancement, l'assistant de configuration détecte RAM / CPU / GPU et recommande puis télécharge le modèle adapté — sans édition manuelle. Réglages affinables ensuite via le panneau intégré (température, contexte, timeout) ou config.yaml › llm.local.default_model. Fallback automatique sur réponses pattern-based si Ollama indisponible.</p>
     </div>
 
     <div class="dual-col">
@@ -452,11 +453,6 @@ relay:
         <li data-fr="PWA installable, code servi depuis relay/static/ (Vanilla JS)" data-en="Installable PWA, code served from relay/static/ (Vanilla JS)">PWA installable, code servi depuis relay/static/ (Vanilla JS)</li>
       </ul>
     </div>
-  </div>
-
-  <div class="reveal d2 release-note">
-    <span class="release-tag">v7.5.0 · 2026-06-10</span>
-    <span data-fr="Page Agents sur My_AI Relay — la grille d'agents, le canvas workflow type n8n et le mode débat arrivent sur l'interface mobile." data-en="Agents page on My_AI Relay — the agent grid, the n8n-style workflow canvas and debate mode come to the mobile interface.">Page Agents sur My_AI Relay — la grille d'agents, le canvas workflow type n8n et le mode débat arrivent sur l'interface mobile.</span>
   </div>
 </section>
 
@@ -545,10 +541,10 @@ myaiRelay.requestTimeoutSeconds:     <span class="tk-num">15</span></pre>
 <section class="dev-only voice-section">
   <div class="sec-meta reveal">
     <span>// SPEC.05 — VOICE MODE</span>
-    <span data-fr="SAISIE VOCALE · 100% LOCAL" data-en="VOICE INPUT · 100% LOCAL">SAISIE VOCALE · 100% LOCAL</span>
+    <span data-fr="VOIX · ENTRÉE &amp; SORTIE · 100% LOCAL" data-en="VOICE · INPUT &amp; OUTPUT · 100% LOCAL">VOIX · ENTRÉE &amp; SORTIE · 100% LOCAL</span>
   </div>
   <h3 class="reveal" data-fr-html="Le <em>mode vocal</em>." data-en-html="The <em>voice mode</em>.">Le <em>mode vocal</em>.</h3>
-  <p class="reveal d1 specs-intro" data-fr="Saisie vocale intégrée à chaque zone de texte de l'app — chat principal, conversation, onglet Agents. Tout est transcrit en local via faster-whisper. La voix ne quitte jamais la machine." data-en="Voice input wired into every text area of the app — main chat, conversation view, Agents tab. Everything is transcribed locally via faster-whisper. Voice never leaves the machine.">Saisie vocale intégrée à chaque zone de texte de l'app — chat principal, conversation, onglet Agents. Tout est transcrit en local via faster-whisper. La voix ne quitte jamais la machine.</p>
+  <p class="reveal d1 specs-intro" data-fr="Voix dans les deux sens, 100% local. En entrée : dictée intégrée à chaque zone de texte (chat principal, conversation, onglet Agents), transcrite via faster-whisper. En sortie : lecture vocale des réponses via pyttsx3 — bouton ▶ sous chaque message + bascule auto-lecture, avec une voix adaptée à la langue détectée. La voix ne quitte jamais la machine." data-en="Voice both ways, 100% local. Input: dictation wired into every text area (main chat, conversation view, Agents tab), transcribed via faster-whisper. Output : spoken responses via pyttsx3 — a ▶ button under each message + an auto-read toggle, with a voice matching the detected language. Voice never leaves the machine.">Voix dans les deux sens, 100% local. En entrée : dictée intégrée à chaque zone de texte (chat principal, conversation, onglet Agents), transcrite via faster-whisper. En sortie : lecture vocale des réponses via pyttsx3 — bouton ▶ sous chaque message + bascule auto-lecture, avec une voix adaptée à la langue détectée. La voix ne quitte jamais la machine.</p>
 
   <div class="dual reveal d2">
     <div class="dual-col">
@@ -574,12 +570,13 @@ idle:         🎙️  <span class="tk-cm"># gris</span>
 recording:    <span class="tk-accent">●</span>   <span class="tk-cm"># rouge pulsant</span>
 transcribing: ⏳  <span class="tk-cm"># orange</span>
 
-<span class="tk-cm"># 3 zones de saisie équipées</span>
-chat_home · conversation · agents_tab</pre>
+<span class="tk-cm"># sortie · lecture des réponses</span>
+play: ▶  ·  auto-read: toggle sidebar</pre>
       <ul class="dual-list">
         <li data-fr="1er clic : enregistrement démarre · pas de limite de durée" data-en="1st click: recording starts · no time limit">1er clic : enregistrement démarre · pas de limite de durée</li>
         <li data-fr="2e clic : arrêt + transcription auto · texte inséré au curseur (avec espace auto)" data-en="2nd click: stop + auto transcription · text inserted at cursor (with auto space)">2e clic : arrêt + transcription auto · texte inséré au curseur (avec espace auto)</li>
-        <li data-fr="Dictée et frappe alternables sans perte de focus — idéal pour les prompts longs" data-en="Voice and keyboard interchangeable without losing focus — ideal for long prompts">Dictée et frappe alternables sans perte de focus — idéal pour les prompts longs</li>
+        <li data-fr="Sortie vocale : bouton ▶ sous chaque réponse + auto-lecture · markdown et code retirés avant lecture" data-en="Voice output : a ▶ button under each response + auto-read · markdown and code stripped before reading">Sortie vocale : bouton ▶ sous chaque réponse + auto-lecture · markdown et code retirés avant lecture</li>
+        <li data-fr="Voix de sortie alignée sur la langue détectée dans la réponse" data-en="Output voice aligned with the language detected in the response">Voix de sortie alignée sur la langue détectée dans la réponse</li>
         <li data-fr="Aucune transmission réseau · zéro API · zéro clé · zéro compte" data-en="No network traffic · zero API · zero key · zero account">Aucune transmission réseau · zéro API · zéro clé · zéro compte</li>
         <li data-fr="Compatible Relay mobile (PWA) — la dictée fonctionne aussi côté téléphone" data-en="Mobile Relay (PWA) compatible — voice input also works on phone">Compatible Relay mobile (PWA) — la dictée fonctionne aussi côté téléphone</li>
       </ul>
@@ -616,6 +613,11 @@ chat_home · conversation · agents_tab</pre>
   <p class="reveal d3" style="margin-top: 24px; font-family: var(--mono); font-size: 12px; color: var(--muted); line-height: 1.7;" data-fr="<strong style='color: var(--accent)'>Pourquoi local ?</strong> Les services STT cloud (Whisper API, Google, Azure) impliquent d'envoyer chaque enregistrement chez un tiers. Pour un assistant pensé local-first, c'était disqualifiant. faster-whisper tourne sur CPU en INT8 avec des perfs proches du temps réel, donc plus aucun compromis : la voix reste sur la machine, point." data-en="<strong style='color: var(--accent)'>Why local?</strong> Cloud STT services (Whisper API, Google, Azure) all mean shipping every recording to a third party. For a local-first assistant, that was a non-starter. faster-whisper runs CPU-side in INT8 close to real-time, so no compromise needed: voice stays on the machine, period.">
     <strong style="color: var(--accent)">Pourquoi local ?</strong> Les services STT cloud (Whisper API, Google, Azure) impliquent d'envoyer chaque enregistrement chez un tiers. Pour un assistant pensé local-first, c'était disqualifiant. faster-whisper tourne sur CPU en INT8 avec des perfs proches du temps réel, donc plus aucun compromis : la voix reste sur la machine, point.
   </p>
+
+  <div class="reveal d3 release-note">
+    <span class="release-tag">v7.6.0 · 2026-06-16</span>
+    <span data-fr="Voix &amp; Setup — sortie vocale des réponses (pyttsx3, bouton ▶ + auto-lecture, voix alignée sur la langue), assistant de configuration au 1er lancement (détection RAM / CPU / GPU → modèle recommandé + téléchargé) et panneau de réglages intégré (gestion des modèles Ollama, température, fenêtre de contexte, timeout, langue, auto-lecture)." data-en="Voice &amp; Setup — spoken responses (pyttsx3, ▶ button + auto-read, language-aligned voice), a first-launch setup assistant (RAM / CPU / GPU detection → recommended model auto-downloaded) and a built-in settings panel (Ollama model management, temperature, context window, timeout, language, auto-read).">Voix &amp; Setup — sortie vocale des réponses (pyttsx3, bouton ▶ + auto-lecture, voix alignée sur la langue), assistant de configuration au 1er lancement (détection RAM / CPU / GPU → modèle recommandé + téléchargé) et panneau de réglages intégré (gestion des modèles Ollama, température, fenêtre de contexte, timeout, langue, auto-lecture).</span>
+  </div>
 </section>
 
 <!-- Code snippet -->
