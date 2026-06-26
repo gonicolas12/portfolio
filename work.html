@@ -383,50 +383,69 @@
 
   <div class="module-tree reveal d2">
 <pre>my_ai/
-├─ <span class="tk-dir">core/</span>                    <span class="tk-cm"># moteur, orchestrateurs, API, MCP</span>
+├─ <span class="tk-dir">core/</span>                      <span class="tk-cm"># moteur · orchestrateurs · API · MCP · scheduler</span>
 │  ├─ ai_engine.py            <span class="tk-cm"># point d'entrée intelligence</span>
-│  ├─ chat_orchestrator.py    <span class="tk-cm"># boucle ReAct · scratchpad XML · MAX_TOURS=15</span>
+│  ├─ chat_orchestrator.py    <span class="tk-cm"># boucle ReAct + Plan & Execute · scratchpad XML</span>
 │  ├─ agent_orchestrator.py   <span class="tk-cm"># page Agents · historiques séparés</span>
-│  ├─ api_server.py           <span class="tk-cm"># FastAPI</span>
+│  ├─ api_server.py           <span class="tk-cm"># FastAPI · REST</span>
 │  ├─ mcp_client.py           <span class="tk-cm"># Model Context Protocol · stdio</span>
-│  ├─ rlhf_manager.py         <span class="tk-cm"># feedback 1—5 ★</span>
-│  ├─ knowledge_base_manager.py
+│  ├─ conversation_search.py  <span class="tk-cm"># recherche sémantique globale cross-conversations</span>
+│  ├─ folder_indexer.py       <span class="tk-cm"># indexeur incrémental @codebase · lié au workspace</span>
+│  ├─ memory_store.py         <span class="tk-cm"># CRUD unifié mémoire · faits + vecteurs</span>
+│  ├─ prompt_library.py       <span class="tk-cm"># slash commands · expansion {arguments}</span>
+│  ├─ scheduler.py            <span class="tk-cm"># tâches planifiées récurrentes (cron)</span>
+│  ├─ scheduler_runner.py     <span class="tk-cm"># runner headless · Planificateur de tâches Windows</span>
+│  ├─ rlhf_manager.py         <span class="tk-cm"># feedback RLHF 1—5 ★</span>
 │  ├─ language_detector.py    <span class="tk-cm"># 12 langues</span>
-│  ├─ session_manager.py · conversation.py · validation.py
-│  ├─ optimization.py · evaluation.py · training_pipeline.py
-│  └─ web_cache.py · network.py · compression_monitor.py
-├─ <span class="tk-dir">memory/</span>                  <span class="tk-cm"># 10 M tokens · ChromaDB persistant</span>
+│  ├─ conversation_exporter.py · command_history.py · config.py
+│  ├─ knowledge_base_manager.py · session_manager.py · conversation.py
+│  ├─ optimization.py · evaluation.py · training_pipeline.py · training_manager.py
+│  └─ web_cache.py · network.py · compression_monitor.py · validation.py
+├─ <span class="tk-dir">memory/</span>                    <span class="tk-cm"># 10 M tokens · ChromaDB persistant</span>
 │  ├─ vector_memory.py        <span class="tk-cm"># tiktoken cl100k_base · all-MiniLM-L6-v2</span>
 │  └─ vector_store/chroma_db/
-├─ <span class="tk-dir">models/</span>                  <span class="tk-cm"># 9 agents + LLM local</span>
+├─ <span class="tk-dir">models/</span>                    <span class="tk-cm"># 9 agents · LLM local · génération d'images</span>
 │  ├─ ai_agents.py            <span class="tk-cm"># Code/Web/Analyst/Creative/Debug/Planner/Security/Optimizer/DS</span>
-│  ├─ local_llm.py            <span class="tk-cm"># wrapper Ollama</span>
-│  ├─ intelligent_code_orchestrator.py
-│  ├─ intelligent_document_analyzer.py
-│  ├─ smart_web_searcher.py · smart_code_searcher.py
-│  ├─ knowledge_base.py
+│  ├─ local_llm.py            <span class="tk-cm"># wrapper Ollama · détection + fallback</span>
+│  ├─ image_generation.py     <span class="tk-cm"># texte → image · Stable Diffusion local</span>
+│  ├─ comfyui_manager.py      <span class="tk-cm"># auto-install ComfyUI portable · multi-GPU</span>
+│  ├─ intelligent_code_orchestrator.py · intelligent_document_analyzer.py
+│  ├─ smart_web_searcher.py · smart_code_searcher.py · internet_search.py
+│  ├─ custom_ai_model.py · linguistic_patterns.py · knowledge_base.py
 │  └─ mixins/ · weights/ · training_runs/
-├─ <span class="tk-dir">processors/</span>              <span class="tk-cm"># PDF · DOCX · XLSX · CSV · CODE</span>
+├─ <span class="tk-dir">processors/</span>                <span class="tk-cm"># PDF · DOCX · XLSX · CSV · CODE</span>
 │  └─ pdf_processor.py · docx_processor.py · excel_processor.py · code_processor.py
-├─ <span class="tk-dir">generators/</span>              <span class="tk-cm"># export documents & code</span>
-├─ <span class="tk-dir">interfaces/</span>              <span class="tk-cm"># GUI CustomTkinter · CLI · Agents · Workflow</span>
-│  ├─ gui_modern.py · cli.py · agents_interface.py
-│  ├─ onboarding.py           <span class="tk-cm"># assistant 1er lancement · détecte RAM/CPU/GPU · modèle auto</span>
-│  ├─ workflow_canvas.py · resource_monitor.py
-│  ├─ gui/                    <span class="tk-cm"># widgets · chat_area · sidebar · streaming · settings_panel</span>
+├─ <span class="tk-dir">generators/</span>                <span class="tk-cm"># document_generator.py · code_generator.py</span>
+├─ <span class="tk-dir">interfaces/</span>                <span class="tk-cm"># GUI CustomTkinter · CLI · Agents · Workflow</span>
+│  ├─ gui_modern.py           <span class="tk-cm"># assemblage des mixins GUI</span>
+│  ├─ onboarding.py           <span class="tk-cm"># assistant 1er lancement · détecte RAM/CPU/GPU</span>
+│  ├─ artifacts.py            <span class="tk-cm"># détection/préparation artifacts (desktop + serveur)</span>
+│  ├─ workflow_canvas.py · resource_monitor.py · cli.py · agents_interface.py
+│  ├─ gui/                    <span class="tk-cm"># mixins de l'interface moderne</span>
+│  │  ├─ artifacts_panel.py   <span class="tk-cm"># volet aperçu live · Edge --app embarqué (SetParent)</span>
+│  │  ├─ command_palette.py   <span class="tk-cm"># Command palette Ctrl+K · raccourcis globaux</span>
+│  │  ├─ slash_commands.py    <span class="tk-cm"># autocomplétion « / » dans la saisie</span>
+│  │  ├─ message_editing.py   <span class="tk-cm"># édition + regénération · branchement ‹ k/n ›</span>
+│  │  ├─ memory_panel.py      <span class="tk-cm"># fenêtre Mémoire · faits/documents/conversations</span>
+│  │  ├─ prompts_panel.py     <span class="tk-cm"># fenêtre Prompts · CRUD bibliothèque</span>
 │  │  ├─ voice_input.py       <span class="tk-cm"># faster-whisper · STT 100% local · 99+ langues</span>
-│  │  └─ voice_output.py      <span class="tk-cm"># pyttsx3 · TTS · voix par langue · auto-lecture</span>
-│  └─ agents/
-├─ <span class="tk-accent">relay/</span>                   <span class="tk-cm"># PWA mobile · onglets Chat / Agents · WebSocket · cloudflared</span>
+│  │  ├─ voice_output.py      <span class="tk-cm"># pyttsx3 · TTS · voix par langue</span>
+│  │  └─ chat_area.py · sidebar.py · streaming.py · settings_panel.py · markdown_formatting.py
+│  └─ agents/                 <span class="tk-cm"># sélection · débat · workflow · scheduler_ui · custom_agents</span>
+├─ <span class="tk-accent">relay/</span>                     <span class="tk-cm"># PWA mobile · Chat / Agents · WebSocket · cloudflared</span>
 │  ├─ relay_server.py · relay_bridge.py · agent_relay.py
 │  └─ static/  (index.html · style.css · app.js · agents.js)
-├─ <span class="tk-accent">vscode_extension/</span>        <span class="tk-cm"># extension VS Code agentique · TypeScript · esbuild</span>
-│  ├─ src/                    <span class="tk-cm"># client WebSocket E2EE · UI webview · 9 outils workspace</span>
-│  ├─ l10n/ · media/          <span class="tk-cm"># i18n (FR/EN) · icônes</span>
-│  ├─ package.json · esbuild.js · tsconfig.json
-│  └─ README.md · README.fr.md · CHANGELOG.md
-├─ <span class="tk-dir">data/</span>                    <span class="tk-cm"># KB · workspaces · web_cache</span>
-├─ <span class="tk-dir">utils/</span> · <span class="tk-dir">tests/</span> · <span class="tk-dir">tools/</span> · <span class="tk-dir">examples/</span> · <span class="tk-dir">docs/</span>
+├─ <span class="tk-accent">vscode_extension/</span>          <span class="tk-cm"># extension VS Code · client Relay distant · TypeScript</span>
+│  ├─ src/                    <span class="tk-cm"># host Node.js · client WebSocket E2EE · @codebase</span>
+│  ├─ media/                  <span class="tk-cm"># webview UI (HTML / CSS / JS)</span>
+│  └─ package.json · README.md
+├─ <span class="tk-dir">utils/</span>                     <span class="tk-cm"># utilitaires transverses</span>
+│  ├─ citations.py            <span class="tk-cm"># citations web numérotées cliquables ([n] → url)</span>
+│  ├─ desktop_notify.py       <span class="tk-cm"># notifications desktop natives (winotify / plyer)</span>
+│  └─ file_manager.py · file_processor.py · intelligent_calculator.py · logger.py
+├─ <span class="tk-dir">outputs/exports/</span>           <span class="tk-cm"># conversations exportées (MD / HTML / PDF)</span>
+├─ <span class="tk-dir">data/</span>                      <span class="tk-cm"># knowledge_base (SQLite) · workspaces · web_cache</span>
+├─ <span class="tk-dir">tests/</span> · <span class="tk-dir">tools/</span> · <span class="tk-dir">examples/</span> · <span class="tk-dir">docs/</span>
 ├─ main.py · launch_unified.py · launch.bat
 ├─ Modelfile · config.yaml · requirements.txt
 └─ create_custom_model.bat · clean_project.bat · test_features.bat</pre>
