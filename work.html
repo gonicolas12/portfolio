@@ -59,6 +59,7 @@
       <span class="chip accent">MCP</span>
       <span class="chip accent">FASTAPI</span>
       <span class="chip accent">FASTER-WHISPER</span>
+      <span class="chip accent">COMFYUI</span>
       <span class="chip dev-only">SENTENCE-TRANSFORMERS</span>
       <span class="chip dev-only">HNSW</span>
       <span class="chip dev-only">SQLITE</span>
@@ -75,7 +76,7 @@
       <span class="chip dev-only">SOUNDDEVICE</span>
       <span class="chip dev-only">PYTTSX3</span>
     </div>
-    <div class="dev-only dev-meta reveal d3" data-fr="v7.6.0 · MIT · Python 3.10+ · Extension VS Code v1.2.3" data-en="v7.6.0 · MIT · Python 3.10+ · VS Code extension v1.2.3">v7.6.0 · MIT · Python 3.10+ · Extension VS Code v1.2.3</div>
+    <div class="dev-only dev-meta reveal d3" data-fr="v8.0.0 · MIT · Python 3.10+ · Extension VS Code v1.3.5" data-en="v8.0.0 · MIT · Python 3.10+ · VS Code extension v1.3.5">v8.0.0 · MIT · Python 3.10+ · Extension VS Code v1.3.5</div>
     <div style="margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap;">
       <a href="https://github.com/gonicolas12/My_AI" target="_blank" class="btn btn-primary" style="background: var(--accent); color: #fff;">GITHUB ↗</a>
       <a href="https://github.com/gonicolas12/My_AI/releases" target="_blank" class="btn btn-ghost dev-only" style="border-color: var(--bg); color: var(--bg);" data-fr="RELEASES ↗" data-en="RELEASES ↗">RELEASES ↗</a>
@@ -275,7 +276,7 @@
     <div class="deep-card reveal d1">
       <div class="n">02</div>
       <h4 data-fr="Mémoire vectorielle persistante" data-en="Persistent vector memory">Mémoire vectorielle persistante</h4>
-      <p data-fr="ChromaDB stocke les conversations et documents en embeddings. L'assistant se souvient des échanges précédents sans ré-entraînement." data-en="ChromaDB stores conversations and documents as embeddings. The assistant remembers past exchanges without retraining.">ChromaDB stocke les conversations et documents en embeddings. L'assistant se souvient des échanges précédents sans ré-entraînement.</p>
+      <p data-fr="ChromaDB stocke conversations et documents en embeddings. Recherche sémantique globale sur tout l'historique et panneau de gestion mémoire pour voir, éditer et supprimer chaque fait mémorisé." data-en="ChromaDB stores conversations and documents as embeddings. Global semantic search across the whole history and a memory control panel to view, edit and delete every stored fact.">ChromaDB stocke conversations et documents en embeddings. Recherche sémantique globale sur tout l'historique et panneau de gestion mémoire pour voir, éditer et supprimer chaque fait mémorisé.</p>
     </div>
     <div class="deep-card reveal d2">
       <div class="n">03</div>
@@ -286,6 +287,26 @@
       <div class="n">04</div>
       <h4 data-fr="Extensible via MCP" data-en="Extensible via MCP">Extensible via MCP</h4>
       <p data-fr="Le protocole Model Context Protocol permet de brancher de nouveaux outils (bases SQL, APIs, file systems) sans toucher au cœur." data-en="The Model Context Protocol lets you plug new tools (SQL DBs, APIs, file systems) without touching the core.">Le protocole Model Context Protocol permet de brancher de nouveaux outils (bases SQL, APIs, file systems) sans toucher au cœur.</p>
+    </div>
+    <div class="deep-card reveal">
+      <div class="n">05</div>
+      <h4 data-fr="Génération d'images 100% locale" data-en="100% local image generation">Génération d'images 100% locale</h4>
+      <p data-fr="Text-to-image local via ComfyUI / diffusers, installé automatiquement au 1er usage. Détection multi-GPU (NVIDIA, AMD, Apple Silicon, Intel Arc) avec fallback CPU, et sync des images vers le mobile en chiffré." data-en="Local text-to-image via ComfyUI / diffusers, auto-installed on first use. Multi-GPU detection (NVIDIA, AMD, Apple Silicon, Intel Arc) with CPU fallback, and encrypted image sync to mobile.">Text-to-image local via ComfyUI / diffusers, installé automatiquement au 1er usage. Détection multi-GPU (NVIDIA, AMD, Apple Silicon, Intel Arc) avec fallback CPU, et sync des images vers le mobile en chiffré.</p>
+    </div>
+    <div class="deep-card reveal d1">
+      <div class="n">06</div>
+      <h4 data-fr="Commandes slash & @codebase" data-en="Slash commands & @codebase">Commandes slash & @codebase</h4>
+      <p data-fr="Les commandes slash (/code, /résume, /traduis) déploient des prompts d'expert réutilisables. @codebase attache un projet entier en contexte persistant. Palette de commandes via Ctrl+K." data-en="Slash commands (/code, /résume, /traduis) expand into reusable expert prompts. @codebase attaches a whole project as persistent context. Command palette via Ctrl+K.">Les commandes slash (/code, /résume, /traduis) déploient des prompts d'expert réutilisables. @codebase attache un projet entier en contexte persistant. Palette de commandes via Ctrl+K.</p>
+    </div>
+    <div class="deep-card reveal d2">
+      <div class="n">07</div>
+      <h4 data-fr="Aperçu live des artifacts" data-en="Live artifacts preview">Aperçu live des artifacts</h4>
+      <p data-fr="Le HTML / CSS / SVG généré se rend en direct à côté du chat via le moteur Edge. Édition et régénération des messages avec historique de versions, et citations web cliquables." data-en="Generated HTML / CSS / SVG renders live next to the chat via the Edge engine. Message editing and regeneration with version history, plus clickable web citations.">Le HTML / CSS / SVG généré se rend en direct à côté du chat via le moteur Edge. Édition et régénération des messages avec historique de versions, et citations web cliquables.</p>
+    </div>
+    <div class="deep-card reveal d3">
+      <div class="n">08</div>
+      <h4 data-fr="Tâches planifiées & automatisation" data-en="Scheduled tasks & automation">Tâches planifiées & automatisation</h4>
+      <p data-fr="Planification d'agents et de workflows (quotidien, hebdo, cron). Exécution en arrière-plan même app fermée via le Planificateur de tâches Windows, avec notifications bureau en fin de tâche." data-en="Schedule agents and workflows (daily, weekly, cron). Background execution even when the app is closed via Windows Task Scheduler, with desktop notifications on completion.">Planification d'agents et de workflows (quotidien, hebdo, cron). Exécution en arrière-plan même app fermée via le Planificateur de tâches Windows, avec notifications bureau en fin de tâche.</p>
     </div>
   </div>
 </section>
@@ -465,7 +486,7 @@ relay:
     <span data-fr="MY_AI RELAY · AGENTIC IDE" data-en="MY_AI RELAY · AGENTIC IDE">MY_AI RELAY · AGENTIC IDE</span>
   </div>
   <h3 class="reveal" data-fr-html="L'<em>extension</em> VS Code." data-en-html="The VS Code <em>extension</em>.">L'<em>extension</em> VS Code.</h3>
-  <p class="reveal d1 specs-intro" data-fr="Une extension VS Code (TypeScript) qui transforme My_AI en agent capable d'éditer, exécuter et fouiller le workspace — façon Claude Code, mais 100% local, sur n'importe quel modèle Ollama. Marketplace : gonicolas12.my-ai." data-en="A VS Code extension (TypeScript) that turns My_AI into an agent able to edit, execute and search the workspace — Claude Code style, but 100% local, on any Ollama model. Marketplace: gonicolas12.my-ai.">Une extension VS Code (TypeScript) qui transforme My_AI en agent capable d'éditer, exécuter et fouiller le workspace — façon Claude Code, mais 100% local, sur n'importe quel modèle Ollama. Marketplace : gonicolas12.my-ai.</p>
+  <p class="reveal d1 specs-intro" data-fr="Une extension VS Code (TypeScript) qui transforme My_AI en agent capable d'éditer, exécuter et fouiller le workspace — façon Claude Code, mais 100% local, sur n'importe quel modèle Ollama. Menu @ pour attacher fichiers et dossiers en contexte @codebase, commandes slash, bouton STOP et garde-fous anti-boucle. Marketplace : gonicolas12.my-ai." data-en="A VS Code extension (TypeScript) that turns My_AI into an agent able to edit, execute and search the workspace — Claude Code style, but 100% local, on any Ollama model. An @ menu to attach files and folders as @codebase context, slash commands, a STOP button and anti-loop safeguards. Marketplace: gonicolas12.my-ai.">Une extension VS Code (TypeScript) qui transforme My_AI en agent capable d'éditer, exécuter et fouiller le workspace — façon Claude Code, mais 100% local, sur n'importe quel modèle Ollama. Menu @ pour attacher fichiers et dossiers en contexte @codebase, commandes slash, bouton STOP et garde-fous anti-boucle. Marketplace : gonicolas12.my-ai.</p>
 
   <div class="dual reveal d2">
     <div class="dual-col">
@@ -498,13 +519,14 @@ myaiRelay.requestTimeoutSeconds:     <span class="tk-num">15</span></pre>
         <li data-fr="Credentials chiffrés dans VS Code SecretStorage (OS keychain)" data-en="Credentials encrypted in VS Code SecretStorage (OS keychain)">Credentials chiffrés dans VS Code SecretStorage (OS keychain)</li>
         <li data-fr="3 niveaux d'approbation : once · per-file · session-wide (reset à la reconnexion)" data-en="3 approval levels: once · per-file · session-wide (reset on reconnect)">3 niveaux d'approbation : once · per-file · session-wide (reset à la reconnexion)</li>
         <li data-fr="Parser <tool_use> custom → compatible n'importe quel modèle Ollama" data-en="Custom <tool_use> parser → works with any Ollama model">Parser &lt;tool_use&gt; custom → compatible n'importe quel modèle Ollama</li>
+        <li data-fr="Menu @ : fichiers/dossiers indexés en contexte @codebase partagé par projet · bouton STOP · garde-fous anti-boucle" data-en="@ menu: files/folders indexed as a per-project @codebase context · STOP button · anti-loop safeguards">Menu @ : fichiers/dossiers indexés en contexte @codebase partagé par projet · bouton STOP · garde-fous anti-boucle</li>
       </ul>
     </div>
   </div>
 
   <div class="specs-grid reveal d3">
     <div class="spec">
-      <div class="spec-num">v1.2.3</div>
+      <div class="spec-num">v1.3.5</div>
       <div class="spec-lbl" data-fr="EXTENSION · MARKETPLACE" data-en="EXTENSION · MARKETPLACE">EXTENSION · MARKETPLACE</div>
     </div>
     <div class="spec">
