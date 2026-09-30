@@ -391,6 +391,7 @@
 │  ├─ ai_engine.py            <span class="tk-cm" data-fr="# point d'entrée intelligence" data-en="# intelligence entry point"># point d'entrée intelligence</span>
 │  ├─ chat_orchestrator.py    <span class="tk-cm" data-fr="# boucle ReAct + Plan &amp; Execute · scratchpad XML" data-en="# ReAct + Plan &amp; Execute loop · XML scratchpad"># boucle ReAct + Plan & Execute · scratchpad XML</span>
 │  ├─ agent_orchestrator.py   <span class="tk-cm" data-fr="# page Agents · historiques séparés" data-en="# Agents page · separate histories"># page Agents · historiques séparés</span>
+│  ├─ agentic_executor.py     <span class="tk-cm" data-fr="# boucle agentique du mode VS Code · outils distants via Relay" data-en="# VS Code mode agentic loop · remote tools via Relay"># boucle agentique du mode VS Code · outils distants via Relay</span>
 │  ├─ api_server.py           <span class="tk-cm" data-fr="# FastAPI · REST" data-en="# FastAPI · REST"># FastAPI · REST</span>
 │  ├─ mcp_client.py           <span class="tk-cm" data-fr="# Model Context Protocol · stdio" data-en="# Model Context Protocol · stdio"># Model Context Protocol · stdio</span>
 │  ├─ conversation_search.py  <span class="tk-cm" data-fr="# recherche sémantique globale cross-conversations" data-en="# global semantic search across conversations"># recherche sémantique globale cross-conversations</span>
@@ -401,6 +402,7 @@
 │  ├─ scheduler_runner.py     <span class="tk-cm" data-fr="# runner headless · Planificateur de tâches Windows" data-en="# headless runner · Windows Task Scheduler"># runner headless · Planificateur de tâches Windows</span>
 │  ├─ rlhf_manager.py         <span class="tk-cm" data-fr="# feedback RLHF 1—5 ★" data-en="# RLHF feedback 1—5 ★"># feedback RLHF 1—5 ★</span>
 │  ├─ language_detector.py    <span class="tk-cm" data-fr="# 12 langues" data-en="# 12 languages"># 12 langues</span>
+│  ├─ platform_paths.py       <span class="tk-cm" data-fr="# chemins d'exemple adaptés à l'OS dans les prompts" data-en="# OS-aware example paths in prompts"># chemins d'exemple adaptés à l'OS dans les prompts</span>
 │  ├─ conversation_exporter.py · command_history.py · config.py
 │  ├─ knowledge_base_manager.py · session_manager.py · conversation.py
 │  ├─ optimization.py · evaluation.py · training_pipeline.py · training_manager.py
@@ -411,8 +413,8 @@
 ├─ <span class="tk-dir">models/</span>                    <span class="tk-cm" data-fr="# 9 agents · LLM local · génération d'images" data-en="# 9 agents · local LLM · image generation"># 9 agents · LLM local · génération d'images</span>
 │  ├─ ai_agents.py            <span class="tk-cm" data-fr="# Code/Web/Analyst/Creative/Debug/Planner/Security/Optimizer/DS" data-en="# Code/Web/Analyst/Creative/Debug/Planner/Security/Optimizer/DS"># Code/Web/Analyst/Creative/Debug/Planner/Security/Optimizer/DS</span>
 │  ├─ local_llm.py            <span class="tk-cm" data-fr="# wrapper Ollama · détection + fallback" data-en="# Ollama wrapper · detection + fallback"># wrapper Ollama · détection + fallback</span>
-│  ├─ image_generation.py     <span class="tk-cm" data-fr="# texte → image · Stable Diffusion local" data-en="# text → image · local Stable Diffusion"># texte → image · Stable Diffusion local</span>
-│  ├─ comfyui_manager.py      <span class="tk-cm" data-fr="# auto-install ComfyUI portable · multi-GPU" data-en="# portable ComfyUI auto-install · multi-GPU"># auto-install ComfyUI portable · multi-GPU</span>
+│  ├─ image_generation.py     <span class="tk-cm" data-fr="# texte → image · Stable Diffusion local · multi-GPU" data-en="# text → image · local Stable Diffusion · multi-GPU"># texte → image · Stable Diffusion local · multi-GPU</span>
+│  ├─ comfyui_manager.py      <span class="tk-cm" data-fr="# auto-install ComfyUI portable · Windows/NVIDIA" data-en="# portable ComfyUI auto-install · Windows/NVIDIA"># auto-install ComfyUI portable · Windows/NVIDIA</span>
 │  ├─ intelligent_code_orchestrator.py · intelligent_document_analyzer.py
 │  ├─ smart_web_searcher.py · smart_code_searcher.py · internet_search.py
 │  ├─ custom_ai_model.py · linguistic_patterns.py · knowledge_base.py
@@ -433,6 +435,7 @@
 │  ├─ workflow_canvas.py · resource_monitor.py · cli.py · agents_interface.py
 │  ├─ gui/                    <span class="tk-cm" data-fr="# mixins de l'interface moderne" data-en="# modern interface mixins"># mixins de l'interface moderne</span>
 │  │  ├─ artifacts_panel.py   <span class="tk-cm" data-fr="# volet aperçu live · Edge --app embarqué + visionneuses natives" data-en="# live preview pane · embedded Edge --app + native viewers"># volet aperçu live · Edge --app embarqué + visionneuses natives</span>
+│  │  ├─ _edge_embed.py       <span class="tk-cm" data-fr="# Edge --app ré-parenté dans le volet · SetParent Win32" data-en="# Edge --app re-parented into the pane · Win32 SetParent"># Edge --app ré-parenté dans le volet · SetParent Win32</span>
 │  │  ├─ _preview_handler.py  <span class="tk-cm" data-fr="# IPreviewHandler · Word/PowerPoint/Excel natifs · thread COM" data-en="# IPreviewHandler · native Word/PowerPoint/Excel · COM thread"># IPreviewHandler · Word/PowerPoint/Excel natifs · thread COM</span>
 │  │  ├─ _dpi_host.py         <span class="tk-cm" data-fr="# fenêtre hôte DPI par écran · aperçu net à 125 %" data-en="# per-monitor DPI host window · crisp preview at 125%"># fenêtre hôte DPI par écran · aperçu net à 125 %</span>
 │  │  ├─ command_palette.py   <span class="tk-cm" data-fr="# Command palette Ctrl+K · raccourcis globaux" data-en="# command palette Ctrl+K · global shortcuts"># Command palette Ctrl+K · raccourcis globaux</span>
@@ -458,7 +461,10 @@
 │  └─ file_manager.py · file_processor.py · intelligent_calculator.py · logger.py
 ├─ <span class="tk-dir">outputs/</span>                   <span class="tk-cm" data-fr="# générés par l'IA · documents/ · exports/ · artifacts/" data-en="# AI-generated · documents/ · exports/ · artifacts/"># générés par l'IA · documents/ · exports/ · artifacts/</span>
 ├─ <span class="tk-dir">data/</span>                      <span class="tk-cm" data-fr="# knowledge_base (SQLite) · workspaces · web_cache" data-en="# knowledge_base (SQLite) · workspaces · web_cache"># knowledge_base (SQLite) · workspaces · web_cache</span>
-├─ <span class="tk-dir">tests/</span> · <span class="tk-dir">tools/</span> · <span class="tk-dir">examples/</span> · <span class="tk-dir">docs/</span>
+├─ <span class="tk-dir">context_storage/</span>           <span class="tk-cm" data-fr="# ultra_context.db (contexte, chunks) · cache de code" data-en="# ultra_context.db (context, chunks) · code cache"># ultra_context.db (contexte, chunks) · cache de code</span>
+├─ <span class="tk-dir">tools/</span>                     <span class="tk-cm" data-fr="# outils · cloudflared &amp; ComfyUI y sont auto-téléchargés" data-en="# tools · cloudflared &amp; ComfyUI get auto-downloaded here"># outils · cloudflared &amp; ComfyUI y sont auto-téléchargés</span>
+│  └─ measure_energy.py       <span class="tk-cm" data-fr="# empreinte énergie &amp; carbone d'une session (codecarbon)" data-en="# energy &amp; carbon footprint of a session (codecarbon)"># empreinte énergie &amp; carbone d'une session (codecarbon)</span>
+├─ <span class="tk-dir">tests/</span> · <span class="tk-dir">examples/</span> · <span class="tk-dir">docs/</span>
 ├─ main.py · launch_unified.py · launch.bat · launch.sh
 ├─ Modelfile · config.yaml · requirements.txt
 └─ create_custom_model.bat · clean_project.bat · test_features.bat</pre>
