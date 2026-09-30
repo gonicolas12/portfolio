@@ -12,8 +12,8 @@ window.PORTFOLIO = {
   permis: "B + véhiculé",
 
   profile: {
-    fr: "J'ai 22 ans, je suis à la recherche d'une alternance en data / IA pour mettre en pratique mes compétences en analyse de données et intelligence artificielle. Curieux et motivé, je souhaite contribuer activement à des projets innovants tout en enrichissant mon expérience professionnelle.",
-    en: "I'm 22 and looking for a data / AI apprenticeship to put my skills in data analysis and artificial intelligence into practice. Curious and motivated, I want to actively contribute to innovative projects while growing my professional experience."
+    fr: "J'ai 22 ans et je suis Ingénieur IA en alternance chez Gaches Chimie, dans le cadre de mon Mastère Data & IA à Toulouse Ynov Campus. Je conçois des solutions d'IA générative (RAG, agents IA, automatisation) qui simplifient les processus métiers, et je les industrialise jusqu'en production.",
+    en: "I'm 22 and an AI Engineer apprentice at Gaches Chimie, as part of my Master's in Data & AI at Toulouse Ynov Campus. I design generative AI solutions (RAG, AI agents, automation) that simplify business processes, and I industrialize them all the way to production."
   },
 
   manifesto: {
@@ -34,6 +34,17 @@ window.PORTFOLIO = {
   },
 
   experiences: [
+    {
+      role: { fr: "INGÉNIEUR IA", en: "AI ENGINEER" },
+      company: "GACHES CHIMIE",
+      period: { fr: "SEPT. 2026 — 2028", en: "SEP 2026 — 2028" },
+      type: { fr: "Alternance · DSI", en: "Apprenticeship · IT Department" },
+      desc: {
+        fr: "Alternance de 2 ans (M1 et M2) à la DSI, rattaché au Directeur des SI. Recueil des besoins métier, conception d'applications et de flux IA (RAG, agents IA, automatisation), intégration et industrialisation dans le SI, formation des utilisateurs, support de premier niveau et veille technologique.",
+        en: "2-year apprenticeship (M1 and M2) in the IT department, reporting to the CIO. Gathering business needs, designing AI applications and flows (RAG, AI agents, automation), integrating and industrializing them into the IS, user training, first-level support and tech watch."
+      },
+      stack: ["Python", "LLM", "RAG", "AI Agents", "Automation", "Cloud"]
+    },
     {
       role: { fr: "IS PROJECT MANAGER — DAIS", en: "IS PROJECT MANAGER — DAIS" },
       company: "PIERRE FABRE",
@@ -59,7 +70,7 @@ window.PORTFOLIO = {
   ],
 
   education: [
-    { school: "TOULOUSE YNOV CAMPUS", degree: { fr: "Bachelor & Master Data / IA", en: "Bachelor & Master Data / AI" }, period: "2023 — 2028" },
+    { school: "TOULOUSE YNOV CAMPUS", degree: { fr: "Bachelor puis Mastère Data & IA", en: "Bachelor's then Master's in Data & AI" }, period: "2023 — 2028" },
     { school: "EPITECH TOULOUSE", degree: { fr: "Pré-MSc Informatique", en: "Pre-MSc Computer Science" }, period: "2022 — 2023" },
     { school: "LYCÉE PIERRE-PAUL RIQUET", degree: { fr: "Baccalauréat STI2D — SIN", en: "STI2D Baccalaureate — SIN" }, period: "2022" }
   ],
@@ -95,8 +106,8 @@ window.PORTFOLIO = {
       featured: true,
       repo: "gonicolas12/My_AI",
       desc: {
-        fr: "Assistant IA 100% local en Python via Ollama. Mémoire vectorielle jusqu'à 10M tokens (ChromaDB) avec recherche globale et gestion mémoire, 9 agents spécialisés, génération d'images locale (ComfyUI / diffusers), commandes slash + contexte @codebase, aperçu live des artifacts, tâches planifiées en arrière-plan, pipeline documents (PDF, DOCX, Excel, CSV, code), API REST FastAPI, MCP, voix locale entrée/sortie (faster-whisper + pyttsx3, 99+ langues), accès mobile via Relay (onglets Chat / Agents) et extension VS Code agentique (9 outils workspace, E2EE AES-256-GCM).",
-        en: "100% local AI assistant in Python via Ollama. Vector memory up to 10M tokens (ChromaDB) with global search and memory management, 9 specialized agents, local image generation (ComfyUI / diffusers), slash commands + @codebase context, live artifacts preview, background scheduled tasks, document pipeline (PDF, DOCX, Excel, CSV, code), FastAPI REST API, MCP, local voice in/out (faster-whisper + pyttsx3, 99+ languages), mobile access via Relay (Chat / Agents tabs) and an agentic VS Code extension (9 workspace tools, AES-256-GCM E2EE)."
+        fr: "Assistant IA 100% local en Python via Ollama, sous Windows, macOS et Linux. Mémoire vectorielle jusqu'à 10M tokens (ChromaDB) avec recherche globale et gestion mémoire, 9 agents spécialisés, génération d'images locale (ComfyUI / diffusers), génération de documents Word, PDF, PowerPoint et Excel avec édition sur copie et aperçu natif, commandes slash + contexte @codebase, aperçu live des artifacts, tâches planifiées en arrière-plan, pipeline documents (PDF, DOCX, PowerPoint, Excel, CSV, code), API REST FastAPI, MCP, voix locale entrée/sortie (faster-whisper + pyttsx3, 99+ langues), accès mobile via Relay (onglets Chat / Agents) et extension VS Code agentique (9 outils workspace, E2EE AES-256-GCM).",
+        en: "100% local AI assistant in Python via Ollama, on Windows, macOS and Linux. Vector memory up to 10M tokens (ChromaDB) with global search and memory management, 9 specialized agents, local image generation (ComfyUI / diffusers), Word, PDF, PowerPoint and Excel document generation with copy-based editing and native preview, slash commands + @codebase context, live artifacts preview, background scheduled tasks, document pipeline (PDF, DOCX, PowerPoint, Excel, CSV, code), FastAPI REST API, MCP, local voice in/out (faster-whisper + pyttsx3, 99+ languages), mobile access via Relay (Chat / Agents tabs) and an agentic VS Code extension (9 workspace tools, AES-256-GCM E2EE)."
       },
       stack: ["Python", "Ollama", "ChromaDB", "MCP", "FastAPI", "faster-whisper", "ComfyUI", "VS Code Extension"],
       metrics: [
