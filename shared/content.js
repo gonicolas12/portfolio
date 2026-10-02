@@ -60,10 +60,10 @@ window.PORTFOLIO = {
       role: { fr: "DATA ANALYST", en: "DATA ANALYST" },
       company: "PIERRE FABRE",
       period: { fr: "JUIN — AOÛT 2025", en: "JUN — AUG 2025" },
-      type: { fr: "Stage · DAIS", en: "Internship · DAIS" },
+      type: { fr: "Stage · Data Office", en: "Internship · Data Office" },
       desc: {
-        fr: "Stage de Data Analyst au sein du DAIS. Projets de gouvernance des données (V.R.A.I.), visualisation Power BI, développement d'un modèle IA en Python.",
-        en: "Data Analyst internship in the DAIS. Data governance projects (V.R.A.I.), Power BI visualization, development of an AI model in Python."
+        fr: "Stage de Data Analyst au sein du Data Office. Projets de gouvernance des données (V.R.A.I.), visualisation Power BI, et début du développement d'un modèle IA en Python, qui deviendra My_AI.",
+        en: "Data Analyst internship at the Data Office. Data governance projects (V.R.A.I.), Power BI visualization, and the start of an AI model in Python that would grow into My_AI."
       },
       stack: ["Python", "Power BI", "V.R.A.I.", "Data Gov"]
     }
