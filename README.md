@@ -11,7 +11,7 @@ Portfolio personnel · Data / AI · 2026.
 Site brutaliste — 4 pages (Home, About, Work, Contact) — typographie massive, palette noir / crème / orange, switch FR/EN et switch Recruteur/Dev.
 
 - **Recruiter mode** : version épurée, orientée profil et lecture rapide.
-- **Dev mode** : sections `.dev-only` qui se déplient sur `work.html` (specs chiffrées, arborescence du repo My_AI, modèles Ollama supportés, config relay mobile, extension VS Code agentique, mode vocal entrée/sortie faster-whisper + pyttsx3, génération / édition de documents Word · PDF · PowerPoint · Excel avec aperçu natif, assistant de configuration).
+- **Dev mode** : sections `.dev-only` qui se déplient sur `work.html` (specs chiffrées, arborescence du repo My_AI, modèles Ollama supportés, config relay mobile, extension VS Code agentique, mode vocal entrée/sortie faster-whisper + pyttsx3, génération / édition de documents Word · PDF · PowerPoint · Excel avec aperçu natif, interface native React + TypeScript et accélération d'Ollama, assistant de configuration).
 
 Construit en HTML / CSS / JS vanilla. Aucun build, aucune dépendance externe au-delà de Google Fonts (Archivo Black, Space Grotesk, Inter, JetBrains Mono).
 
