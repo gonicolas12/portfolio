@@ -85,7 +85,7 @@
       <span class="chip dev-only">REPORTLAB</span>
       <span class="chip dev-only">RAPIDOCR</span>
     </div>
-    <div class="dev-only dev-meta reveal d3" data-fr="v9.0.0 · MIT · Python 3.10+ · Extension VS Code v1.3.8" data-en="v9.0.0 · MIT · Python 3.10+ · VS Code extension v1.3.8">v9.0.0 · MIT · Python 3.10+ · Extension VS Code v1.3.8</div>
+    <div class="dev-only dev-meta reveal d3" data-fr="v9.0.0 · MIT · Python 3.10+ · Extension VS Code v1.4.0" data-en="v9.0.0 · MIT · Python 3.10+ · VS Code extension v1.4.0">v9.0.0 · MIT · Python 3.10+ · Extension VS Code v1.4.0</div>
     <div style="margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap;">
       <a href="https://github.com/gonicolas12/My_AI" target="_blank" class="btn btn-primary" style="background: var(--accent); color: #fff;">GITHUB ↗</a>
       <a href="https://github.com/gonicolas12/My_AI/releases" target="_blank" class="btn btn-ghost dev-only" style="border-color: var(--bg); color: var(--bg);" data-fr="RELEASES ↗" data-en="RELEASES ↗">RELEASES ↗</a>
@@ -472,7 +472,7 @@
 │  ├─ document_preview.py     <span class="tk-cm" data-fr="# rendu HTML des documents · repli + mobile" data-en="# HTML rendering of documents · fallback + mobile"># rendu HTML des documents · repli + mobile</span>
 │  ├─ onboarding.py           <span class="tk-cm" data-fr="# assistant 1er lancement · détecte RAM/CPU/GPU" data-en="# first-launch wizard · detects RAM/CPU/GPU"># assistant 1er lancement · détecte RAM/CPU/GPU</span>
 │  └─ cli.py · resource_monitor.py
-├─ <span class="tk-accent">relay/</span>                     <span class="tk-cm" data-fr="# PWA mobile · Chat / Agents · WebSocket · cloudflared" data-en="# mobile PWA · Chat / Agents · WebSocket · cloudflared"># PWA mobile · Chat / Agents · WebSocket · cloudflared</span>
+├─ <span class="tk-accent">relay/</span>                     <span class="tk-cm" data-fr="# PWA mobile · Chat / Agents · WebSocket · cloudflared + localhost.run" data-en="# mobile PWA · Chat / Agents · WebSocket · cloudflared + localhost.run"># PWA mobile · Chat / Agents · WebSocket · cloudflared + localhost.run</span>
 │  ├─ relay_server.py · relay_bridge.py · agent_relay.py
 │  └─ static/  (index.html · style.css · app.js · agents.js)
 ├─ <span class="tk-accent">vscode_extension/</span>          <span class="tk-cm" data-fr="# extension VS Code · client Relay distant · TypeScript" data-en="# VS Code extension · remote Relay client · TypeScript"># extension VS Code · client Relay distant · TypeScript</span>
@@ -533,9 +533,13 @@ relay:
   response_timeout:  <span class="tk-num">500</span>
   password:          ""
   tunnel:            true
+  tunnel_providers:
+    - <span class="tk-str">"cloudflared"</span>
+    - <span class="tk-str">"localhost.run"</span>
   host:              <span class="tk-str">"0.0.0.0"</span></pre>
       <ul class="dual-list">
-        <li data-fr="Tunnel cloudflared automatique → URL HTTPS publique + QR code partageable · chaque tunnel est vérifié depuis le PC, seuls les joignables y figurent" data-en="Automatic cloudflared tunnel → public HTTPS URL + shareable QR code · each tunnel is checked from the PC, only reachable ones make it in">Tunnel cloudflared automatique → URL HTTPS publique + QR code partageable · chaque tunnel est vérifié depuis le PC, seuls les joignables y figurent</li>
+        <li data-fr="Tunnels cloudflared + localhost.run en parallèle → URL HTTPS publique + QR code partageable, prêt en quelques secondes · chaque tunnel est vérifié depuis le PC, seuls les joignables y figurent" data-en="cloudflared + localhost.run tunnels in parallel → public HTTPS URL + shareable QR code, ready within seconds · each tunnel is checked from the PC, only reachable ones make it in">Tunnels cloudflared + localhost.run en parallèle → URL HTTPS publique + QR code partageable, prêt en quelques secondes · chaque tunnel est vérifié depuis le PC, seuls les joignables y figurent</li>
+        <li data-fr="serveo en option seulement (son nom de tunnel contient l'IP publique du réseau) · liste des tunnels jamais servie sans token" data-en="serveo is opt-in only (its tunnel name contains the network's public IP) · the tunnel list is never served without a token">serveo en option seulement (son nom de tunnel contient l'IP publique du réseau) · liste des tunnels jamais servie sans token</li>
         <li data-fr="Onglets Chat / Agents — sync messages temps réel via WebSocket, indicateurs de frappe, thème dark" data-en="Chat / Agents tabs — real-time message sync via WebSocket, typing indicators, dark theme">Onglets Chat / Agents — sync messages temps réel via WebSocket, indicateurs de frappe, thème dark</li>
         <li data-fr="Chat mobile indépendant de la fenêtre : il passe par le service de chat commun, et chaque échange s'affiche en direct sur le PC avec un badge « Mobile »" data-en="Mobile chat independent of the window: it goes through the shared chat service, and each exchange shows up live on the PC with a “Mobile” badge">Chat mobile indépendant de la fenêtre : il passe par le service de chat commun, et chaque échange s'affiche en direct sur le PC avec un badge « Mobile »</li>
         <li data-fr="Page Agents mobile : grille des 9 agents + custom, canvas workflow type n8n, mode débat, exécution sur le PC hôte · chaque exécution devient un fil rouvrable sur le PC" data-en="Mobile Agents page: grid of the 9 agents + custom, n8n-style workflow canvas, debate mode, execution on the host PC · every run becomes a reopenable thread on the PC">Page Agents mobile : grille des 9 agents + custom, canvas workflow type n8n, mode débat, exécution sur le PC hôte · chaque exécution devient un fil rouvrable sur le PC</li>
@@ -554,7 +558,7 @@ relay:
     <span data-fr="MY_AI RELAY · AGENTIC IDE" data-en="MY_AI RELAY · AGENTIC IDE">MY_AI RELAY · AGENTIC IDE</span>
   </div>
   <h3 class="reveal" data-fr-html="L'<em>extension</em> VS Code." data-en-html="The VS Code <em>extension</em>.">L'<em>extension</em> VS Code.</h3>
-  <p class="reveal d1 specs-intro" data-fr="Une extension VS Code (TypeScript) qui transforme My_AI en agent capable d'éditer, exécuter et fouiller le workspace — 100% local, sur n'importe quel modèle Ollama. Menu @ pour attacher fichiers et dossiers en contexte @codebase, pièces jointes PDF, Word et PowerPoint, commandes slash, bouton STOP et garde-fous anti-boucle. Marketplace : gonicolas12.my-ai." data-en="A VS Code extension (TypeScript) that turns My_AI into an agent able to edit, execute and search the workspace — 100% local, on any Ollama model. An @ menu to attach files and folders as @codebase context, PDF, Word and PowerPoint attachments, slash commands, a STOP button and anti-loop safeguards. Marketplace: gonicolas12.my-ai.">Une extension VS Code (TypeScript) qui transforme My_AI en agent capable d'éditer, exécuter et fouiller le workspace — 100% local, sur n'importe quel modèle Ollama. Menu @ pour attacher fichiers et dossiers en contexte @codebase, pièces jointes PDF, Word et PowerPoint, commandes slash, bouton STOP et garde-fous anti-boucle. Marketplace : gonicolas12.my-ai.</p>
+  <p class="reveal d1 specs-intro" data-fr="Une extension VS Code (TypeScript) qui transforme My_AI en agent capable d'éditer, exécuter et fouiller le workspace — 100% local, sur n'importe quel modèle Ollama. Menu @ pour attacher fichiers et dossiers en contexte @codebase, pièces jointes PDF, Word et PowerPoint, commandes slash, boutons Stop et Effacer qui arrêtent net la réponse, et garde-fous anti-boucle. Marketplace : gonicolas12.my-ai." data-en="A VS Code extension (TypeScript) that turns My_AI into an agent able to edit, execute and search the workspace — 100% local, on any Ollama model. An @ menu to attach files and folders as @codebase context, PDF, Word and PowerPoint attachments, slash commands, Stop and Clear buttons that halt the reply at once, and anti-loop safeguards. Marketplace: gonicolas12.my-ai.">Une extension VS Code (TypeScript) qui transforme My_AI en agent capable d'éditer, exécuter et fouiller le workspace — 100% local, sur n'importe quel modèle Ollama. Menu @ pour attacher fichiers et dossiers en contexte @codebase, pièces jointes PDF, Word et PowerPoint, commandes slash, boutons Stop et Effacer qui arrêtent net la réponse, et garde-fous anti-boucle. Marketplace : gonicolas12.my-ai.</p>
 
   <div class="dual reveal d2">
     <div class="dual-col">
@@ -583,18 +587,19 @@ myaiRelay.autoReconnect:             <span class="tk-num">true</span>
 myaiRelay.requestTimeoutSeconds:     <span class="tk-num">15</span></pre>
       <ul class="dual-list">
         <li data-fr="E2EE AES-256-GCM · clé éphémère dans le fragment d'URL (jamais sur le serveur)" data-en="AES-256-GCM E2EE · ephemeral key in URL fragment (never on the server)">E2EE AES-256-GCM · clé éphémère dans le fragment d'URL (jamais sur le serveur)</li>
-        <li data-fr="Multi-tunnel failover : cloudflared · serveo · localhost.run en parallèle" data-en="Multi-tunnel failover: cloudflared · serveo · localhost.run in parallel">Multi-tunnel failover : cloudflared · serveo · localhost.run en parallèle</li>
+        <li data-fr="Multi-tunnel failover : cloudflared · localhost.run en parallèle (serveo en option)" data-en="Multi-tunnel failover: cloudflared · localhost.run in parallel (serveo optional)">Multi-tunnel failover : cloudflared · localhost.run en parallèle (serveo en option)</li>
         <li data-fr="Credentials chiffrés dans VS Code SecretStorage (OS keychain)" data-en="Credentials encrypted in VS Code SecretStorage (OS keychain)">Credentials chiffrés dans VS Code SecretStorage (OS keychain)</li>
         <li data-fr="3 niveaux d'approbation : once · per-file · session-wide (reset à la reconnexion)" data-en="3 approval levels: once · per-file · session-wide (reset on reconnect)">3 niveaux d'approbation : once · per-file · session-wide (reset à la reconnexion)</li>
         <li data-fr="Parser <code>&amp;lt;tool_use&amp;gt;</code> custom → compatible n'importe quel modèle Ollama" data-en="Custom <code>&amp;lt;tool_use&amp;gt;</code> parser → works with any Ollama model">Parser <code>&lt;tool_use&gt;</code> custom → compatible n'importe quel modèle Ollama</li>
-        <li data-fr="Menu @ : fichiers/dossiers indexés en contexte @codebase partagé par projet · bouton STOP · garde-fous anti-boucle" data-en="@ menu: files/folders indexed as a per-project @codebase context · STOP button · anti-loop safeguards">Menu @ : fichiers/dossiers indexés en contexte @codebase partagé par projet · bouton STOP · garde-fous anti-boucle</li>
+        <li data-fr="Menu @ : fichiers/dossiers indexés en contexte @codebase partagé par projet · garde-fous anti-boucle" data-en="@ menu: files/folders indexed as a per-project @codebase context · anti-loop safeguards">Menu @ : fichiers/dossiers indexés en contexte @codebase partagé par projet · garde-fous anti-boucle</li>
+        <li data-fr="Stop fige aussitôt la réponse, coupe le flux Ollama côté hôte et n'exécute plus aucun outil · Effacer arrête aussi une réponse en cours" data-en="Stop freezes the reply at once, cuts the Ollama stream on the host and runs no further tool · Clear also stops a reply in progress">Stop fige aussitôt la réponse, coupe le flux Ollama côté hôte et n'exécute plus aucun outil · Effacer arrête aussi une réponse en cours</li>
       </ul>
     </div>
   </div>
 
   <div class="specs-grid reveal d3">
     <div class="spec">
-      <div class="spec-num">v1.3.8</div>
+      <div class="spec-num">v1.4.0</div>
       <div class="spec-lbl" data-fr="EXTENSION · MARKETPLACE" data-en="EXTENSION · MARKETPLACE">EXTENSION · MARKETPLACE</div>
     </div>
     <div class="spec">
@@ -606,8 +611,8 @@ myaiRelay.requestTimeoutSeconds:     <span class="tk-num">15</span></pre>
       <div class="spec-lbl" data-fr="OUTILS WORKSPACE EXPOSÉS" data-en="EXPOSED WORKSPACE TOOLS">OUTILS WORKSPACE EXPOSÉS</div>
     </div>
     <div class="spec">
-      <div class="spec-num">3</div>
-      <div class="spec-lbl" data-fr="TUNNELS PARALLÈLES · FAILOVER" data-en="PARALLEL TUNNELS · FAILOVER">TUNNELS PARALLÈLES · FAILOVER</div>
+      <div class="spec-num">2</div>
+      <div class="spec-lbl" data-fr="TUNNELS PAR DÉFAUT · FAILOVER" data-en="DEFAULT TUNNELS · FAILOVER">TUNNELS PAR DÉFAUT · FAILOVER</div>
     </div>
     <div class="spec">
       <div class="spec-num">AES-256-GCM</div>
