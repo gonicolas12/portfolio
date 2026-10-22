@@ -11,7 +11,7 @@ Portfolio personnel · Data / AI · 2026.
 Site brutaliste — 4 pages (Home, About, Work, Contact) — typographie massive, palette noir / crème / orange, switch FR/EN et switch Recruteur/Dev.
 
 - **Recruiter mode** : version épurée, orientée profil et lecture rapide.
-- **Dev mode** : sections `.dev-only` qui se déplient sur `work.html` (specs chiffrées, arborescence du repo My_AI, modèles Ollama supportés, config relay mobile, extension VS Code agentique, mode vocal entrée/sortie faster-whisper + pyttsx3, génération / édition de documents Word · PDF · PowerPoint · Excel avec aperçu natif, interface native React + TypeScript et accélération d'Ollama, assistant de configuration).
+- **Dev mode** : sections `.dev-only` qui se déplient sur `work.html` (specs chiffrées, arborescence du repo My_AI, modèles Ollama supportés, config relay mobile, extension VS Code agentique, mode vocal entrée/sortie faster-whisper + pyttsx3, génération / édition de documents Word · PDF · PowerPoint · Excel avec aperçu natif, interface native React + TypeScript et accélération d'Ollama, assistant de configuration) et fiche technique de My_OS (architecture, permissions, validation en VM).
 
 Construit en HTML / CSS / JS vanilla. Aucun build, aucune dépendance externe au-delà de Google Fonts (Archivo Black, Space Grotesk, Inter, JetBrains Mono).
 
@@ -29,7 +29,7 @@ Construit en HTML / CSS / JS vanilla. Aucun build, aucune dépendance externe au
 portfolio/
 ├── index.html              # Home — manifesto, chiffres clés, projet phare, méthode
 ├── about.html              # Profil, timeline, stack, langues, intérêts
-├── work.html               # Étude de cas MY_AI, 9 agents, sections .dev-only, code snippet
+├── work.html               # Étude de cas MY_AI, 9 agents, sections .dev-only, code snippet, projet MY_OS
 ├── contact.html            # Liens directs, FAQ, disponibilité
 ├── shared/
 │   ├── core.css            # Tokens, sysbar, navbar, modes rec/dev, responsive global
@@ -85,6 +85,7 @@ python3 -m http.server 8000
 - Design & code : Nicolas Gouy — [GitHub](https://github.com/gonicolas12) · [LinkedIn](https://www.linkedin.com/in/nicolas-gouy/)
 - Polices : Archivo Black, Space Grotesk, Inter, JetBrains Mono (Google Fonts)
 - Étude de cas mise en avant : [My_AI](https://github.com/gonicolas12/My_AI) — assistant IA 100 % local en Python.
+- Autre projet présenté : [My_OS](https://github.com/gonicolas12/My_OS) — distribution Linux avec IA intégrée au système.
 
 ## Licence
 

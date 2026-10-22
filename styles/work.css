@@ -588,6 +588,13 @@
   letter-spacing: 0.25em;
   color: var(--muted);
 }
+.proj-teaser-status {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: var(--accent);
+  font-weight: 700;
+}
 .proj-teaser h3 {
   font-family: var(--display);
   font-size: clamp(40px, 6vw, 72px);
@@ -610,6 +617,9 @@
   max-width: 700px;
   margin: 0 0 24px;
 }
+.proj-teaser .specs-grid { margin-bottom: 24px; }
+.proj-teaser .spec { background: var(--bg); }
+.proj-teaser .spec:hover { background: var(--ink); }
 .proj-teaser-stack {
   margin-bottom: 24px;
 }
@@ -619,13 +629,7 @@
   border: 1px dashed var(--line-soft);
   background: var(--bg);
 }
-.proj-teaser-dev p {
-  font-family: var(--serif);
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--muted);
-  margin: 0;
-}
+.proj-teaser-dev .dev-meta { margin: 0 0 8px; }
 
 /* Mini CTA */
 .mini-cta {
@@ -821,7 +825,6 @@
   .proj-teaser-tagline { font-size: 16px; }
   .proj-teaser-desc { font-size: 14px; }
   .proj-teaser-dev { padding: 12px 14px; }
-  .proj-teaser-dev p { font-size: 13px; }
 
   .mini-cta { padding: 60px 16px; }
 }

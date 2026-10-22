@@ -121,15 +121,19 @@ window.PORTFOLIO = {
       name: "MY_OS",
       tagline: { fr: "Linux avec IA intégrée au système", en: "Linux with system-integrated AI" },
       year: "2026",
-      status: "COMING_SOON",
+      status: "LIVE",
       featured: false,
       repo: "gonicolas12/My_OS",
       desc: {
-        fr: "Distribution Linux avec un assistant IA intégré au système. Raccourci clavier global, pilotage du PC en langage naturel, modèle local Ollama par défaut + cloud Claude optionnel, sécurisé par conception.",
-        en: "Linux distribution with a system-integrated AI assistant. Global keyboard shortcut, natural language PC control, local Ollama model by default + optional Claude cloud, secure by design."
+        fr: "Distribution Linux (base Arch) avec un assistant IA intégré au système, publiée en ISO live et testée de bout en bout en VM (BIOS et UEFI). Raccourci clavier global, pilotage du PC en langage naturel (fichiers, paquets, réglages, processus), modèle local Qwen via Ollama par défaut + cloud Claude optionnel par requête, moteur de permissions à 4 niveaux de risque fixés par du code statique, confirmations, élévation polkit ponctuelle et journal d'audit SQLite.",
+        en: "Arch-based Linux distribution with a system-integrated AI assistant, shipped as a live ISO and tested end to end in a VM (BIOS and UEFI). Global keyboard shortcut, natural language PC control (files, packages, settings, processes), local Qwen model via Ollama by default + optional per-request Claude cloud, 4-level permission engine with risk set by static code, confirmations, one-off polkit elevation and an SQLite audit log."
       },
-      stack: ["Linux", "Ollama", "Claude", "Python"],
-      metrics: []
+      stack: ["Arch Linux", "Python", "Ollama", "Qwen", "Claude", "PySide6", "systemd", "polkit", "SQLite"],
+      metrics: [
+        { k: "LOCAL", v: "100%" },
+        { k: "RISK LEVELS", v: "4" },
+        { k: "VM SCENARIOS", v: "42" }
+      ]
     }
   ]
 };
